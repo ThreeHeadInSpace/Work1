@@ -1,0 +1,11 @@
+# Отключение платных услуг
+PaidServicesDisable: 
+  answer: |
+     Я понял, что ваш вопрос связан с отключением платных услуг, но пока еще не хватает информации, чтобы дать ответ. Выберите, какую услугу хотите отключить: 
+  buttons:
+    - text: "Сервис уведомлений"
+      transition: "/SMSNotifications/SMSOff"
+    - text: "Моя защита"
+      transition: "/Insurance/Insurance/Return/CreditCard"
+    - text: "Подписки"
+      transition: "/Subscription/Subscription/TurnOff"

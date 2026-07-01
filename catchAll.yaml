@@ -1,0 +1,2251 @@
+general:
+  mainReply:
+    - Прошу прощения, не получилось вас понять.
+    - Не совсем понял вас.
+    - Простите, не совсем понял ваш ответ.
+    - Извините, не уверен, что правильно понял, что вы имели в виду.
+  defaultFirst:
+    - Попробуйте, пожалуйста, переформулировать вопрос.
+    - Пожалуйста, попробуйте задать вопрос по-другому.
+  defaultFinal:
+    - Кажется, это пока не в моей компетенции. Для продолжения консультации переключаю вас на оператора.
+
+AddressesUralsib/ATMOrOffice:
+  counter: 3
+  firstReplies:
+    - Чтобы я смог подсказать информацию по отделениям и банкоматам, уточните, что именно вам требуется?
+    - Вам требуется отделение банка Уралсиб или банкомат?
+  buttons:
+    - text: Отделение банка
+      transition: /AddressesUralsib/ATMOrOffice/Office
+    - text: Банкомат
+      transition: /AddressesUralsib/ATMOrOffice/ATM
+  needTransfer: false
+  finalReply:
+    - "Вы можете найти список отделений и банкоматов по [ссылке]({{$temp.officeLink}})"
+  transition: /SomethingElse
+
+Mortgage/Mortgage:
+  counter: 3
+  firstReplies:
+    - Какая информация об ипотечном кредите вам необходима?
+    - Какую информацию об ипотечном кредитовании в банке Уралсиб вы хотели бы получить?
+  buttons:
+    - text: Оформить заявку
+      transition: /Mortgage/Mortgage/Request
+    - text: Ознакомиться с условиями
+      transition: /Mortgage/Mortgage/Conditions
+  needTransfer: true
+
+Mortgage/Mortgage/Conditions:
+  counter: 3
+  firstReplies:
+    - Вы подходите под требования?
+    - Вы подходите под перечисленные требования?
+  buttons:
+    - text: Да
+      transition: /Mortgage/Mortgage/Conditions/Agree
+    - text: Нет
+      transition: /Mortgage/Mortgage/Conditions/Disagree
+  needTransfer: true
+
+CarLoan/CarLoan:
+  counter: 3
+  firstReplies:
+    - Вы подходите под требования?
+    - Вы подходите под перечисленные требования?
+  buttons:
+    - text: Да
+      transition: /CarLoan/CarLoan/Agree
+    - text: Нет
+      transition: /CarLoan/CarLoan/Disagree
+  needTransfer: true
+
+CreditCards/CreditCard:
+  counter: 3
+  firstReplies:
+    - Какая информация о кредитных картах вам необходима?
+    - Какую информацию о кредитных картах банка Уралсиб вы хотели бы получить?
+  buttons:
+    - text: Оформить заявку
+      transition: /CreditCards/CreditCard/Request
+    - text: Ознакомиться с условиями
+      transition: /CreditCards/CreditCard/Conditions
+  needTransfer: true
+
+CreditCards/CreditCard/Conditions:
+  counter: 3
+  firstReplies:
+    - Вы подходите под требования?
+    - Вы подходите под перечисленные требования?
+  buttons:
+    - text: Да
+      transition: /CreditCards/CreditCard/Conditions/Agree
+    - text: Нет
+      transition: /CreditCards/CreditCard/Conditions/Disagree
+  needTransfer: true
+
+CreditCards/CreditCard/AskCardType:
+  counter: 3
+  firstReplies:
+    - Какая карта вам необходима?
+    - Какую кредитную карту вы рассматриваете?
+  buttons:
+    - text: Карта 120 дней
+      transition: /CreditCards/CreditCard/AskCardType/120Days
+    - text: Карта с кэшбеком
+      transition: /CreditCards/CreditCard/AskCardType/Cashback
+  needTransfer: true
+
+CreditCards/CardLoan/Request/Offer:
+  counter: 3
+  firstReplies:
+    - Желаете оформить заявку на кредитную карту?
+    - Хотите подать заявку на кредит?
+  buttons:
+    - text: Да
+      transition: /CreditCards/CreditCard/Offer/Agree
+    - text: Нет
+      transition: /CreditCards/CreditCard/Offer/Disagree
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan:
+  counter: 3
+  firstReplies:
+    - Какая информация о потребительском кредите вам необходима?
+    - Какую информацию о потребительском кредитовании в банке Уралсиб вы хотели бы получить?
+  buttons:
+    - text: Оформить заявку
+      transition: /ConsumerLoan/ConsumerLoan/Request
+    - text: Ознакомиться с условиями
+      transition: /ConsumerLoan/ConsumerLoan/Conditions
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/Conditions:
+  counter: 3
+  firstReplies:
+    - Вы задаете вопрос как физическое лицо?
+    - Вы являетесь физическим лицом?
+  buttons:
+    - text: Да
+      transition:  /ConsumerLoan/ConsumerLoan/Conditions/Individual
+    - text: Нет
+      transition: /ConsumerLoan/ConsumerLoan/Conditions/Legal
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/Conditions/Individual:
+  counter: 3
+  firstReplies:
+    - Вы подходите под требования?
+    - Вы подходите под перечисленные требования?
+  buttons:
+    - text: Да
+      transition: /ConsumerLoan/ConsumerLoan/Conditions/Individual/Agree
+    - text: Нет
+      transition: /ConsumerLoan/ConsumerLoan/Conditions/Individual/Disagree
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/IsBankClient:
+  counter: 3
+  firstReplies:
+    - Вы — клиент банка Уралсиб?
+    - В настоящее время вы являетесь клиентом Уралсиба?
+  buttons:
+    - text: Да
+      transition: /ConsumerLoan/ConsumerLoan/IsBankClient/Agree
+    - text: Нет
+      transition: /ConsumerLoan/ConsumerLoan/IsBankClient/Disagree
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/IsBankClient/Agree:
+  counter: 3
+  firstReplies:
+    - Введите сумму, которую планируете взять в кредит.
+    - Напишите сумму, которую хотите взять в кредит.
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/IsBankClient/Disagree:
+  counter: 3
+  firstReplies:
+    - Введите сумму, которую планируете взять в кредит.
+    - Напишите сумму, которую хотите взять в кредит.
+  needTransfer: true
+
+ConsumerLoan/ConsumerLoan/Request:
+  counter: 3
+  firstReplies:
+    - Подаем заявку на кредитную карту?
+    - Хотите подать заявку на кредит?
+  buttons:
+    - text: Да
+      transition: /ConsumerLoan/ConsumerLoan/Request/Agree
+    - text: Нет
+      transition: /ConsumerLoan/ConsumerLoan/Request/Disagree
+  needTransfer: true
+
+# ConsumerLoan/ConsumerLoan/Request/NoOffer:
+#   counter: 3
+#   firstReplies:
+#     - Подаем заявку на кредитную карту?
+#     - Хотите подать заявку на кредит?
+#   buttons:
+#     - text: Да
+#       transition: /ConsumerLoan/ConsumerLoan/Request/NoOffer  #/Apply/Link В NoOffer нет кнопок и такого стейта тоже нет 
+#     - text: Нет
+#       transition: /SomethingElse
+#   needTransfer: true
+
+Deposits/Account:
+  counter: 3
+  firstReplies:
+    - Какая информация о счетах вам необходима?
+    - Какую информацию о счетах в банке Уралсиб вы хотели бы получить?
+  buttons:
+    - text: Ознакомиться с условиями
+      transition: /Deposits/Account/Conditions
+    - text: Открыть счет
+      transition: /Deposits/Account/Open
+    - text: Закрыть счет
+      transition: /Deposits/Account/Close
+  needTransfer: true
+
+Deposits/Deposit:
+  counter: 3
+  firstReplies:
+      - Какая информация о вкладах вам необходима?
+      - Какую информацию о депозитах банка Уралсиб вы хотели бы получить?
+  buttons:
+    - text: Ознакомиться с условиями
+      transition: /Deposits/Deposit/Conditions
+    - text: Открыть вклад
+      transition: /Deposits/Deposit/Open
+    - text: Закрыть вклад
+      transition: /Deposits/Deposit/Close
+  needTransfer: true
+
+Deposits/Deposit/Conditions:
+  counter: 3
+  firstReplies:
+    - Уточните, вам требуется вклад с возможностью пополнения и совершения расходных операций?
+    - Вы хотели бы осуществлять расходные операции со срочного вклада?
+  buttons:
+    - text: Да
+      transition: /Deposits/Deposit/Conditions/Agree
+    - text: Нет
+      transition:  /Deposits/Deposit/Conditions/Disagree
+  needTransfer: true
+
+Feedback/Feedback:
+  counter: 3
+  firstReplies:
+    - Отзыв какого характера вы хотели бы оставить?
+    - Какой именно отзыв вы хотели бы оставить?
+  buttons:
+    - text: Благодарность
+      transition: "/Feedback/Feedback/Gratitude"
+    - text: Претензия
+      transition: "/Feedback/Feedback/Claim"
+  needTransfer: true
+
+DebitCards/Conditions:
+  counter: 3
+  firstReplies:
+    - Вы задаете вопрос как физическое лицо?
+    - Вы являетесь физическим лицом?
+  buttons:
+    - text: "Да"
+      transition: "/DebitCards/DebitCard/Conditions/Individual"
+    - text: "Нет"
+      transition: "/DebitCards/DebitCard/Conditions/Legal"
+  needTransfer: true
+
+DebitCards/DebitCard:
+  counter: 3
+  firstReplies:
+    - Какая операция вас интересует?
+    - Выберите интересующую вас операцию.
+  buttons:
+    - text: "Оформить заявку"
+      transition: "/DebitCards/DebitCard/Request"
+    - text: "Ознакомиться с условиями"
+      transition: "/DebitCards/DebitCard/Conditions"
+  needTransfer: true
+
+DebitCards/DebitCard/AskCardType/Profit:
+  counter: 3
+  firstReplies:
+    - Как бы вы хотели получить карту?
+    - Выберите подходящий способ получения карты.
+  buttons:
+    - text: "Курьером"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Delivery"
+    - text: "В офисе банка"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Office"
+  needTransfer: true
+
+DebitCards/DebitCard/AskCardType/Profit/Office:
+  counter: 3
+  firstReplies:
+    - Какую карту вы хотите оформить?
+    - Выберите нужный тип карты.
+  buttons:
+    - text: "Пластиковая карта"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Office/Plastic"
+    - text: "Цифровая карта"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Office/Digital"
+  needTransfer: true
+
+DebitCards/DebitCard/AskCardType/Profit/Mir:
+  counter: 3
+  firstReplies:
+    - Какую карту вы хотите оформить?
+    - Выберите нужный тип карты.
+  buttons:
+    - text: "Пластиковая карта"
+      transition: "/DebitCards/DebitCard/AskCardType/Mir/Plastic"
+    - text: "Цифровая карта"
+      transition: "/DebitCards/DebitCard/AskCardType/Mir/Digital"
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation:
+  counter: 3
+  firstReplies:
+    - О каком разделе «Уралсиб Онлайн» вам рассказать?
+    - По какому разделу «Уралсиб Онлайн» требуется консультация?
+  buttons:
+    - text: "Переводы"
+      transfer: /MobileAppNavigation/DBONavigation/Transfers
+    - text: "Оплата услуг"
+      transfer: /MobileAppNavigation/DBONavigation/ServicePayments
+    - text: "Кредиты"
+      transfer: /MobileAppNavigation/DBONavigation/Loans
+    - text: "Счета и сбережения"
+      transfer: /MobileAppNavigation/DBONavigation/Savings
+    - text: "Отображение карт"
+      transfer: /MobileAppNavigation/DBONavigation/DisplayCards
+    - text: "Управление картами"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards
+    - text: "Настройки"
+      transfer: /MobileAppNavigation/DBONavigation/Settings
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/DisplayCards:
+  counter: 3
+  firstReplies:
+    - Какая информация об отображении карт в мобильном приложении вам требуется?
+    - Что именно вы хотели бы узнать об отображении карт в мобильном приложении банка?
+  buttons:
+    - text: "Не отображается карта"
+      transfer: /MobileAppNavigation/DBONavigation/DisplayCards/ShowCard
+    - text: "Где найти баланс карты?"
+      transfer: /MobileAppNavigation/DBONavigation/DisplayCards/Balance
+    - text: "Скрыть карту"
+      transfer: /MobileAppNavigation/DBONavigation/DisplayCards/HideCard
+    - text: "Переименовать карту"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Rename
+    - text: "Назад"
+      transfer: /MobileAppNavigation/DBONavigation
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/DisplayCards/ShowCard:
+  counter: 3
+  firstReplies:
+    - Не отображается новая или действующая карта?
+    - Проблема с отображением связана с новой или с действующей картой?
+  buttons:
+    - text: "Новая"
+      transfer: /Card/Status
+    - text: "Действующая"
+      transfer: /MobileAppNavigation/DBONavigation/DisplayCards/ShowCard/Current
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards:
+  counter: 3
+  firstReplies:
+    - Какое действие вас интересует?
+    - Что именно вы хотели бы узнать о действиях с картами в мобильном приложении?
+  buttons:
+    - text: "Пополнить баланс"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/TopUp
+    - text: "Получить выписку"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Statement
+    - text: "Узнать баланс бонусов"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/UralsibBonus
+    - text: "Заблокировать карту"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Block
+    - text: "Разблокировать карту"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Unblock
+    - text: "Изменить ПИН"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/ChangePIN
+    - text: "Посмотреть расходы"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Analytics
+    - text: "Узнать реквизиты"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Details
+    - text: "Переименовать карту"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Rename
+    - text: "Настроить уведомления"
+      transfer: /MobileAppNavigation/DBONavigation/ManageCards/Notifications
+    - text: "Назад"
+      transfer: /MobileAppNavigation/DBONavigation
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Savings:
+  counter: 3
+  firstReplies:
+    - Какое действие вас интересует?
+    - Что именно вы хотели бы узнать о действиях с счетами и вкладами в мобильном приложении?
+  buttons:
+    - text: "Пополнить вклад"
+      transfer: /MobileAppNavigation/DBONavigation/Savings/TopUp
+    - text: "Узнать реквизиты"
+      transfer: /MobileAppNavigation/DBONavigation/Savings/Details
+    - text: "Переименовать счет"
+      transfer: /MobileAppNavigation/DBONavigation/Savings/Rename
+    - text: "Получить выписку"
+      transfer: /MobileAppNavigation/DBONavigation/Savings/Statement
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Loans:
+  counter: 3
+  firstReplies:
+    - Какое действие вас интересует?
+    - Что именно вы хотели бы узнать о действиях с кредитами в мобильном приложении?
+  buttons:
+    - text: "Узнать реквизиты"
+      transfer: /MobileAppNavigation/DBONavigation/Loans/Details
+    - text: "Погасить досрочно"
+      transfer: /MobileAppNavigation/DBONavigation/Loans/EarlyRepay
+    - text: "Пополнить кредитный счет"
+      transfer: /MobileAppNavigation/DBONavigation/Loans/TopUp
+    - text: "Ознакомиться с условиями договора"
+      transfer: /MobileAppNavigation/DBONavigation/Loans/Terms
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Settings:
+  counter: 3
+  firstReplies:
+    - Какое действие вас интересует?
+    - Что именно вы хотели бы настроить в мобильном приложении?
+  buttons:
+    - text: "Подключить и настроить СБП"
+      transfer: /MobileAppNavigation/DBONavigation/Settings/PhoneTransfer
+    - text: "Настроить способы входа в приложение"
+      transfer: /MobileAppNavigation/DBONavigation/Settings/Login
+    - text: "Настроить подтверждение операций"
+      transfer: /MobileAppNavigation/DBONavigation/Settings/Approve
+    - text: "Изменить лимиты на переводы"
+      transfer: /MobileAppNavigation/DBONavigation/Settings/Limits
+    - text: "Найти отделение или банкомат"
+      transfer: /MobileAppNavigation/DBONavigation/Settings/Offices
+    - text: "Назад"
+      transfer: /MobileAppNavigation/DBONavigation
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/Analytics:
+  counter: 3
+  firstReplies:
+    - Аналитику какой карты вы хотели бы просмотреть?
+    - Выберите карту, по которой нужна аналитика.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/TopUp:
+  counter: 3
+  firstReplies:
+    - Какую карту вы хотели бы пополнить?
+    - Выберите карту, которую хотите пополнить.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/Details:
+  counter: 3
+  firstReplies:
+    - Реквизиты какой карты вы бы хотели узнать?
+    - Выберите карту, реквизиты которой вам нужны.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/Rename:
+  counter: 3
+  firstReplies:
+    - Какую карту вы бы хотели переименовать?
+    - Выберите карту, имя которой хотите изменить.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/Notifications:
+  counter: 3
+  firstReplies:
+    - По какой карте вы хотите настроить уведомления?
+    - Выберите карту, по которой нужно настроить уведомления.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/UralsibBonus:
+  counter: 3
+  firstReplies:
+    - По какой карте вы хотите узнать детали о программе лояльности?
+    - Выберите карту, по которой требуется информация об «Уралсиб Бонус».
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/ManageCards/Statement:
+  counter: 3
+  firstReplies:
+    - По какой карте нужна выписка?
+    - Выберите карту, по которой хотите получить выписку.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Savings/TopUp:
+  counter: 3
+  firstReplies:
+    - Какой счет вы хотели бы пополнить?
+    - Выберите счет, который хотите пополнить.
+  buttons: depositButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Savings/Details:
+  counter: 3
+  firstReplies:
+    - Реквизиты какого счета вы бы хотели узнать?
+    - Выберите счет, реквизиты которого вам нужны.
+  buttons: depositButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Savings/Rename:
+  counter: 3
+  firstReplies:
+    - Какой счет вы бы хотели переименовать?
+    - Выберите счет, имя которого хотите изменить.
+  buttons: depositButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Savings/Statement:
+  counter: 3
+  firstReplies:
+    - По какому продукту вам требуется выписка?
+    - По какому продукту вы хотели бы получить выписку?
+  buttons: depositButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Loans/Details:
+  counter: 3
+  firstReplies:
+    - Реквизиты какого кредитного счета вы бы хотели узнать?
+    - Выберите кредит, реквизиты которого вам нужны.
+  buttons: loanButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Loans/EarlyRepayment:
+  counter: 3
+  firstReplies:
+    - Какой кредит вы хотели бы погасить досрочно?
+    - Выберите кредит для досрочного погашения.
+  buttons: loanButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Loans/TopUp:
+  counter: 3
+  firstReplies:
+    - Какой кредитный счет вы хотели бы пополнить?
+    - Выберите кредит, который хотите пополнить.
+  buttons: loanButtons
+  needTransfer: true
+
+MobileAppNavigation/DBONavigation/Loans/Terms:
+  counter: 3
+  firstReplies:
+    - По какому кредиту вас интересуют условия?
+    - Выберите кредит, чтобы ознакомиться с его условиями.
+  buttons: loanButtons
+  needTransfer: true
+
+LoyaltyProgram/UralsibBonus:
+  counter: 3
+  firstReplies:
+    - Что именно вы хотите узнать?
+    - Что я могу вам подсказать об «Уралсиб Бонус»?
+  buttons:
+    - text: "Регистрация в программе"
+      transition: "/LoyaltyProgram/UralsibBonus/Participate"
+    - text: "Условия получения бонусов"
+      transition: "/LoyaltyProgram/UralsibBonus/Conditions"
+    - text: "Куда можно потратить бонусы?"
+      transition: "/LoyaltyProgram/UralsibBonus/Spend"
+  needTransfer: true
+
+LoyaltyProgram/UralsibBonus/Balance:
+  counter: 3
+  firstReplies:
+    - Какая карта вас интересует?
+    - Выберите интересующую вас карту, чтобы настроить по ней программу лояльности.
+  buttons: activeCardsButtons
+  isPaginationNeeded: true
+  needTransfer: true
+
+CashOrder/CashOrder:
+  counter: 3
+  firstReplies:
+    - Какая информация о заказе наличных вам необходима?
+    - Какую информацию о заказе наличных в отделение банка вы хотели бы получить?
+  buttons:
+    - text: Ознакомиться с условиями
+      transition: "/CashOrder/CashOrder/Conditions"
+    - text: "Оформить заявку"
+      transition: "/CashOrder/CashOrder/Request"
+    - text: "Отменить заявку"
+      transition: "/CashOrder/CashOrder/RequestCancel"
+  needTransfer: true
+
+CashOrder/CashOrder/RequestCancel:
+  counter: 3
+  firstReplies:
+    - Какой из заказов вы хотите отменить?
+    - Какую заявку на заказ наличных требуется отменить?
+  buttons: cashOrderButtons
+  needTransfer: true
+
+CashOrder/CashOrder/RequestCancel/Confirmation:
+  counter: 3
+  firstReplies:
+    - Хотите отменить заявку на заказ наличных №{{ $session.cashOrder.id }} от {{ $session.cashOrder.issueDate }}?
+    - Требуется отменить заявку на заказ наличных №{{ $session.cashOrder.id }} от {{ $session.cashOrder.issueDate }}?
+  buttons:
+    - text: Да
+      transition: "/CashOrder/CashOrder/RequestCancel/Confirmation/Agree"
+    - text: Нет
+      transition: "/CashOrder/CashOrder/RequestCancel/Confirmation/Disagree"
+  needTransfer: true
+
+CashOrder/CashOrder/Currency:
+  counter: 3
+  firstReplies:
+    - Вам требуется заказ денежной суммы наличными в рублях?
+    - Необходимая валюта для заказа наличных — рубли?
+  buttons:
+    - text: Да
+      transition: "/CashOrder/CashOrder/Currency/Rub"
+    - text: Нет, в валюте
+      transition: "/CashOrder/CashOrder/Currency/Another"
+  needTransfer: true
+
+CashOrder/CashOrder/Currency/Rub:
+  counter: 3
+  firstReplies:
+    - Укажите предполагаемую сумму заказа.
+    - Введите сумму, которую хотите заказать.
+  needTransfer: true
+
+CashOrder/CashOrder/Currency/Another:
+  counter: 3
+  firstReplies:
+    - Поступление денежных средств было совершено до 09.03.2022?
+    - Поступление денег, которое желаете получить наличными, было сделано до 09.03.2022?
+  buttons:
+    - text: Да
+      transition: "/CashOrder/CashOrder/Currency/Another/Agree"
+    - text: Нет, позже
+      transition: "/CashOrder/CashOrder/Currency/Another/Disagree"
+  needTransfer: true
+
+PaymentsAndTransfer/MoneyTransfer:
+  counter: 3
+  firstReplies:
+    - Какой вид перевода вам требуется?
+    - Подскажите, какой денежный перевод планируете совершить?
+  buttons:
+    - text: По номеру телефона или СБП
+      transition: /PaymentsAndTransfer/MoneyTransfer/SBP
+    - text: По номеру карты
+      transition: /PaymentsAndTransfer/MoneyTransfer/Card2Card
+    - text: По реквизитам
+      transition: /PaymentsAndTransfer/MoneyTransfer/Requisites
+    - text: По системе срочных переводов
+      transition: /PaymentsAndTransfer/MoneyTransfer/Urgent
+  needTransfer: true
+
+PaymentsAndTransfer/MoneyTransfer/Requisites:
+  counter: 3
+  firstReplies:
+    - Уточните, какая информация о переводе по реквизитам вам требуется?
+    - Что бы вы хотели узнать о переводе по реквизитам?
+  buttons:
+    - text: "Как совершить перевод?"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Currency"
+    - text: "Комиссия за перевод"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Commission"
+    - text: "Ограничения на перевод"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Limits"
+  needTransfer: true
+
+PaymentsAndTransfer/MoneyTransfer/Requisites/Currency:
+  counter: 3
+  firstReplies:
+    - Планируете сделать перевод в рублях?
+    - Вас интересует перевод в рублях?
+  buttons:
+    - text: "Да"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Currency/Rub"
+    - text: "Нет"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Currency/Another"
+  needTransfer: true
+
+PaymentsAndTransfer/MoneyTransfer/Urgent:
+  counter: 3
+  firstReplies:
+    - Какая информация о срочных переводах будет вам полезна?
+    - Что вы хотели бы узнать о срочных переводах?
+  buttons:
+    - text: Отправить перевод
+      transition: /PaymentsAndTransfer/MoneyTransfer/Urgent/Send
+    - text: Получить перевод
+      transition: /PaymentsAndTransfer/MoneyTransfer/Urgent/Receive
+  needTransfer: true
+
+AdditionalService/3DSecure:
+  counter: 3
+  firstReplies:
+    - По какой карте вы хотите проверить наличие услуги «3D Secure»?
+    - Чтобы узнать информацию о подключении услуги, выберите интересующую карту.
+  buttons: activeCardsButtons
+  needTransfer: true
+
+AdditionalService/3DSecure/Status:
+  counter: 3
+  firstReplies:
+    - Желаете подключить услугу «Сервис уведомлений»?
+    - Вам требуются СМС-уведомления?
+  buttons:
+    - text: Да
+      transition: /SMSNotifications/SMSOn
+    - text: Нет
+      transition: /PaymentsAndTransfer/MoneyTransfer/Urgent/Receive    
+  needTransfer: true
+
+Deposits/Deposit/GetDepositType:
+  counter: 3
+  firstReplies:
+    - Уточните, вам требуется вклад с возможностью пополнения и совершения расходных операций?
+    - Вы хотели бы осуществлять расходные операции со срочного вклада?
+  buttons:
+    - text: "Да" 
+      transition: /Deposits/Deposit/Conditions/Agree
+    - text: "Нет"
+      transition: /Deposits/Deposit/Conditions/Disagree
+  needTransfer: true
+
+Deposits/AskAboutOldOrNew:
+  counter: 3
+  firstReplies:
+    - Вам требуется информация об имеющемся у вас счету или о новом продукте?
+    - Вас интересует имеющийся у вас счет или новый продукт?
+  buttons:
+    - text: "Мой счет" 
+      transition: /Deposits/AskAboutOldOrNew/Current
+    - text: "Новый продукт"
+      transition: /Deposits/AskAboutOldOrNew/New
+  needTransfer: true
+
+Deposits/ChooseAccountOrDeposit:
+  counter: 3
+  firstReplies:
+    - Выберите счет, по которому вам требуется информация.
+    - Какой продукт вас интересует?
+    - Выберите интересующий продукт из списка.
+  buttons: activeDepositsButtons
+  needTransfer: true
+
+Deposits/Deposit/ServiceFee:
+  counter: 3
+  firstReplies:
+    - По какому продукту вы хотите узнать сумму комиссии за обслуживание?
+    - Чтобы узнать информацию о комиссии за обслуживание, выберите нужный продукт из списка.
+  buttons:
+     - text: "Вклад"
+       transition: "/Deposits/Deposit/ServiceFee/No"
+     - text: "Накопительный счет"
+       transition: "/Deposits/Deposit/ServiceFee/No"
+     - text: "Текущий счет"
+       transition: "/Deposits/Deposit/ServiceFee/Account"
+     - text: "Вклад до востребования"
+       transition: "/Deposits/Deposit/ServiceFee/Account"
+  needTransfer: true
+
+Deposits/Deposit/ServiceFee/Account:
+  counter: 3
+  firstReplies:
+    - Выберите валюту, в которой открыт ваш счет.
+    - Чтобы узнать информацию о комиссии за обслуживание, выберите валюту счета.
+  buttons:
+    - text: "Рубли"
+      transition: /Deposits/Deposit/ServiceFee/Account/RuChi
+    - text: "Китайские юани"
+      transition: /Deposits/Deposit/ServiceFee/Account/RuChi
+    - text: "Другая иностранная валюта"
+      transition: /Deposits/Deposit/ServiceFee/Account/Other
+  needTransfer: true
+
+Deposits/Deposit/Withdraw:
+  counter: 3
+  firstReplies:
+    - Для уточнения условий снятия выберите нужную валюту.
+    - Чтобы узнать об условиях снятия средств, выберите нужную валюту из списка.
+  buttons:
+    - text: "Рубли"
+      transition: /Deposits/Deposit/Withdraw/RUB
+    - text: "Доллары США"
+      transition: /Deposits/Deposit/Withdraw/Foreign
+    - text: "Евро"
+      transition: /Deposits/Deposit/Withdraw/Foreign
+  needTransfer: true
+
+Deposits/Deposit/WithdrawEarly/Name:
+  counter: 3
+  firstReplies:
+    - Рассказать вам о том, как закрыть вклад?
+    - Вам требуется информация о том, как закрыть вклад?
+  buttons:
+    - text: "Да"
+      transition: /Deposits/Deposit/Close
+    - text: "Нет"
+      transition: /SomethingElse
+  needTransfer: true
+
+Deposits/Deposit/TransferFee:
+  counter: 3
+  firstReplies:
+    - В какой валюте вы планируете внести средства на счет?
+    - Укажите валюту, в которой планируете внести денежные средства.
+  buttons:
+    - text: "Рубли"
+      transition: /Deposits/Deposit/TransferFee/Rubles
+    - text: "Иностранная валюта"
+      transition: /Deposits/Deposit/TransferFee/Foreign
+  needTransfer: true
+
+Deposits/Deposit/TransferFee/Foreign:
+  counter: 3
+  firstReplies:
+    - Укажите, со счета какого банка планируете осуществить перевод.
+    - С какого счета планируете совершить перевод для пополнения вклада?
+  buttons:
+    - text: "Со счета Уралсиб"
+      transition: /Deposits/Deposit/TransferFee/Foreign/Inside
+    - text: "Со счета другого банка"
+      transition: /Deposits/Deposit/TransferFee/Foreign/Outside
+  needTransfer: true
+
+Deposits/Deposit/WithdrawEarly:
+  counter: 3
+  firstReplies:
+    - Укажите, какой вклад вас интересует.
+    - Информация о досрочном закрытии какого вклада вам треуется?
+  buttons:
+    - text: "Доход"
+      transition: /Deposits/Deposit/WithdrawEarly/Name
+    - text: "Комфорт"
+      transition: /Deposits/Deposit/WithdrawEarly/Name
+    - text: "Другой вклад"
+      transition: /Deposits/Deposit/WithdrawEarly/Other
+  needTransfer: true
+
+Package/Package:
+  counter: 3
+  firstReplies:
+    - Что вы хотели бы узнать о пакетах услуг?
+    - Какая информация о пакетах услуг вам требуется?
+  buttons:
+    - text: Оформить пакет услуг
+      transition: /Premium/Premium
+    - text: Тарифы и условия
+      transition: /Package/Package/Terms
+    - text: Оборот для условий бесплатности
+      transition: /Package/Package/FreeTerms
+    - text: Закрыть пакет услуг
+      transition: /Package/Package/Close
+  needTransfer: true
+
+Package/ChoosePackage:
+  counter: 3
+  firstReplies:
+    - Укажите нужный пакет услуг
+    - Выберите пакет услуг, чтобы я мог сообщить по нему информацию.
+  buttons: activePackageButtons  
+  needTransfer: true
+
+CardsConsultation/Card:
+  counter: 3
+  firstReplies:
+    - О каком продукте ваш вопрос?
+    - По какому продукту вы хотите получить консультацию?
+  buttons:
+    - text: Дебетовая карта
+      transition: /CardsConsultation/Card/Debit
+    - text: Кредитная карта
+      transition: /CardsConsultation/Card/Credit
+  needTransfer: true
+
+CardsConsultation/Card/AskAboutOldOrNew:
+  counter: 3
+  firstReplies:
+    - Вам требуется помощь с имеющейся у вас картой или с новой картой?
+    - Ваш вопрос связан с вашей картой или с новым продуктом?
+  buttons:
+    - text: Моя карта
+      transition: /CardsConsultation/Card/AskAboutOldOrNew/Current
+    - text: Новая карта
+      transition: /CardsConsultation/Card/AskAboutOldOrNew/New
+  needTransfer: true
+  
+CardsConsultation/Card/AskAboutProfit:
+  counter: 3
+  firstReplies:
+    - Ваша карта является картой «Прибыль»?
+    - Карта, о которой вы спрашиваете, является картой «Прибыль»?
+  buttons:
+    - text: Да
+      transition: /CardsConsultation/Card/AskAboutProfit/Agree
+    - text: Нет
+      transition: /CardsConsultation/Card/AskAboutOldOrNew/New
+  needTransfer: true
+
+CardsConsultation/ChooseCard:
+  counter: 3
+  firstReplies:
+    - Выберите интересующую карту.
+    - Выберите необходимую вам карту.
+  buttons: cardsForConsultationButtons
+  needTransfer: true
+
+CardsConsultation/Card/Block/Reason:
+  counter: 3
+  firstReplies:
+    - Выберите карту, которую требуется заблокировать.
+    - Какую карту нужно заблокировать?
+  buttons: cardsToBlockButtons
+  needTransfer: true
+
+CardsConsultation/Card/Unblock:
+  counter: 3
+  firstReplies:
+    - Какую карту вы хотите разблокировать?
+    - Выберите карту, которую хотите разблокировать.
+  buttons: cardsToUnblockButtons
+  needTransfer: true
+
+CardsConsultation/Card/Unblock/Reason:
+  counter: 3
+  firstReplies:
+    - Вы хотите разблокировать эту карту?
+    - Нужна разблокировка данной карты?
+  buttons:
+    - text: Да
+      transition: /CardsConsultation/Card/GetUnblock
+    - text: Нет
+      transition: /SomethingElse
+  needTransfer: true
+
+CardsConsultation/Card/PIN:
+  counter: 3
+  firstReplies:
+    - Какая операция с ПИН-кодом вам нужна?
+    - Вы хотите установить или сменить ПИН-код?
+  buttons:
+    - text: Установить ПИН
+      transition: /CardsConsultation/Card/PIN/Install
+    - text: Изменить ПИН
+      transition: /CardsConsultation/Card/PIN/Change
+  needTransfer: true
+
+CardsConsultation/Card/PIN/Install:
+  counter: 3
+  firstReplies:
+    - На какую карту вы хотите установить ПИН?
+    - Для установки ПИН-кода выберите нужную карту.
+  buttons: cardsToInstallPINCodeButtons
+  needTransfer: true
+
+CardsConsultation/Card/PIN/Install/Status:
+  counter: 3
+  firstReplies:
+    - Вы хотите изменить ПИН-код?
+    - Желаете сменить ПИН-код карты?
+  buttons:
+    - text: Да
+      transition: /CardsConsultation/Card/PIN/Change
+    - text: Нет
+      transition: /SomethingElse
+  needTransfer: true
+
+CardsConsultation/Card/PIN/Change:
+  counter: 3
+  firstReplies:
+    - На какой карте вы хотите сменить ПИН-код?
+    - Для смены ПИН-кода выберите нужную карту.
+  buttons: cardsToChangePINCodeButtons
+  needTransfer: true
+
+CardsConsultation/Card/Status:
+  counter: 3
+  firstReplies:
+    - Выберите карту для уточнения статуса готовности.
+    - Для того, чтобы узнать о готовности карты, выберите нужную из списка.
+  buttons: cardsToKnowStatusButtons
+  needTransfer: true
+
+SMSNotifications/SMSPrice:
+  counter: 3
+  firstReplies:
+    - По какой карте вы хотите узнать комиссию за уведомления?
+    - Чтобы узнать сумму комиссии за СМС-уведомления, выберите интересующую карту.
+  buttons: activeCardsButtons  
+  needTransfer: true
+
+SMSNotifications/SMSOn:
+  counter: 3
+  firstReplies:
+    - К какой карте вы хотите подключить уведомления?
+    - Чтобы подключить СМС-уведомления, выберите интересующую карту.
+  buttons: activeCardsButtons  
+  needTransfer: true
+
+SMSNotifications/SMSOn/Check:
+  counter: 3
+  firstReplies:
+    - Хотите подключить СМС-уведомления?
+    - Вам нужно подключить СМС-уведомления?
+  buttons:
+    - text: "Да"
+      transition: /SMSNotifications/SMSOn/Check/Number
+    - text: "Нет"
+      transition: /SomethingElse
+  needTransfer: true
+
+SMSNotifications/SMSOn/Check/Number:
+  counter: 3
+  firstReplies:
+    - На какой номер вы хотите получать уведомления?
+    - Выберите номер, на который хотите получать СМС-уведомления.
+  buttons: activeNumbersButtons
+  needTransfer: true
+
+Refusal/Refusal/Ads:
+  counter: 3
+  firstReplies:
+    - Вы уверены, что хотите отказаться от рассылки о персональных предложениях?
+    - Вы хотите отказаться от рассылки предложений банка?
+  buttons:
+    - text: "Да"
+      transition: /Refusal/Refusal/Ads/Agree
+    - text: "Нет"
+      transition: /Refusal/Refusal/Ads/Disagree
+  needTransfer: true
+
+Arrest/Arrest:
+  counter: 3
+  firstReplies:
+    - Какая информация об арестах вам требуется?
+    - Какую информацию об арестах я могу вам подсказать?
+  buttons:
+    - text: "Наличие ареста и детали"
+      transition: /Arrest/Info
+    - text: "Погашение кредита при аресте"
+      transition: /Arrest/Repayment
+    - text: "Снять арест"
+      transition: /Arrest/Remove
+    - text: "Почему не сняли арест"
+      transition: /Arrest/NotRemoved  
+  needTransfer: true
+
+Arrest/Info:
+  counter: 3
+  firstReplies:
+    - Укажите постановление об аресте, по которому нужна информация.
+    - Выберите постановление об аресте, по которому требуется информация.
+  buttons: activeArrestsButtons  
+  needTransfer: true
+
+LoansConsultation/Loan/AskAboutOldOrNew:
+  counter: 3
+  firstReplies:
+    - Вам требуется информация о действующем кредите или о новом продукте?
+    - Вас интересует имеющийся у вас кредит или новый продукт?
+  buttons:
+    - text: "Мой кредит"
+      transition: /LoansConsultation/Loan/AskAboutOldOrNew/Current
+    - text: "Новый продукт"
+      transition: /LoansConsultation/Loan/AskAboutOldOrNew/New
+  needTransfer: true
+
+LoansConsultation/ChooseLoan:
+  counter: 3
+  firstReplies:
+    - Укажите нужный кредитный договор.
+    - Выберите кредитный договор, чтобы я мог сообщить по нему информацию.
+  buttons: activeLoansButtons
+  needTransfer: true
+
+LoansConsultation/Loan/Info:
+  counter: 3
+  firstReplies:
+    - Какие данные по кредиту вас интересуют?
+    - Что вы хотели бы узнать о кредитном договоре?
+  buttons:
+    - text: "Информация о задолженности"
+      transition: /LoansConsultation/Loan/Info/Details
+    - text: "Досрочное погашение"
+      transition: /LoansConsultation/Loan/Repayment
+  needTransfer: true
+
+LoansConsultation/Loan/Repayment:
+  counter: 3
+  firstReplies:
+    - Какой вид погашения вас интересует?
+    - Вы хотите узнать про частичное или полное досрочное погашение?
+  buttons:
+    - text: "Частичное"
+      transition: /LoansConsultation/Loan/Repayment/Part
+    - text: "Полное"
+      transition: /LoansConsultation/Loan/Repayment/Full
+  needTransfer: true
+
+LoansConsultation/Loan/RepaymentChange:
+  counter: 3
+  firstReplies:
+    - Выберите тип заявки на досрочное погашение, которую вы хотите изменить.
+    - Заявку по какому виду погашения кредита вы хотите отредактировать?
+  buttons:
+    - text: "Частичное"
+      transition: /LoansConsultation/Loan/RepaymentChange/Part
+    - text: "Полное"
+      transition: /LoansConsultation/Loan/RepaymentChange/Full
+  needTransfer: true
+
+LoansConsultation/Loan/Encumbrance:
+  counter: 3
+  firstReplies:
+    - Для отображения информации по залоговой выберите тип жилья, который вы приобретали.
+    - Чтобы подробнее узнать об условиях получения закладной, выберите жилье, которое вы приобретали.
+  buttons:
+    - text: "Готовое жилье"
+      transition: /LoansConsultation/Loan/Encumbrance/Ready
+    - text: "Строящееся жилье"
+      transition: /LoansConsultation/Loan/Encumbrance/Building
+  needTransfer: true
+
+LoansConsultation/Loan/Encumbrance/Building:
+  counter: 3
+  firstReplies:
+    - Приобретенное вами жилье уже построено?
+    - Строительство приобретенного жилья на данный момент закончено?
+  buttons:
+    - text: "Да"
+      transition: /LoansConsultation/Loan/Encumbrance/Building/Done
+    - text: "Нет"
+      transition: /LoansConsultation/Loan/Encumbrance/Building/Still
+  needTransfer: true
+
+CloseCard/CloseCard:
+  counter: 3
+  firstReplies:
+    - Выберите какую карту хотите закрыть.
+    - Какую карту хотите закрыть?
+  buttons:
+    - text: Дебетовая карта
+      transition: /CloseCard/CloseCard/DebitCard
+    - text: Кредитная карта
+      transition: /CloseCard/CloseCard/CreditCard
+  needTransfer: true
+  
+Subscription/Subscription:
+  counter: 3
+  firstReplies:
+    - Какой у вас вопрос по платным подпискам?
+    - Какой у вас вопрос касательно платных подписок?
+  buttons:
+    - text: Проверить действующие
+      transition: /Subscription/Subscription/Status
+    - text: Подключить 
+      transition: /Subscription/Subscription/TurnOn
+    - text: Отменить
+      transition: /Subscription/Subscription/TurnOff
+  needTransfer: true
+  
+Loan/Common:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по кредиту?
+    - Какой у вас вопрос по кредиту?
+  buttons:
+    - text: Оформить кредит
+      transition: /Loan/Loan
+    - text: Узнать решение по заявке
+      transition: /Loan/Common/Check
+    - text: Оплатить полностью или частично
+      transition: /MobileAppNavigation/DBONavigation/Loans/EarlyRepayment
+    - text: Способы погашения
+      transition: /MobileAppNavigation/DBONavigation/Loans/TopUp
+    - text: Сумма и дата платежа
+      transition: /Loan/Common/SumDateInfo
+    - text: Ознакомиться с условиями договора
+      transition: /MobileAppNavigation/DBONavigation/Loans/Terms
+    - text: Узнать реквизиты
+      transition: /MobileAppNavigation/DBONavigation/Loans/Details
+  needTransfer: true
+
+Arrest/Arrest:
+  counter: 3
+  firstReplies:
+    - Какая информация об арестах вам требуется?
+    - Какую информацию об арестах я могу вам подсказать?
+  buttons:
+    - text: "Наличие ареста и детали"
+      transition: /Arrest/Info
+    - text: "Погашение кредита при аресте"
+      transition: /Arrest/Repayment
+    - text: "Снять арест"
+      transition: /Arrest/Remove
+    - text: "Почему не сняли арест"
+      transition: /Arrest/NotRemoved
+  needTransfer: true
+
+Arrest/Info:
+  counter: 3
+  firstReplies:
+    - Укажите постановление об аресте, по которому нужна информация.
+    - Выберите постановление об аресте, по которому требуется информация.
+  buttons: activeArrestsButtons
+  needTransfer: true
+  
+CardQuestion/Common:
+  counter: 3
+  firstReplies:
+    - Уточните, о какой карте вопрос?
+    - О какой карте ваш вопрос?
+  buttons:
+    - text: Дебетовая карта
+      transition: "/CardQuestion/Common/DebitCard"
+    - text: Кредитная карта
+      transition: "/CardQuestion/Common/CreditCard"
+  needTransfer: true
+  
+CardQuestion/Common/CreditCard:
+  counter: 3
+  firstReplies:
+    - Уточните, какой вопрос по кредитной карте?
+    - Уточните, с чем связан вопрос по кредитной карте?
+  buttons:
+    - text: "Оформить"
+      transition: "/CreditCards/CreditCard/Request"
+    - text: "Сумма и дата платежа"
+      transition: "/CreditCards/CreditCard/SumDateInfo"
+    - text: "Срок льготного периода"
+      transition: "/CreditCards/CreditCard/GracePeriod"
+    - text: "Способы пополнения"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/TopUp"
+    - text: "Заблокировать"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Block"
+    - text: "Разблокировать"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+    - text: "Посмотреть реквизиты"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Details"
+    - text: "Узнать о готовности"
+      transition: "/CardQuestion/Common/Ready"
+  needTransfer: true
+
+CardQuestion/Common/DebitCard:
+  counter: 3
+  firstReplies:
+    - Уточните, какой вопрос по дебетовой карте?
+    - Уточните, с чем связан вопрос по дебетовой карте?
+  buttons:
+    - text: "Оформить"
+      transition: "/DebitCards/DebitCard"
+    - text: "Баланс"
+      transition: "/MobileAppNavigation/DBONavigation/DisplayCards/Balance"
+    - text: "Перевыпустить"
+      transition: "/CardQuestion/Common/Reissue"
+    - text: "Получить выписку"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Statement"
+    - text: "Заблокировать"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Block"
+    - text: "Разблокировать"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+    - text: "Посмотреть реквизиты"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Details"
+    - text: "Узнать о готовности"
+      transition: "/CardQuestion/Common/Ready"
+  needTransfer: true
+  
+CardQuestion/Issue:
+  counter: 3
+  firstReplies:
+    - Уточните, какую карту хотите оформить?
+    - Какая карта вас интересует?
+  buttons:
+    - text: "Кредитная карта"
+      transition: "/CreditCards/CreditCard/Request"
+    - text: "Дебетовая карта"
+      transition: "/DebitCards/DebitCard"
+  needTransfer: true
+
+CreditCard/GracePeriod:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по льготному периоду?
+    - Какой у вас вопрос по льготному периоду?
+  buttons:
+    - text: "Срок льготного периода"
+      transition: "/CreditCards/CreditCard/GracePeriod/Info"
+    - text: "Операции для льготного периода"
+      transition: "/CreditCards/CreditCard/GracePeriod/Operation" 
+    - text: "Несогласие с льготным периодом"
+      transition: "/CreditCards/CreditCard/GracePeriod/Disagree"  
+    - text: "Условия"
+      transition: "/CreditCards/CreditCard/GracePeriod/Conditions"  
+  needTransfer: true
+
+MoneyTransfer/Common:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по переводу?
+    - Какой у вас вопрос по переводу?
+  buttons:
+    - text: "Создать перевод"
+      transition: "/PaymentsAndTransfer/MoneyTransfer"
+    - text: "Отозвать перевод"
+      transition: "/PaymentsAndTransfer/Common/Revoke"
+    - text: "Сроки перевода"
+      transition: "/PaymentsAndTransfer/Common/Time"
+    - text: "Проблема с платежом или переводом"
+      transition: "/PaymentsAndTransfer/Common/Problem"
+  needTransfer: true
+
+Limits/Limit:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по лимиту?
+    - Какой у вас вопрос по лимиту?
+  buttons:
+    - text: "На снятие наличных"
+      transition: "/Limits/Limit/WithdrawCash"
+    - text: "По кредитной карте"
+      transition: "/Limits/Limit/CreditCard"
+    - text: "Лимит на переводы"
+      transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Limits"
+  needTransfer: true  
+
+Limits/Limit/CreditCard:
+  counter: 3
+  firstReplies:
+    - Уточните, что вы хотите уточнить по лимиту кредитной карты?
+    - Какой у вас вопрос по лимиту кредитной карты?
+  buttons:
+    - text: "Увеличить лимит"
+      transition: "/Limits/Limit/CreditCard/Increase"
+    - text: "Уменьшить лимит"
+      transition: "/Limits/Limit/CreditCard/Decrease"
+    - text: "Посмотреть лимит"
+      transition: "/Limits/Limit/CreditCard/Check" 
+  needTransfer: true    
+
+DebtOverdue:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по просроченной задолженности?
+    - Какой у вас вопрос по просроченной задолженности?
+  buttons:
+    - text: "Наличие просроченной задолженности"
+      transition: "/DebtOverDue/DebtOverDue/Have"
+    - text: "Урегулировать просроченную задолженность"
+      transition: "/DebtOverDue/DebtOverDue/Collection"
+    - text: "Погашение просроченной задолженности"
+      transition: "/MobileAppNavigation/DBONavigation/Loans/TopUp"
+  needTransfer: true   
+
+Debt:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по задолженности?
+    - Какой у вас вопрос по задолженности?
+  buttons:
+    - text: "Сумма и дата платежа по кредиту"
+      transition: "/Loan/Common/SumDateInfo"
+    - text: "Сумма и дата платежа по кредитной карте"
+      transition: "/CreditCards/CreditCard/SumDateInfo"
+    - text: "Наличие просроченной задолженности"
+      transition: "/DebtOverDue/DebtOverDue/Have"
+    - text: "Урегулировать просроченную задолженность"
+      transition: "/DebtOverDue/DebtOverDue/Collection" 
+    - text: "Сумма долга по аресту"
+      transition: "/Arrest/Arrest/Information"   
+  needTransfer: true     
+  
+Refinancing/Refinancing:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по рефинансированию?
+    - Уточните, какой у вас вопрос по рефинансированию?
+  buttons:
+    - text: "Оформить рефинансирование"
+      transition: "/Refinancing/Refinancing/Request"
+    - text: "Узнать решение по заявке"
+      transition: "/Loan/Common/Check/Status"
+  needTransfer: true
+  
+Refinancing/Request:
+  counter: 3
+  firstReplies:
+    - Подскажите, рефинансирование какого кредита интересует?
+    - Уточните, рефинансирование какого кредита вас интересует?
+  buttons:
+    - text: "Ипотека"
+      transition: "/Refinancing/Refinancing/Request/Mortgage"
+    - text: "Потребительский кредит"
+      transition: "/Refinancing/Refinancing/Request/ConsumerLoan"  
+    - text: "Автокредит"
+      transition: "/Refinancing/Refinancing/Request/CarLoan"
+    - text: "Кредитная карта"
+      transition: "/Refinancing/Refinancing/Request/CreditCard"  
+  needTransfer: true
+  
+Refinancing/Request/Mortgage:
+  counter: 3
+  firstReplies:
+    - Уточните, вы подходите под требования банка?
+    - Соответствуете ли вы требованиям банка для дальнейшего сотрудничества?
+  buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/Mortgage/Conditions"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/Mortgage/Disagree"    
+  needTransfer: true 
+  
+Refinancing/Request/CarLoan:
+  counter: 3
+  firstReplies:
+    - Рассказать условия подробнее?
+    - Хотите узнать условия?
+  buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/CarLoan/Agree"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/CarLoan/Disagree"
+  needTransfer: true   
+  
+  
+Refinancing/Request/CreditCard:
+  counter: 3
+  firstReplies:
+    - Рассказать условия подробнее?
+    - Хотите узнать условия?
+  buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/CreditCard/Agree"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/CreditCard/Disagree" 
+  needTransfer: true  
+  
+Close:
+  counter: 3
+  firstReplies:
+    - Уточните, какой продукт вы хотите закрыть?
+    - Уточните, какой у вас вопрос по закрытию?
+  buttons:
+    - text: "Карта"
+      transition: "/CloseCard/CloseCard"
+    - text: "Счет"
+      transition: "/Deposits/Account/Close"
+    - text: "Вклад"
+      transition: "/Deposits/Deposit/Close"
+    - text: "Кредит"
+      transition: "/MobileAppNavigation/DBONavigation/Loans/TopUp"  
+  needTransfer: true 
+
+CardQuestion/Activation:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связан вопрос по активации?
+    - Какой у вас вопрос по активации?
+  buttons:
+        - text: "Карта доставлена курьером"
+          transition: "/CardQuestion/Activation/Delivery"
+        - text: "Карта выдана на работе"
+          transition: "/CardQuestion/Activation/AtWork"
+        - text: "Не пришло СМС об активации"
+          transition: "/CardQuestion/Activation/SMSNotArrive"
+  needTransfer: true
+  
+Broker:
+  counter: 3
+  firstReplies:
+    - Вы хотите открыть брокерский счет, или у вас вопрос по действующему счету?
+  buttons: 
+        - text: "Открыть"
+          transition: "/Broker/Broker/Request"
+        - text: "Вопрос по действующему счету"
+          transition: "/Broker/Broker/Current"  
+  needTransfer: true 
+  
+Comission/Comission:
+  counter: 3
+  firstReplies:
+    - За какую услугу интересует комиссия?
+    - Какой у вас вопрос по комиссии?
+  buttons:
+        - text: "Комиссия за снятие"
+          transition: "/Comission/Comission/Withdraw"
+        - text: "Комиссия за перевод"
+          transition: "/Comission/Comission/Transfer"
+        - text: "Комиссия за обслуживание"
+          transition: "/Comission/Comission/Service"
+        - text: "Комиссия за пополнение"
+          transition: "/Comission/Comission/Replenish"
+        - text: "Стоимость «Сервиса уведомление»"
+          transition: "/SMSNotifications/SMSPrice"
+  needTransfer: true
+  
+Comission/Comission/Withdraw:
+  counter: 3
+  firstReplies:
+    - Какой у вас вопрос по комиссии за снятие?
+    - Каким способом будете снимать деньги?
+  buttons:
+        - text: "Кредитная карта"
+          transition: "/Comission/Comission/Withdraw/CreditCard"
+        - text: "Дебетовая карта"
+          transition: "/Comission/Comission/Withdraw/DebitCard"
+        - text: "Счет"
+          transition: "/CashOrder/CashOrder/Conditions"
+  needTransfer: true
+  
+Comission/Comission/Withdraw/CreditCard:
+  counter: 3
+  firstReplies:
+    - С какой кредитной карты хотите снимать деньги? 
+    - Комиссия по какой кредитной карте вас интересует?
+  buttons:
+        - text: "Карта 120 дней без процентов"
+          transition: "/Comission/Comission/Withdraw/CreditCard/Day120"
+        - text: "Карта с кешбэком"
+          transition: "/Comission/Comission/Withdraw/CreditCard/Cashback"
+  needTransfer: true
+  
+Comission/Comission/Transfer:
+  counter: 3
+  firstReplies:
+    - Какой у вас вопрос по комиссии за перевод?
+    - По какому продукту интересует перевод?
+  buttons:
+        - text: "Кредитная карта"
+          transition: "/Comission/Comission/Withdraw/CreditCard"
+        - text: "Дебетовая карта"
+          transition: "/Comission/Comission/Withdraw/DebitCard"
+        - text: "Счет"
+          transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Comission"
+  needTransfer: true
+  
+Comission/Service:
+  counter: 3
+  firstReplies:
+    - Обслуживание какого продукта вас интересует?
+    - Про комиссию за обслуживание какого продукта желаете узнать?
+  buttons:
+        - text: "Кредитная карта"
+          transition: "/Comission/Comission/Service/Card/CreditCard"
+        - text: "Дебетовая карта"
+          transition: "/Comission/Comission/Service/Card/DebitCard"
+        - text: "Счет"
+          transition: "/Comission/Comission/Service/Card/DebitCard"
+  needTransfer: true
+  
+Comission/Service/Card:
+  counter: 3
+  firstReplies:
+    - Комиссию по какой карте желаете узнать?
+    - бслуживание какой карты вас интересует?
+  buttons:
+        - text: "Кредитная карта"
+          transition: "/Comission/Comission/Service/Card/CreditCard"
+        - text: "Дебетовая карта"
+          transition: "/Comission/Comission/Service/Card/DebitCard"
+  needTransfer: true
+
+Trouble:
+  counter: 3
+  firstReplies:
+    - Уточните, с чем связана проблема?
+    - Какая у вас проблема?
+  buttons:
+        - text: "Оформление кредита"
+          transition: "/Trouble/Trouble/Loan"
+        - text: "Кнопка"
+          transition: "/Trouble/Trouble/Button"
+        - text: "Карта"
+          transition: "/OtherServicesProblems/PayByCardError"
+        - text: "Банкомат"
+          transition: "/OtherServicesProblems/ATMError"
+        - text: "Сайт"
+          transition: "/OtherServicesProblems/WebsiteError"
+  needTransfer: true  
+  
+Password:
+  counter: 3
+  firstReplies:
+    - Какой у вас вопрос о пароле?
+    - Какой у вас вопрос касательно пароля?
+  buttons:
+        - text: "Получить пароль для приложения"
+          transition: "/MobileAppProblems/MobileProblem/Registration"
+        - text: "Сменить пароль для приложения"
+          transition: "/MobileAppNavigation/DBONavigation/Settings/PasswordChange"
+        - text: "ПИН-код по карте"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/ChangePIN"
+  needTransfer: true  
+  
+Contract:
+  counter: 3
+  firstReplies:
+    - Уточните, какой вопрос по договору?
+    - Уточните, с чем связан вопрос по договору?
+  buttons:
+        - text: "Получить копию договора"
+          transition: "/Contract/Contract/Receive"
+        - text: "Посмотреть номер кредитного договора"
+          transition: "/MobileAppNavigation/DBONavigation/Loans/Terms"
+        - text: "Расторгнуть"
+          transition: "/Close/Close"
+  needTransfer: true    
+  
+Contract/Receive:
+  counter: 3
+  firstReplies:
+    - Уточните, по какому продукту нужен договор?
+    - Уточните, договор какого продукта вас интересует?
+  buttons:
+        - text: "Кредитная карта"
+          transition: "/Contract/Contract/Receive/CreditCard"
+        - text: "Кредит, выданный в магазине на товар"
+          transition: "/Contract/Contract/Receive/Pos"
+        - text: "Микрозайм"
+          transition: "/Contract/Contract/Receive/MKK"
+        - text: "Договор вклада, счета или карты"
+          transition: "/Contract/Contract/Receive/Debet"
+        - text: "Другой кредит"
+          transition: "/Contract/Contract/Receive/Other" 
+  needTransfer: true 
+  
+CardDelivery:
+  counter: 3
+  firstReplies:
+    - Уточните, какой у вас вопрос по доставке?
+    - Выберите интересующую вас тематику, связанную с доставкой.
+  buttons:
+        - text: Вопрос по статусу доставки карты
+          transition: "/CardDelivery/CardDelivery/Status"
+        - text: Причина отмены доставки
+          transition: "/CardDelivery/CardDelivery/ReasonForRefusal"
+        - text: Города доставки
+          transition: "/CardDelivery/CardDelivery/DeliveryCities"
+        - text: Нет моего города при заказе карты
+          transition: "/CardDelivery/CardDelivery/NoDeliveryCity"
+        - text: Отменить доставку
+          transition: "/CardDelivery/CardDelivery/CancelDelivery"
+        - text: Вопрос о курьерской службе
+          transition: "/CardDelivery/CardDelivery/Courier"
+        - text: Изменить способ или дату получения
+          transition: "/CardDelivery/CardDelivery/Change"
+  needTransfer: true 
+  
+CardDelivery/Courier:
+  counter: 3
+  firstReplies:
+    - Уточните, какой у вас вопрос курьерской службе?
+    - Выберите интересующую вас тематику, связанную с курьером.
+  buttons:
+        - text: Связаться с курьером
+          transition: "/CardDelivery/CardDelivery/Courier/ContactTheCourier"
+        - text: Жалоба на курьера
+          transition: "/CardDelivery/CardDelivery/Courier/Claim"
+        - text: Проверка курьерской службы
+          transition: "/CardDelivery/CardDelivery/Courier/Verificftion"
+        - text: Назад
+          transition: "/CardDelivery/CardDelivery"
+  needTransfer: true           
+
+CardDelivery/Change:
+  counter: 3
+  firstReplies:
+    - Уточните, какой у вас вопрос изменению способа доставки?
+    - Выберите интересующую вас тематику, связанную с доставкой.
+  buttons:
+        - text: Способ получения 
+          transition: "/CardDelivery/CardDelivery/Change/ReceiveCard"
+        - text: Адрес или дата доставки
+          transition: "/CardDelivery/CardDelivery/Change/Address"
+        - text: Назад 
+          transition: "/CardDelivery/CardDelivery"
+  needTransfer: true   
+  
+Payment:
+  counter: 3
+  firstReplies:
+    - Ваш вопрос связан с платежом, расскажите подробнее или выберите вариант ответа.
+    - Что вы хотите узнать по платежу?
+  buttons:
+      - text: Отмена платежа
+        transition: "/Payment/Payment/Cancel"
+      - text: Платеж по кредиту
+        transition: "/Payment/Payment/Loan"
+      - text: Помощь с переводом
+        transition: "/PaymentsAndTransfer/Common/Problem"
+      - text: Сроки перевода
+        transition: "/PaymentsAndTransfer/Common/Time"
+      - text: Лимиты на переводы
+        transition: "/MobileAppNavigation/DBONavigation/Settings/Limits"
+      - text: Оплата услуг
+        transition: "/PaymentsAndTransfer/MoneyTransfer/Payments"
+  needTransfer: true   
+  
+Payment/Cancel:
+  counter: 3
+  firstReplies:
+    - Какой у вас вопрос по отмене платежа?
+    - Расскажите подробнее какой платеж хотите отменить.
+  buttons:
+      - text: Отмена перевода
+        transition: "/PaymentsAndTransfer/Common/Revoke"
+      - text: Возврат покупки
+        transition: "/PaymentsAndTransfer/Common/Revoke"
+      - text: Отмена комиссии
+        transition: "/Comission/Comission/Disagree"
+      - text: Отключение подписок
+        transition: "/Subscription/Subscription/TurnOff"
+  needTransfer: true  
+  
+Payment/Loan:
+  counter: 3
+  firstReplies:
+    - Ваш вопрос связан с платежом по кредиту, расскажите подробнее или выберите вариант ответа.
+    - Расскажите подробнее, что вас интересует по оплате кредита.
+  buttons:
+      - text: Сумма и дата платежа
+        transition: "/Payment/Payment/Loan/SumDateInfo"
+      - text: Когда спишется платеж
+        transition: "/Payment/Payment/Loan/Status"
+      - text: Изменить или пропустить платеж
+        transition: "/Payment/Payment/Loan/Change"
+      - text: Внести платеж
+        transition: "/Payment/Payment/Loan/TopUp"
+  needTransfer: true  
+  
+Payment/Loan/SumDateInfo:
+  counter: 3
+  firstReplies:
+    - По какому кредиту вас интересуют условия?
+    - По какому кредиту вас интересует информация?
+  buttons:
+      - text: Кредит
+        transition: "/Loan/Common/SumDateInfo"
+      - text: Кредитная карта
+        transition: "/CreditCards/CreditCard/SumDateInfo"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments"
+  needTransfer: true  
+  
+Payment/Loan/Change:
+  counter: 3
+  firstReplies:
+    - По какому кредиту хотели перенести или пропустить платеж?
+    - Уточните, по какому кредиту хотели изменить или пропустить платеж?
+  buttons:
+      - text: Кредит или кредитная карта
+        transition: "/Payment/Payment/Loan/Change/Loan"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments/ChangePaymentDate"
+  needTransfer: true  
+  
+Payment/Loan/TopUp:
+  counter: 3
+  firstReplies:
+    - Какой кредит желаете оплатить?
+    - Оплатой какого кредита интересуетесь?
+  buttons:
+      - text: Кредит
+        transition: "/MobileAppNavigation/DBONavigation/Loans/TopUp"
+      - text: Кредитная карта
+        transition: "/MobileAppNavigation/DBONavigation/ManageCards/TopUp"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments/RepaymentMethods"
+  needTransfer: true  
+  
+GeneralStates/FileEven:
+  counter: 3
+  firstReplies:
+    - К сожалению, не могу изучить содержание присланного вами файла. Пожалуйста, подскажите, что в файле или напишете свой вопрос текстом.
+    - Мне жаль, но ознакомиться с содержанием присланного вами файла я пока не могу. Напишите, пожалуйста, свой вопрос или выберите вариант ответа.
+  buttons:
+        - text: "Справка о доходах"
+          transition: "/GeneralStates/FileEvent/Statement"
+        - text: "Скриншот с неполадкой"
+          transition: "/GeneralStates/FileEvent/Other"
+        - text: "Другое"
+          transition: "/GeneralStates/FileEvent/Other"
+  needTransfer: true    
+
+Feedback/Feedback:
+  counter: 3
+  firstReplies:
+    - Подскажите, что именно вам требуется?
+    - Уточните, чем могу вам помочь?
+  buttons: 
+    - text: Оставить благодарность
+      transition: "/Feedback/Feedback/Gratitude"
+    - text: Оставить претензию
+      transition: "/Feedback/Feedback/Claim"
+    - text: Узнать статус обращения
+      transition: "/Feedback/Feedback/ClaimStatus"
+  needTransfer: true
+
+Feedback/Feedback/ClaimStatus:
+  counter: 3
+  firstReplies:
+    - По какому именно обращению вы бы хотели узнать статус?
+    - Выберите обращение, статус которого вас интересует.
+  buttons: claimsButtons
+  needTransfer: true
+
+Feedback/Feedback/Claim/NeedHelp:
+  counter: 3
+  firstReplies:
+    - Хотите узнать что-то еще?
+    - Нужна консультация по другому вопросу?
+  buttons: 
+    - text: Карты
+      transition: "/CardsConsultation/Cards"
+    - text: Кредиты
+      transition: "/Loan/Loan"
+    - text: Вклады
+      transition: "/Deposits/Deposit"
+    - text: Платежи и переводы
+      transition: "/PaymentsAndTransfer/MoneyTransfer"
+    - text: Навигация в системе
+      transition: "/MobileAppNavigation/DBONavigation"
+  needTransfer: true
+
+Feedback/Feedback/Claim/ATMDetails/Address/Operation:
+  counter: 3
+  firstReplies:
+    - Во время совершения какой операции произошла ошибка?
+    - Укажите вид операции, во время которой произошел сбой.
+  # Переход по стейту нарочно не указан, благодаря этому корректно распознаются сущности в запросе
+  buttons: 
+    - text: Снятие наличных
+    - text: Внесение наличных
+    - text: Оплата услуг наличными
+  needTransfer: true
+
+Feedback/Feedback/Claim/ATMDetails/Address/Operation/Date:
+  counter: 3
+  firstReplies:
+    - Для фиксации претензии нужна дата возникновения проблемы, поэтому, пожалуйста, укажите ее в формате ДД.ММ.ГГГГ.
+    - Укажите дату операции в формате ДД.ММ.ГГГГ.
+  needTransfer: true
+
+Feedback/Feedback/Claim/ATMDetails/Address/Operation/Date/Time:
+  counter: 3
+  firstReplies:
+    - Для фиксации претензии нужно время совершения операции, поэтому, пожалуйста, укажите его в формате ЧЧ:ММ.
+    - Укажите время операции в формате ЧЧ:ММ.
+  needTransfer: true
+
+Feedback/Feedback/Claim/ATMDetails/Address/Operation/Date/Time/Card:
+  counter: 3
+  firstReplies:
+    - Напишите 4 последние цифры номера карты, которую вы использовали.
+    - Укажите 4 последние цифры номера карты, которой пользовались во время сбоя банкомата.
+  needTransfer: true
+
+Feedback/Feedback/Claim/Mail:
+  counter: 3
+  firstReplies:
+    - Укажите адрес электронной почты в формате address@example.com.
+    - Введите адрес электронной почты в формате address@example.com.
+  needTransfer: true
+
+Feedback/Feedback/Claim/Mail:
+  counter: 3
+  firstReplies:
+    - Укажите телефонный номер в формате +7XXXXXXXXXX.
+    - Введите номер телефона в формате +7XXXXXXXXXX.
+  needTransfer: true
+
+Feedback/Feedback/Claim/AdsDetails:
+  counter: 3
+  firstReplies:
+    - От какого вида рекламных оповещений вы хотите отказаться?
+    - Выберите вид оповещений, которые больше не хотите получать.
+  buttons: 
+    - text: СМС
+      transition: "/Feedback/Feedback/Claim/AdsDetails/Phone"
+    - text: Звонки
+      transition: "/Feedback/Feedback/Claim/AdsDetails/Phone"
+    - text: Электронные письма
+      transition: "/Feedback/Feedback/Claim/AdsDetails/Email"
+    - text: Почтовые письма
+      transition: "/Feedback/Feedback/Claim/AdsDetails/Mail"
+  needTransfer: true
+  
+LoanOffer/LoanOffer:
+  counter: 3
+  firstReplies:
+    - Какой вид кредита вас интересует?
+    - По какому кредиту вы хотите посмотреть предложения?
+  buttons:
+    - text: "Потребительский кредит"
+      transition: /LoanOffer/LoanOffer/Consumer
+    - text: "Кредитная карта"
+      transition: /CreditCards/CreditCard/Request
+  needTransfer: true
+  
+LoanOffer/LoanOffer/Consumer:
+  counter: 3
+  firstReplies:
+    - Какая сумма кредита вам нужна?
+    - Введите сумму, которую хотите взять в кредит.
+  needTransfer: true
+
+LoanOffer/LoanOffer/Consumer/Approved:
+  counter: 3
+  firstReplies:
+    - Хотите подать заявку на потребительский кредит на условиях, описанных выше?
+    - Вы хотите воспользоваться предложением на потребительский кредит на данных условиях?
+  buttons:
+    - text: "Да"
+      transition: /ConsumerLoan/ConsumerLoan/Request/Agree
+    - text: "Нет"
+      transition: /ConsumerLoan/ConsumerLoan/Request/Disagree
+  needTransfer: true
+  
+LoanOffer/LoanOffer/Consumer/Preapproved:
+  counter: 3
+  firstReplies:
+    - Хотите подать заявку на потребительский кредит на условиях, описанных выше?
+    - Вы хотите воспользоваться предложением на потребительский кредит на данных условиях?
+  buttons:
+    - text: "Да"
+      transition: /ConsumerLoan/ConsumerLoan/Request/Agree
+    - text: "Нет"
+      transition: /ConsumerLoan/ConsumerLoan/Request/Disagree
+  needTransfer: true
+
+PaymentSchedule/PaymentSchedule:
+  counter: 3
+  firstReplies:
+    - Ваш вопрос связан с графиком платежей, расскажите подробней или выберите нужный вариант?
+    - Что вы хотите узнать по графику платежей?
+  buttons:
+        - text: Скачать
+          transition: "/PaymentSchedule/PaymentSchedule/Download"
+        - text: Не обновился
+          transition: "/PaymentSchedule/PaymentSchedule/NotUpdated"
+  needTransfer: true  
+  
+PaymentSchedule/PaymentSchedule/Download:
+  counter: 3
+  firstReplies:
+    - Выберите по какому продукту хотите скачать график платежей?
+    - Расскажите подробнее или выберите вариант ответа.
+  buttons: 
+        - text: Кредит
+          transition: "/PaymentSchedule/PaymentSchedule/Download/Loan"
+        - text: Микрокредит
+          transition: "/Microloan/Microloan/Active/Documents" 
+  needTransfer: true   
+  
+PaymentSchedule/PaymentSchedule/NotUpdated:
+  counter: 3
+  firstReplies:
+    - У вас не обновился график платежей, расскажите подробнее или выберите вариант ответа.
+    - Расскажите подробнее, по какому продукту не обновляется график платежей.
+  buttons: 
+        - text: Кредит
+          transition: "/PaymentSchedule/PaymentSchedule/NotUpdated/NotUpdatedLoan"
+        - text: Микрокредит
+          transition: "/Microloan/Microloan/Active/PersonalAccount/Incorrect" 
+  needTransfer: true
+  
+Percent:
+  counter: 3
+  firstReplies:
+    - Уточните какой вопрос о процентах?
+    - Уточните с чем свящзан вопрос о процентах?
+  buttons: 
+        - text: "Ставка по кредиту"
+          transition: "/LoansConsultation/Loan"
+        - text: "Ставка по карте"
+          transition: "/CardsConsultation/Card"
+        - text: "Ставка по накопительному счету"
+          transition: "/Deposits/Account/Conditions"
+        - text: "Ставка по вкладу"
+          transition: "/Deposits/Deposit/Conditions"   
+        - text: "Снизить ставку по кредиту"
+          transition: "/Refinancing/Refinancing"
+        - text: "Несогласие с начисленными процентами"
+          transition: "/Percent/Percent/Disagree" 
+  needTransfer: true  
+  
+GetCheck:
+    counter: 3
+    firstReplies:
+      - Какой вопрос по получению платежного документа?
+      - Какой у вас вопрос касательно получения платежного документа?
+    Buttons:
+        - text: Платежное поручение
+          transition: "/Statements/GetCheck/PaymentOrder"
+        - text: Чек по операции
+          transition: "/Statements/GetCheck/Receipt"
+        - text: Не получается скачать чек
+          transition: "/Statements/GetCheck/Problem"
+    needTransfer: true 
+    
+Limits/Limit/CreditCard/Decrease:
+    counter: 3
+    firstReplies:
+      - Оставим лимит?
+      - Какой лимит оставить?
+      
+TurnOff:
+    counter: 3
+    firstReplies:
+      - Какую услугу вы хотите отключить?
+      - Отключение какой услуги вас интересует?
+    Buttons:
+        - text: СМС уведомления
+          transition: "/SMSNotifications/SMSOff"
+        - text: Страхование
+          transition: "/Insurance/Insurance/Return"
+        - text: Подписки
+          transition: "/Subscription/Subscription/TurnOff"
+    needTransfer: true    
+    
+Turn:
+    counter: 3
+    firstReplies:
+      - Какую услугу вы хотите подключить?
+      - Подключение какой услуги вас интересует?
+    Buttons:
+        - text: СМС уведомления
+          transition: "/SMSNotifications/SMSOn"
+        - text: Страхование
+          transition: "/Insurance/Insurance/Request"
+        - text: Подписки
+          transition: "/Subscription/Subscription/TurnOn"
+    needTransfer: true   
+    
+CloseCard/CloseCard/CreditCard/Disagree:
+    counter: 3
+    firstReplies:
+      - Оставим кредитную карту?
+      - Желаете оставить кредитную карту?
+    
+PaidServices/PaidServicesDisable:
+    counter: 3
+    firstReplies:
+        - Какую услугу вы хотите отключить?
+        - Отключение какой услуги вас интересует?
+    buttons:
+        - text: "Сервис уведомлений"
+          transition: "/SMSNotifications/SMSOff"
+        - text: "Моя защита"
+          transition: "/Insurance/Insurance/Return/CreditCard"
+        - text: "Подписки"
+          transition: "/Subscription/Subscription/TurnOff"
+    needTransfer: true 
+    
+Blocking/Blocking/Block:
+    counter: 3
+    firstReplies:
+        - Что вы хотите закблокировать?
+        - Блокировка чего вас интересует?
+    buttons:
+        - text: "Карта"
+          transition: "/CardsConsultation/Card/Block"
+        - text: "Мобильное приложение"
+          transition: "/MobileApp/MobileBlock"
+    needTransfer: true 
+    
+Blocking/Blocking/Unblock:
+    counter: 3
+    firstReplies:
+        - Что вы хотите разблокировать?
+        - Разблокировка чего вас интересует?
+    buttons:
+        - text: "Карта"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+        - text: "Мобильное приложение"
+          transition: "/MobileApp/MobileUnblock"
+        - text: "Снять арест"
+          transition: "/ArrestArrest/Remove"
+    needTransfer: true 
+    
+Blocking/Blocking:
+    counter: 3
+    firstReplies:
+        - Что вас интересует?
+        - С чем связан ваш вопрос?
+    buttons:
+        - text: "Заблокировать"
+          transition: "/Blocking/Blocking/Block"
+        - text: "Разблокировать"
+          transition: "/Blocking/Blocking/Unblock"
+    needTransfer: true 
+    
+CashWithdrawal/CashWithdrawal:
+    counter: 3
+    firstReplies:
+        - Какой способ снятия наличных вас интересует?
+        - Где планируете снимать наличных?
+    buttons:
+        - text: "Через банкомат"
+          transition: "/CashWithdrawal/CashWithdrawal/ATM"
+        - text: "В кассе банка"
+          transition: "/CashOrder/CashOrder"
+    needTransfer: true 
+
+CashWithdrawal/CashWithdrawal/ATM:
+    counter: 3
+    firstReplies:
+        - Какой у вас вопрос по снятию наличных?
+        - Что вас интересует по вопросу снятия наличных?
+    buttons:
+        - text: "Найти ближайший банкомат"
+          transition: "/AddressesUralsib/ATMOrOffice/ATM"
+        - text: "Ознакомиться с комиссией"
+          transition: "/Comission/Comission/Withdraw"
+        - text: "Посмотреть лимиты"
+          transition: "/Limits/Limit/WithdrawCash"
+        - text: "Проблема с устройством"
+          transition: "/Feedback/Feedback/Claim/ATM"
+    needTransfer: true 
+    
+Documents/Documents:
+    counter: 3
+    firstReplies:
+        - Какой у вас вопрос по документам?
+        - Какой у вас вопрос касательно документов?
+    buttons:
+        - text: "Cтатус отправленных документов"
+          transition: "/Documents/Documents/Status"
+        - text: "Получить документы"
+          transition: "/Documents/Documents/Get"
+        - text: "Отправить документы"
+          transition: "/Documents/Documents/Send"
+    needTransfer: true 
+    
+Documents/Documents/Status:
+    counter: 3
+    firstReplies:
+        - Какой у вас вопрос по отправленным документам?
+        - Выберите по какому документу интересует информация.
+    buttons:
+        - text: "Документы по разблокировке карты"
+          transition: "/Documents/Documents/Status/Card"
+        - text: "Документы по страховке"
+          transition: "/Insurance/Insurance/DocChecking"
+        - text: "Документы по аресту"
+          transition: "/Arrest/NotRemoved"
+    needTransfer: true 
+    
+Documents/Documents/Get:
+    counter: 3
+    firstReplies:
+        - Какой документ хотите получить?
+        - Выберите какой документ хотите получить.
+    buttons:
+        - text: "Договор по кредиту"
+          transition: "/Contract/Contract/Receive"
+        - text: "Документы по ипотеке"
+          transition: "/LoansConsultation/Loan/Encumbrance"
+        - text: "Документы по автокредиту"
+          transition: "/LoansConsultation/Loan/VehiclePassport"
+        - text: "Справки и выписки"
+          transition: "/Statements/Statements"
+    needTransfer: true 
+    
+Documents/Documents/Send:
+    counter: 3
+    firstReplies:
+        - Уточните какой документ хотите отправить?
+        - Выберите документ, по которому интересует отправка.
+    buttons:
+        - text: "Документы по страхованию"
+          transition: "/Insurance/Insurance/DocChecking"
+        - text: "Документы подтверждающие доход"
+          transition: "/Documents/Documents/Send/Confirm"
+        - text: "ПТС/СТС"
+          transition: "/Documents/Documents/Send/VehiclePassport"
+        - text: "Разблокировка карты"
+          transition: "/Documents/Documents/Send/UnblockCard"
+    needTransfer: true 
+    
+YourRate/YourRate:
+    counter: 3
+    firstReplies:
+        - Какой у вас вопрос по услуге «Своя ставка»?
+        - Какой у вас вопрос касательно услуги «Своя ставка»?
+    buttons:
+        - text: "Общая информация"
+          transition: "/YourRate/YourRate/Info"
+        - text: "Оформить"
+          transition: "/YourRate/YourRate/Request"
+        - text: "Отказаться"
+          transition: "/YourRate/YourRate/Refund"
+    needTransfer: true 
+    
+YourRate/YourRate/Refund:
+    counter: 3
+    firstReplies:
+        - Уточните, по какому кредиту была подключена услуга «Своя ставка»?
+        - Понял, что вы хотите отказаться от услуги «Своя ставка». Уточните, какой кредит оформляли?
+    buttons:
+        - text: "Потребительский кредит"
+          transition: "/YourRate/YourRate/Refund/ConsumerLoan"
+        - text: "Автокредит"
+          transition: "/YourRate/YourRate/Refund/CarLoan"
+        - text: "Узнать статус заявления на отказ"
+          transition: "/YourRate/YourRate/Refund/Status"
+    needTransfer: true 
+    
+Limits/Limitations:
+    counter: 3
+    firstReplies:
+        - Ваш вопрос связан с ограничениями, расскажите подробнее или нажмите нужную кнопку
+        - Какой у вас вопрос по ограничениям?
+    buttons:
+        - text: "Арест"
+          transition: "/Arrest/Info"
+        - text: "Блокировка карты"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+        - text: "Ограничения по переводам"
+          transition: "/Limits/Limit/Transfer"
+        - text: "Ограничения на снятие наличных"
+          transition: "/Limits/Limit/WithdrawCash"
+    needTransfer: true 
+    
+Limits/Limit/Transfer:
+    counter: 3
+    firstReplies:
+        - По какому виду перевода вас интересует лимит?
+        - По какому переводу вас интересует лимит?
+    buttons:
+        - text: "Перевод по реквизитам"
+          transition: "/PaymentsAndTransfer/MoneyTransfer/Requisites/Limits"
+        - text: "Перевод по системе быстрых платежей (СБП)"
+          transition: "/Limits/Limit/Transfer/SBP"
+        - text: "Оплата услуг"
+          transition: "/PaymentsAndTransfer/MoneyTransfer/Payments"
+    needTransfer: true 
+
+ 

@@ -1,0 +1,45 @@
+# Договор
+Contract: 
+  answer:
+  - |
+    Я понял, что ваш вопрос связан с договором, но пока еще не хватает информации, чтобы дать ответ. Выберите, что хотите закрыть: 
+  buttons:
+    - text: "Получить копию договора"
+      transition: "/Contract/Contract/Receive"
+    - text: "Посмотреть номер кредитного договора"
+      transition: "/MobileAppNavigation/DBONavigation/Loans/Terms"
+    - text: "Расторгнуть"
+      transition: "/Close/Close"
+
+Receive:
+  answer:
+  - |
+    Уточните, копию какого договора на какой продукт нужно получить: 
+  buttons:
+    - text: "Кредитная карта"
+      transition: "/Contract/Contract/Receive/CreditCard"
+    - text: "Кредит, выданный в магазине на товар"
+      transition: "/Contract/Contract/Receive/Pos"
+    - text: "Микрозайм"
+      transition: "/Contract/Contract/Receive/MKK"
+    - text: "Договор вклада, счета или карты"
+      transition: "/Contract/Contract/Receive/Debet"
+    - text: "Другой кредит"
+      transition: "/Contract/Contract/Receive/Other"  
+      
+
+Debet: Получить копию договора по вкладу, счету или дебетовой карте можно в [офисе банка]({{$temp.officeLink}})  
+
+CreditCard:
+  isNotAuthorized: 'Для получения копии договора по кредитной карте напишите в чат приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)'
+  isAuthorized: 'Получить копию договора по кредитной карте поможет оператор.'
+
+Pos: 
+  isNotAuthorized: 'Для получения копии договора по кредитам, выданным в магазине на товары напишите в чат приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)'
+  isAuthorized: 'Получить копию договора по кредитам, выданным в магазине на товары поможет оператор.'  
+
+MKK:  Получить кредитный договор можно в личном кабинете. Войти в личный кабинет можно через [сайт](https://uralsibfinance.ru/) раздел «Личный кабинет».
+
+Other: Получить копию договора по потребительскому кредиту, автокредиту и ипотеке можно только в [офисе банка]({{$temp.officeLink}})  
+
+    

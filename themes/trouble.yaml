@@ -1,0 +1,32 @@
+#Проблемы
+Trouble: 
+  answer:
+  - |
+    Я понял, что у вас возникла проблема. Чтобы я мог дать ответ, уточните, с чем вы столкнулись?
+  buttons:
+    - text: "Оформление кредита"
+      transition: "/Trouble/Trouble/Loan"
+    - text: "Кнопка"
+      transition: "/Trouble/Trouble/Button"
+    - text: "Карта"
+      transition: "/OtherServicesProblems/PayByCardError"
+    - text: "Банкомат"
+      transition: "/OtherServicesProblems/ATMError"
+    - text: "Сайт"
+      transition: "/OtherServicesProblems/WebsiteError"
+
+Loan:
+  NotAuthorized:
+    - |
+      Решить проблему с при оформлении кредита поможет оператор. Напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+  Authorized:
+    - |
+     Решить проблему с оформлением кредита поможет оператор
+    
+Button:
+  NotAuthorized:
+    - |
+      Решить проблему с кнопкой поможет оператор. Напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+  Authorized:
+    - |
+     Решить проблему с кнопкой поможет оператор  

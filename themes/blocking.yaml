@@ -1,0 +1,34 @@
+# Блокировка - Уточнение
+
+Blocking:
+  reply:
+    - |
+     Уточните, что вы хотите сделать?
+  buttons:
+    - text: "Заблокировать"
+      transition: "/Blocking/Blocking/Block"
+    - text: "Разблокировать"
+      transition: "/Blocking/Blocking/Unblock"
+      
+Block: 
+  reply:
+   - |
+    Выберите, что требуется заблокировать: 
+  buttons:
+    - text: "Карта"
+    #   transition: "/MobileAppNavigation/DBONavigation/ManageCards/Block"
+      transition: "/CardsConsultation/Card/Block"
+    - text: "Мобильное приложение"
+      transition: "/MobileApp/MobileBlock"
+      
+Unblock: 
+  reply:
+   - |
+     Выберите, что хотите разблокировать:  
+  buttons:
+    - text: "Карта"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+    - text: "Мобильное приложение"
+      transition: "/MobileApp/MobileUnblock"
+    - text: "Снять арест"
+      transition: "/Arrest/Remove"

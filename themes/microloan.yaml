@@ -1,0 +1,286 @@
+# # МКК
+# microloan:
+#   По вопросам, связанным с микрозаймами лучше справится мой коллега – оператор. Уже соединяю!
+
+# payMicroloan:
+#   - В первые 14 дней с даты выдачи займа досрочно погасить можно без заявления.
+#   - |
+#     Если прошло более 14 дней, то заявление на досрочное погашение подается за 30 календарных дней до даты досрочного погашения займа.
+
+#     Написать заявление на полное или частичное досрочное погашение можно двумя способами:
+#     • В любом отделении Уралсиба
+#     • Через [личный кабинет МКК](https://lk.uralsibfinance.ru/)
+
+# MKK
+microloan: 
+  answer:
+  - |
+    Какой у вас вопрос по займу?
+
+  buttons:
+    - text: "Оформить заём"
+      transition: "/Microloan/Microloan/Offer"
+    - text: "Действующий заём"
+      transition: "/Microloan/Microloan/Active"
+    - text: "Решение по заявке"
+      transition: "/Microloan/Microloan/Check/Status"
+    - text: "Закрыть заявку"
+      transition: "/Microloan/Microloan/Check/Close"
+    - text: "Страхование займа"
+      transition: "/Insurance/Insurance/Microloan"
+      
+offer: 
+  answer:
+  - |
+    Уточните, у вас уже есть действующий заём?
+
+  buttons:
+    - text: "Есть заём"
+      transition: "/Microloan/Microloan/Offer/OfferYes"
+    - text: "Нет займа"
+      transition: "/Microloan/Microloan/Offer/OfferNo"
+      
+offerYes:
+- |
+  Заявку на оформление нового займа можно будет подать только после того, как полностью будет погашен текущий заём. 
+
+offerNo:
+    NotAuthorized:
+    - |
+      Оформить заём можно:
+      • В приложении [«Уралсиб Онлайн»](https://uralsib.ru/online)
+      • В [веб-версии на сайте](https://online.uralsib.ru/)
+      • В отделении банка. Адреса и режим работы офисов вы найдете в [этом разделе]({{$temp.officeLink}})
+    Authorized:
+    - Оставайтесь на линии - сейчас соединю вас с оператором, чтобы проверил наличие оффера по займу.
+    
+   
+    
+active: 
+  answer:
+  - |
+    Уточните, какой у вас вопрос по действующему займу?
+
+  buttons:
+    - text: "Платежи по займу"
+      transition: "/Microloan/Microloan/Active/Payments"
+    - text: "Личный кабинет"
+      transition: "/Microloan/Microloan/Active/PersonalAccount"
+    - text: "Документы по займу"
+      transition: "/Microloan/Microloan/Active/Documents"
+    - text: "Другие вопросы по займу"
+      transition: "/Microloan/Microloan/Active/Other"
+   
+activePayments: 
+  answer:
+  - |
+    Уточните, какой у вас вопрос по платежам?
+
+  buttons:
+    - text: "Сумма и дата платежа"
+      transition: "/Microloan/Microloan/Active/Payments/SumDateInfo"
+    - text: "Изменить дату или сумму платежа"
+      transition: "/Microloan/Microloan/Active/Payments/ChangePaymentDate"
+    - text: "Досрочное погашение"
+      transition: "/Microloan/Microloan/Active/Payments/PayMicroloan"
+    - text: "Оплата займа при аресте"
+      transition: "/Microloan/Microloan/Active/Payments/Arrest"
+    - text: "Кредитные каникулы"
+      transition: "/Restructuring/Restructuring/Request/Microloan"  
+    - text: "Реквизиты для погашения займа"
+      transition: "/Microloan/Microloan/Active/Payments/Requisites" 
+    - text: "Способы погашения займа"
+      transition: "/Microloan/Microloan/Active/Payments/RepaymentMethods"   
+    - text: "Просрочка по займу"
+      transition: "/DebtOverDue/DebtOverDue/Collection"   
+      
+sumDateInfo: 
+  answer:
+  - |
+    Информацию по дате и сумме платежа можно узнать через [личный кабинет](https://lk.uralsibfinance.ru/) в разделе «Главная».
+  - |
+    Платеж по займу списывается до конца рабочего дня.
+  
+  buttons:
+    - text: "Узнать другие способы"
+      transition: "/Microloan/Microloan/Active/Payments/SumDateInfo/Other"
+    - text: "Другой вопрос"
+      transition: "/SomethingElse"
+      
+sumDateInfoOther:   
+  - |
+      Также информацию по дате и сумме платежа можно узнать:
+      • В [офисе банка]({{$temp.officeLink}})
+      Либо направив запрос:
+      • По почте на адрес ООО МКК «УРАЛСИБ Финанс»: 119048, город Москва, улица Ефремова, дом 8, этаж 9 комната 1
+      • На электронную почту ООО МКК «УРАЛСИБ Финанс» по адресу info@uralsibfinance.ru
+      
+changePaymentDate: 
+  answer:
+  - |
+    Изменение даты платежа, отсрочка платежа по займу не предусмотрены.
+  - |
+    Изменить сумму ежемесячного платежа можно только при частично досрочном погашении.
+  
+  buttons:
+    - text: "Досрочное погашение"
+      transition: "/Microloan/Microloan/Active/Payments/PayMicroloan"  
+    - text: "Другой вопрос"
+      transition: "/SomethingElse"
+      
+PayMicroloan:    
+- |
+ В первые 14 дней с даты выдачи займа досрочно погасить можно без заявления.
+- |
+ Если прошло более 14 дней, то заявление на досрочное погашение подается за 30 календарных дней до даты досрочного погашения займа.
+
+ Написать заявление на полное или частичное досрочное погашение можно двумя способами:
+ •    В любом отделении Уралсиба
+ •    Через [личный кабинет МКК](https://lk.uralsibfinance.ru) в разделе «Главная» – «Займ» - «Досрочное погашение».
+ 
+Arrest: 
+- |
+ Внести платеж при аресте можно по реквизитам:
+ •    Счет 40701810700820000033
+ •    БИК 048073770
+ •    КПП 770401001
+ •    ИНН 9704026957
+ •    Корреспондентский счет 30101810600000000770
+ •    Получатель ООО МКК «УРАЛСИБ Финанс»
+ •    Назначение платежа: погашение задолженности по договору займа № (ваш номер договора), ФИО
+
+Requisites: 
+  answer:
+  - |
+    Информация по способам погашения займа и реквизиты указаны в индивидуальных условиях договора займа (п. 8 - 8.1).
+  - |
+    Если у вас нет договора, то реквизиты можно узнать в  приложении  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/) 
+  
+  buttons:
+    - text: "Узнать другие способы"
+      transition: "/Microloan/Microloan/Active/Payments/Requisites/Other"
+    - text: "Другой вопрос"
+      transition: "/SomethingElse"
+      
+RequisitesOther:   
+- |
+  Также реквизиты можно узнать:
+  •  В [офисе банка](OfficeLink) 
+  •  Либо оставив запрос:
+  •  Через [личный кабинет](https://lk.uralsibfinance.ru/) в разделе «Вопрос – ответ» - «Форма обратной связи»
+  •  По почте на адрес ООО МКК «УРАЛСИБ Финанс»: 119048, город Москва, улица Ефремова, дом 8, этаж 9 комната 1
+  • На электронную почту ООО МК «УРАЛСИБ Финанс» по адресу info@uralsibfinance.ru
+  
+RepaymentMethods: 
+  answer:
+  - |
+    Информация по способам погашения займа и реквизиты указаны в индивидуальных условиях договора займа (п. 8 - 8.1).
+  - |
+    Если у вас нет договора, то оплату можно совершить в приложении  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru) путем перевода денежных средств на Основной счет заемщика (в ДБО указывается как до востребования карточный) 
+  
+  buttons:
+    - text: "Узнать другие способы"
+      transition: "/Microloan/Microloan/Active/Payments/RepaymentMethods/Other"
+    - text: "Другой вопрос"
+      transition: "/SomethingElse"
+      
+RepaymentMethodsOther:   
+- |
+  Другие способы погашения займа:
+  • Через платежный сервис в [личном кабинете](https://lk.uralsibfinance.ru/)
+  • Банкомат, карта банкоматов доступна [здесь]({{$temp.ATMLink}}) и терминал, карта платежных терминалов доступна [здесь]({{$temp.TerminalLink}})
+  • В [офисе банка]({{$temp.officeLink}}) 
+- |
+  Ознакомиться со всеми способами оплаты можно в [личном кабинете](https://lk.uralsibfinance.ru) раздел «Главная» - «Документы и информация по займам» - «Индивидуальных условиях договора потребительского займа» (в п. 8 и 8.1) и раздел «Вопрос – ответ» – «Какие есть способы погашения займа»).
+ 
+PersonalAccount: 
+  answer:
+  - |
+    Уточните, какой у вас вопрос по личному кабинету МКК?
+
+  buttons:
+    - text: "Регистрация в личном кабинете"
+      transition: "/Microloan/Microloan/Active/PersonalAccount/Registration"
+    - text: "Не работает личный кабинет"
+      transition: "/Microloan/Microloan/Active/PersonalAccount/Problem"
+    - text: "Некорректные данные по займу"
+      transition: "/Microloan/Microloan/Active/PersonalAccount/Incorrect"
+    - text: "Проблема при восстановлении пароля"
+      transition: "/Microloan/Microloan/Active/PersonalAccount/PasswordProblem"
+      
+Registration:
+- |
+  Зарегистрироваться в личном кабинете можно: 
+  • на [сайте МКК](https://uralsibfinance.ru) 
+  • через [личный кабинет](https://lk.uralsibfinance.ru) 
+  Для регистрации:
+  1. Введите номер телефона и паспортные данные, указанные при оформлении займа.
+  2. Придумайте пароль (минимум 6 символов, с цифрой и заглавной буквой).
+      
+Problem:  
+- |
+  При сложностях со входом или работой личного кабинета МКК:
+  · Отключите VPN
+  · Почистите кэш
+  · Воспользоваться другим браузером (Яндекс, Google).
+- |
+  Если ситуация не изменится, отправьте скриншот с ошибкой и описание проблемы на почтовый ящик info@uralsibfinance.ru 
+  
+Incorrect: Если данные по займу отображаются некорректно, отправьте скриншот и описание проблемы через форму обратной связи в [личном кабинете](https://lk.uralsibfinance.ru) раздел «Вопрос – ответ» - «Форма обратной связи».
+  
+PasswordProblem: 
+- |
+  Перед восстановлением пароля для личного кабинета МКК:
+  · Отключите VPN
+  · Почистите кэш
+  · Воспользоваться другим браузером (Яндекс, Google).
+    Для восстановления пароля на странице личного кабинета нажмите на кнопку «Регистрация / Восстановить пароль».
+- |
+  Если ситуация не изменится, отправьте скриншот с ошибкой и описание проблемы на почтовый ящик info@uralsibfinance.ru .
+  
+Documents: 
+- |
+  Для получения документов и справок по займу, вы можете:
+  · Обратиться в офис банка Уралсиб
+  · Скачать их в [личном кабинете](https://lk.uralsibfinance.ru) в разделе «Главная» - «Документы и информация по займам»
+  · Оставить обращение на сайте ООО МКК «УРАЛСИБ Финанс» в разделе [«Написать нам»](https://uralsibfinance.ru/feedback)
+- |
+  Срок предоставления информации до 15 рабочих дней.
+  
+Other:
+    NotAuthorized:
+    - |
+      Для уточнения информации напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+    - |
+     Для уточнения информации по нетипичным вопросам займа, перевожу на оператора.
+     
+Check: 
+  answer:
+  - |
+    Я понял, что вопрос связан с заявкой по микрозайму. Вот наиболее популярные запросы:
+
+  buttons:
+    - text: "Оформить заявку"
+      transition: "/Microloan/Microloan/Offer"
+    - text: "Узнать решение по заявке"
+      transition: "/Microloan/Microloan/Check/Status"
+    - text: "Отменить заявку"
+      transition: "/Microloan/Microloan/Check/Close"
+ 
+     
+Status:
+    NotAuthorized:
+    - |
+      Для уточнения информации по статусу рассмотрения заявки, напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+    - |
+     Оставайтесь на линии - сейчас соединю вас с оператором для уточнения статуса рассмотрения заявки по займу. 
+     
+Close:
+    NotAuthorized:
+    - |
+      Для закрытия заявки по займу, напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru)
+    Authorized:
+    - |
+     Для отмены заявки по займу перевожу вас на специалиста.      

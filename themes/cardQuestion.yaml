@@ -1,0 +1,153 @@
+# Вопросы по картам
+Common:
+  reply: 
+      - Ваш вопрос связан с дебетовой или кредитной картой?
+  buttons: 
+      - text: Дебетовая карта
+        transition: "/CardQuestion/Common/DebitCard"
+      - text: Кредитная карта
+        transition: "/CardQuestion/Common/CreditCard"
+
+CreditCard: 
+    reply: Готов проконсультировать вас по кредитным картам. Какой у вас вопрос?
+    buttons:
+        - text: "Оформить"
+          transition: "/CreditCards/CreditCard/Request"
+        - text: "Сумма и дата платежа"
+          transition: "/CreditCards/CreditCard/SumDateInfo"
+        - text: "Срок льготного периода"
+          transition: "/CreditCards/CreditCard/GracePeriod"
+        - text: "Способы пополнения"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/TopUp"
+        - text: "Заблокировать"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Block"
+        - text: "Разблокировать"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+        - text: "Посмотреть реквизиты"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Details"
+        - text: "Узнать о готовности"
+          transition: "/CardQuestion/Common/Ready"
+
+DebitCard:
+    reply: Готов проконсультировать вас по дебетовым картам. Какой у вас вопрос?
+    buttons:
+        - text: "Оформить"
+          transition: "/DebitCards/DebitCard"
+        - text: "Баланс"
+          transition: "/MobileAppNavigation/DBONavigation/DisplayCards/Balance"
+        - text: "Перевыпустить"
+          transition: "/CardQuestion/Common/Reissue"
+        - text: "Получить выписку"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Statement"
+        - text: "Заблокировать"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Block"
+        - text: "Разблокировать"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Unblock"
+        - text: "Посмотреть реквизиты"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/Details"
+        - text: "Узнать о готовности"
+          transition: "/CardQuestion/Common/Ready"
+      
+Ready:
+    reply: Узнать статус готовности карты поможет оператор. Пожалуйста, ожидайте.
+
+Reissue:
+    isNotAuthorized: |
+        Проверить возможность перевыпуска карты можно:
+        • В чате
+        • В приложении «Уралсиб Онлайн» или в веб-версии на [сайте](https://online.uralsib.ru/) на главном экране выберите карту -> вкладка «Управление» -> «Перевыпустить»
+        • Через офис. Для дебетовой в любом офисе в пределах филиала. Для кредитной в обслуживающем отделении
+    iosOrAndroid: |
+        Для проверки возможности перевыпуска карты:
+        1. Выберите нужную карту.
+        2. Войдите во вкладку «Управление».
+        3. Нажмите кнопку «Перевыпустить», заполните поля - «Отправить заявку».
+
+PayTag: 
+    reply: |
+        Уралсиб не выпускает платежные стикеры. Есть альтернативные способы для безналичных платежей:
+        1. Расплачиваться в магазинах пластиковой картой банка Уралсиб.
+        2. Оплачивать товары и услуги по QR-коду с помощью мобильного приложения на смартфоне. 
+
+DigitalCard:
+    isNotAuthorized: 
+      - |
+        Выпустить цифровую карту можно в приложении «Уралсиб Онлайн» или в веб-версии на [сайте](https://online.uralsib.ru/)
+      - |
+        Для этого:
+        1. На главной странице в разделе «Карты» нажмите на «+».
+        2. Выберите тип и вид карты.
+        3. Выберите «Цифровая» и переключите бегунок на согласии.
+    iosOrAndroid: |
+        Для выпуска цифровой карты:
+        1. На главном экране в разделе «Карты» нажмите «+».
+        2. Выберите тип и вид карты.
+        3. Выберите «Цифровая» и переключите бегунок на согласии.
+        4. Нажмите на кнопку «Заказать карту».
+
+Issue:
+    reply: Желаете оформить кредитную или дебетовую карту?
+    buttons:
+        - text: "Кредитная карта"
+          transition: "/CreditCards/CreditCard/Request"
+        - text: "Дебетовая карта"
+          transition: "/DebitCards/DebitCard"
+          
+Activation:
+    reply: Каким способом получили карту?
+    buttons:
+        - text: "Карта доставлена курьером"
+          transition: "/CardQuestion/Activation/Delivery"
+        - text: "Карта выдана на работе"
+          transition: "/CardQuestion/Activation/AtWork"
+        - text: "Карта получена в офисе"
+          transition: "/CardQuestion/Activation/Office"
+
+Delivery:
+    reply: 
+        - |
+         В течение дня, после получения карты у курьера, вам поступит SMS-сообщение об активации карты и установке PIN-кода.
+         
+        - |
+         Для активации бесконтактной оплаты по карте совершите покупку с вводом установленного PIN-кода или запросите баланс в банкомате Уралсиба.
+    buttons:
+        - text: "Прошло более 1 дня SMS не поступило"
+          transition: "/CardQuestion/Activation/SMSNotArrive/More1Day"
+        - text: "Установить PIN-код"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/ChangePIN"
+
+AtWork:
+    reply: 
+        - |
+         Если карта получена в офисе банка, сроки активации можно уточнить в этом же отделении.
+        
+        - |
+         Для карт, выданным работодателем, срок активации можно узнать в бухгалтерии организации. 
+         Если карта не активировалась в срок, обратитесь в офис банка. 
+         Карта отделений банка доступна [здесь]({{$temp.officeLink}})
+         
+Office:
+    reply: Чтобы активировать карту установите PIN-код. Для активации бесконтактной оплаты по карте совершите покупку с вводом установленного PIN-кода или запросите баланс в банкомате Уралсиба.
+    buttons:
+        - text: "Установить PIN-код"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/ChangePIN"
+    
+SMSNotArrive:
+    reply: В течение дня с момента получения карты вам поступит SMS-сообщение об активации карты и установке PIN-кода.
+    buttons:
+        - text: "Прошло более 1 дня SMS не поступило"
+          transition: "/CardQuestion/Activation/SMSNotArrive/More1Day"
+
+    
+More1Day:
+    isNotAuthorized: Для проверки готовности карты к активации и установке PIN-кода напишите в чат «Уралсиб Онлайн».
+    Authorized: Похоже, здесь нужен человек. Переключаю вас на оператора, он проверит готовность карты к активации и установке PIN-кода.
+    
+    ReissueCancel:
+    NotAuthorized:
+        - Для уточнения возможности закрытия заявки на перевыпуск карты напишите в чат приложения «Уралсиб Онлайн» или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+        - Для уточнения возможности закрытия заявки на перевыпуск карты, перевожу на оператора.
+    
+
+

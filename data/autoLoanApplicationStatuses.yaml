@@ -1,0 +1,56 @@
+111_Returned_to_CI_from_Disbursement:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Возвращена КИ с этапа выдачи кредита
+12_PreparingOfContractReturn:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Подготовка договора: Возврат на доработку'
+13_SigningOfContract:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Подписание договора
+14_SigningOfContractReturn:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Подписание договора: Возврат на доработку'
+20_DealPreparation:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Подготовка к сделке
+36_Disbursement_Data_Input:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Закрытие заявки
+42_ApprovalReturnFromDocumentsCheck:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Одобрение: возврат на доработку с этапа проверки документов в заявке'
+44_DocumentsCheckReturn:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Проверка документов в заявке: возврат на доработку'
+48_ApplicationCheckBeforeSignOffRep:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Проверка заявки до подписания: повторно'
+49_ApplicationCheckAfterSignOffRep:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Проверка заявки после подписания: повторно'
+98_Unlocked_After_Postpone:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Разблокирована после отложения
+99_Returned_to_CI_from_Documents_Preparation:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Возвращена КИ с этапа подготовки документов
+EMPTY:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Неопределенная фаза
+NEW:
+  needTransferToOperator: false
+  reply: Заявка на автокредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Новая заявка

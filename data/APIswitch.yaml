@@ -1,0 +1,39 @@
+getDebitCardsNotificationsFee: true
+getCreditCardsNotificationsFee: true
+createDebitCardsNotifications: true
+createCreditCardsNotifications: true
+
+getDeposits: true
+processDeposits: true
+
+getArrests: true
+processArrests: true
+
+callback: false
+
+getDebitCards: true
+getCreditCards: true
+getBalanceDebitCards: true
+getDebitCardsFreeTerms: true
+getCreditCardsDebt: true
+getCreditCardsFreeTerms: true
+changeStatusDebitCards: true
+changeStatusCreditCards: true
+
+listOfCashOrders: true
+cancelCashOrder: true
+
+getLoanApplications: false
+
+getPersonalLoans: true
+getCarLoans: true
+getMortgageLoans: true
+
+getPackages: true
+getPackageFreeTerms: true
+
+getListOfOffers: true
+responseToOffers: true
+
+registerClaim: false
+listOfClaims: true

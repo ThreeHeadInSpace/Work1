@@ -1,0 +1,16 @@
+# Задолженность
+Debt:
+    reply: |
+        Я понял, что ваш вопрос связан с задолженностью. Уточните, что именно вас интересует? 
+        Вот самые частые запросы:
+    buttons:
+        - text: "Сумма задолженности и дата платежа по кредиту"
+          transition: "/Debt/Debt/Loan"
+        - text: "Сумма задолженности и дата платежа по кредитной карте"
+          transition: "/Debt/Debt/Credit"
+        - text: "Наличие просроченной задолженности"
+          transition: "/DebtOverDue/DebtOverDue/Have"
+        - text: "Урегулировать просроченную задолженность"
+          transition: "/DebtOverDue/DebtOverDue/Collection"
+        - text: "Сумма долга по аресту"
+          transition: "/Arrest/Info"

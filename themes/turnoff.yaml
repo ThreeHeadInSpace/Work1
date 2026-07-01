@@ -1,0 +1,13 @@
+# Отключение
+turnoff: 
+  answer:
+  - |
+    Я понял, что вопрос об отключении. Уточните, что вы хотите отключить? 
+
+  buttons:
+    - text: "СМС уведомления"
+      transition: "/SMSNotifications/SMSOff"
+    - text: "Страхование"
+      transition: "/Insurance/Insurance/Return"
+    - text: "Подписки"
+      transition: "/Subscription/Subscription/TurnOff"  

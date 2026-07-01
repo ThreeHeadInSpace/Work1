@@ -1,0 +1,111 @@
+# Рефинансирование
+
+refinancing: 
+  answer:
+  - |
+    Я понял, что ваш вопрос связан с рефинансированием, но пока еще не хватает информации, чтобы дать ответ. Выберите, что хотите узнать: 
+  buttons:
+    - text: "Оформить рефинансирование"
+      transition: "/Refinancing/Refinancing/Request"
+    - text: "Узнать решение по заявке"
+      transition: "/CheckLoan/CheckLoan"
+      
+request: 
+  answer:
+  - |
+    Уточните, рефинансирование какого кредита интересует:
+  buttons:
+    - text: "Ипотека"
+      transition: "/Refinancing/Refinancing/Request/Mortgage"
+    - text: "Потребительский кредит"
+      transition: "/Refinancing/Refinancing/Request/ConsumerLoan"  
+    - text: "Автокредит"
+      transition: "/Refinancing/Refinancing/Request/CarLoan"
+    - text: "Кредитная карта"
+      transition: "/Refinancing/Refinancing/Request/CreditCard"   
+      
+CarLoan:
+    answer:
+    - |
+     Рефинансировать автокредит, взятый в стороннем банке можно с помощью нашего потребительского кредита.
+     Желаете узнать условия?   
+    buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/CarLoan/Agree"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/CarLoan/Disagree" 
+      
+Agree:
+  - |
+    Узнать условия и оставить заявку на рефинансирование автокредита можно по [ссылке](https://uralsib.ru/kredity/refinansirovanie)   
+      
+Disagree:
+  - |
+    Понял вас. Более подробные условия и ответы на часто задаваемые вопросы вы сможете найти по [ссылке](https://uralsib.ru/kredity/kredit-na-lyubye-tseli?utm_source=chatbot) 
+    
+CreditCard:
+  answer:
+  - |
+    Рефинансировать кредитную карту стороннего банка можно потребительским кредитом.
+    Желаете узнать условия?   
+  buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/CreditCard/Agree"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/CreditCard/Disagree" 
+      
+CreditCardAgree:
+  - |
+    Узнать условия и оставить заявку на рефинансирование кредитной карты можно по [ссылке](https://uralsib.ru/kredity/refinansirovanie)       
+      
+CreditCardDisagree:
+  - |
+    Понял вас. Более подробные условия и ответы на часто задаваемые вопросы вы сможете найти по [ссылке](https://uralsib.ru/kredity/kredit-na-lyubye-tseli?utm_source=chatbot)   
+    
+mortgage: 
+  answer:
+    - |
+     Можно рефинансировать ипотеку, оформленную в стороннем банке. 
+     Требования к заемщику для оформления рефинансирования ипотечного кредита:
+     • Гражданство РФ с постоянной регистрацией на территории РФ
+     • Возраст от 21 года до 70 лет на момент погашения кредита
+     • Официальное трудоустройство более 3 месяцев или срок регистрации ИП более 1 года
+    - |
+     Подскажите, вы подходите под требования банка?
+  buttons:
+    - text: "Да"
+      transition: "/Refinancing/Refinancing/Request/Mortgage/Conditions"
+    - text: "Нет"
+      transition: "/Refinancing/Refinancing/Request/Mortgage/Disagree"      
+      
+mortgageDisagree:
+  - |
+    Понял вас. К сожалению, в таком случае вам может быть отказано в оформлении рефинансирования ипотеки. 
+  - |
+    Оставлю вам [ссылку](https://uralsib.ru/ipoteka/refinansirovanie) на оформление, вдруг что-то изменится.  
+    
+Conditions: 
+  - |
+    • Срок кредита от 3 до 30 лет
+    • Сумма кредита: для Москвы, Санкт-Петербурга и Московской области - от 900 000 до 20 000 000 рублей, для Сочи - 12 000 000 рублей, для других городов - 9 000 000 рублей.
+    • По ипотечному кредиту должно быть внесено не менее 12 ежемесячных платежей в течение не менее 12 месяцев
+  - |
+    Заявку можно подать в отделении банка, либо на [сайте](https://uralsib.ru/ipoteka/refinansirovanie)
+    
+ConsumerLoan: 
+  answer:
+  - |
+    Уточните, вы хотите рефинансировать кредит банка «Уралсиб» или стороннего банка?
+  buttons:
+    - text: "Кредит стороннего банка"
+      transition: "/Refinancing/Refinancing/Request/ConsumerLoan/OtherBank"
+    - text: "Кредит банка «Уралсиб»"
+      transition: "/Refinancing/Refinancing/Request/ConsumerLoan/Uralsib"      
+      
+OtherBank:
+  - |
+    Узнать условия и оставить заявку на рефинансирование потребительского кредита можно по [ссылке](https://uralsib.ru/kredity/refinansirovanie)
+    
+Uralsib: 
+  - |
+    Оформить рефинансирование потребительского кредита от банка «Уралсиб» можно только по специальному предложению, которое отразится на главной странице в мобильном приложении.

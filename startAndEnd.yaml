@@ -1,0 +1,66 @@
+hello:
+#   start: Устраняем неполадки с СБП. Пожалуйста, выполните перевод позднее.
+  unauthorized:
+    - Приветствую вас! На связи Уралсиб-бот.
+    - Рад приветствовать вас! С вами Уралсиб-бот.
+    - Здравствуйте! На связи Уралсиб-бот.
+  authorized:
+    - Приветствую вас, {{ $session.name }}! На связи Уралсиб-бот.
+    - Рад приветствовать вас, {{ $session.name }}! С вами Уралсиб-бот.
+    - Здравствуйте, {{ $session.name }}! Я Уралсиб-бот, цифровой помощник банка.
+  oldApp:
+    ios:
+      Ваша версия приложения устарела. Чтобы использовать максимум преимуществ, установите веб-версию. В браузере Safari перейдите по ссылке и следуйте [инструкции](https://uralsib.ru/online/ios)
+    android:
+      Ваша версия приложения устарела. Чтобы использовать максимум преимуществ, [обновите его](https://uralsib.ru/online/android)
+  preProcess:
+    - Приветствую вас!
+    - Здравствуйте!
+    - Рад приветствовать вас!
+
+howCanIHelpYou:
+  firstReplies:
+    - Пожалуйста, уточните, чем я могу вам помочь?
+    - Готов вам помочь. Задайте ваш вопрос, пожалуйста.
+    - Напишите свой вопрос, я помогу.
+  buttons:
+    - text: "Карты"
+      transition: "/CardsConsultation/Card"
+    - text: "Кредиты"
+      transition: "/LoansConsultation/Loan"
+    - text: "Вклады"
+      transition: "/Deposits/Deposit"
+    - text: "Платежи и переводы"
+      transition: "/PaymentsAndTransfer/MoneyTransfer"
+    - text: "Навигация в системе"
+      transition: "/MobileAppNavigation/DBONavigation"
+    # TODO from main
+    # - text: "Дебетовые карты"
+    #   transition: "/CardQuestion/Common/DebitCard"
+    # - text: "Кредиты"
+    #   transition: "/Loan/Common"
+    # - text: "Вклады"
+    #   transition: "/Deposits/Deposit"
+    # - text: "Платежи и переводы"
+    #   transition: "/PaymentsAndTransfer/Common"
+    # - text: "Навигация в системе"
+    #   transition: "/MobileAppNavigation/DBONavigation"
+
+dontHaveQuestions:
+  - Понял вас!
+
+somethingElse:
+  reply:
+      - Хотите спросить что-то еще?
+      - Могу ли я помочь чем-то еще?
+      - Желаете задать еще вопрос?
+  debitButton:
+    - text: "Назад к списку дебетовых карт"
+      transition: "/DebitCards/DebitCard/AskCardType"
+  creditButton:
+    - text: "Назад к списку кредитных карт"
+      transition: "/CreditCards/CreditCard/AskCardType"
+
+goodbye:
+  - Благодарю за обращение! Всего доброго!
+  - Спасибо вам за обращение! Всего доброго, до свидания!

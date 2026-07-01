@@ -1,0 +1,13 @@
+# Подключение
+turnon: 
+  answer:
+  - |
+    Я понял, что вопрос о подключении. Уточните, что вы хотите подключить? 
+
+  buttons:
+    - text: "СМС уведомления"
+      transition: "/SMSNotifications/SMSOn"
+    - text: "Страхование"
+      transition: "/Insurance/Insurance/Request"
+    - text: "Подписки"
+      transition: "/Subscription/Subscription/TurnOn"  

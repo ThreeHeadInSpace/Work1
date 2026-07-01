@@ -1,0 +1,23 @@
+# Проценты
+percent: 
+  answer:
+  - |
+    Я понял, что ваш вопрос о процентах. Вот некоторые из наиболее популярных запросов:
+
+  buttons:
+    - text: "Ставка по кредиту"
+      transition: "/LoansConsultation/Loan"
+    - text: "Ставка по карте"
+      transition: "/CardsConsultation/Card"
+    - text: "Ставка по накопительному счету"
+      transition: "/Deposits/Account/Conditions"
+    - text: "Ставка по вкладу"
+      transition: "/Deposits/Deposit/Conditions"   
+    - text: "Снизить ставку по кредиту"
+      transition: "/Refinancing/Refinancing"
+    - text: "Несогласие с начисленными процентами"
+      transition: "/Percent/Percent/Disagree"
+      
+disagree: 
+    isNotAuthorized: Уточнить информацию по процентам поможет оператор. Напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized: Уточнить информацию по процентам поможет оператор.

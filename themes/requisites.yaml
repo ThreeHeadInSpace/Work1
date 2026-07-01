@@ -1,0 +1,27 @@
+# Реквизиты
+requisites: 
+  answer:
+  - |
+    Ваш вопрос связан с реквизитами. Чтобы я мог дать ответ, уточните, какая информация вам требуется? 
+
+  buttons:
+    - text: "Реквизиты по кредиту"
+      transition: "/MobileAppNavigation/DBONavigation/Loans/Details"
+    - text: "Реквизиты счета"
+      transition: "/MobileAppNavigation/DBONavigation/Savings/Details"
+    - text: "Реквизиты карты"
+      transition: "/MobileAppNavigation/DBONavigation/ManageCards/Details"
+    - text: "Реквизиты банка"
+      transition: "/Requisites/Requisites/Bank"
+      
+Bank: Реквизиты банка можно узнать по [ссылке](https://uralsib.ru/o-banke/rekvizity)
+
+CVV: 
+  - |
+    Чтобы посмотреть трехзначный код безопасности (CVC) в приложении:
+    1. На главном экране выберите карту.
+    2. Нажмите на карту еще раз.
+    3. Далее на иконку «Глаз», после чего введите код из смс.
+
+ 
+ 

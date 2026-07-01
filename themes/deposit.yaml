@@ -1,0 +1,392 @@
+# Вклады и счета
+Account:
+  Answer:
+    - Уточните, какая информация о счетах вам требуется?
+    - Выберите, что именно хотите узнать о счетах.
+
+  Buttons:
+    - text: "Ознакомиться с условиями"
+      transition: "/Deposits/Account/Conditions"
+    - text: "Открыть счет"
+      transition: "/Deposits/Account/Open"
+    - text: "Закрыть счет"
+      transition: "/Deposits/Account/Close"
+
+  Close:
+    Unauthorized: |
+      Закрыть счет можно꞉
+      • В [офисе банка]({{$temp.officeLink}})
+      • В приложении «Уралсиб Онлайн»: на главном экране выберите нужный счет -> в разделе «Управление» выберите пункт «Закрыть счет»
+      • В [веб-версии](https://online.uralsib.ru/) на главной странице выберите нужный счет и нажмите «Закрыть счет»
+
+      Единственный счет можно закрыть только в офисе.
+
+    Authorized:
+      AndroidOrIOS: |
+        Для закрытия счета꞉
+        1. На главной странице выберите нужный счет.
+        2. Войдите в раздел «Управление».
+        3. Выберите пункт «Закрыть счет».
+
+        Единственный счет можно закрыть только в офисе.
+      Web: |
+        Для закрытия счета꞉
+        1. Выберите нужный счет на главной странице.
+        2. Нажмите «Закрыть счет».
+
+        Единственный счет можно закрыть только в офисе.
+
+  AskAccountType:
+    Answer:
+      - Выберите интересующий вас продукт.
+
+    Buttons:
+      - text: "Накопительный счет"
+        transition: "/Deposits/Account/AskAccountType/SavingsAccount"
+      - text: "Текущий счет"
+        transition: "/Deposits/Account/AskAccountType/ActualAccount"
+      - text: "Номинальный счет"
+        transition: "/Deposits/Account/AskAccountType/NominalAccount"
+      - text: "Другое"
+        transition: "/Deposits/Account/AskAccountType/Other"
+
+    ActualAccount:
+      FromConditions: |
+        Открыть текущий счет можно в рублях, долларах $ (USD) и евро € (EUR).
+
+        Комиссия за открытие составит {{$temp.issueFee}}
+        Комиссия за обслуживание зависит от валюты счета. Узнать ее можно в тарифных планах꞉
+        • Для счета в рублях꞉ https://uralsib.ru/api/directory-engine/files/rates/tek_s_rur_010626_lywozevv.pdf
+        • Для счета в иностранной валюте꞉ https://uralsib.ru/api/directory-engine/files/rates/tek_s_val_010626_opubbsqw.pdf
+
+      FromOpen: |
+        Открыть текущий счет можно в офисе банка или в приложении «Уралсиб Онлайн»:
+        1. На главном экране нажмите кнопку «Открыть новый продукт» -> далее «Открыть накопительный счет».
+        2. Пролистайте иконки в верхней части экрана влево, выберите «Текущий банковский счет».
+        3. Нажмите «Открыть счет».
+
+        Подробнее по [ссылке]({{$temp.actualAccountLink}})
+
+    SavingsAccount:
+      FromConditions:
+        - |
+         В Уралсиб есть накопительный счет с начислением процентов на минимальный остаток в течение месяца.
+         Комиссия за открытие счета составит {{$temp.issueFee}}
+         
+        - |
+         Также отправляю вам ссылки на документы с подробным описанием [тарифного плана]꞉ https://uralsib.ru/api/directory-engine/files/rates/nakopitelnye-scheta_010626_w7zahekv.pdf
+
+      FromOpen: |
+        Открыть накопительный счет можно в офисе банка или в приложении «Уралсиб Онлайн»:
+        1. На главном экране нажмите кнопку «Открыть новый продукт» -> далее «Открыть накопительный счет».
+        2. Пролистайте иконки в верхней части экрана влево, выберите нужный накопительный счет.
+        3. Нажмите «Открыть счет».
+
+         Подробнее по [ссылке]({{$temp.savingsAccountLink}})
+
+    NominalAccount:
+      FromConditions:
+        - Номинальный счет доступен для открытия родителям, опекунам или попечителям для зачисления средств социального характера꞉
+         сумм алиментов, пенсий, пособий, возмещения вреда здоровью и вреда, понесенного в случае смерти кормильца, а также иных средств,
+         выплачиваемых им на содержание несовершеннолетних, недееспособных или ограниченно дееспособных граждан.
+         Открытие номинального счета не облагается комиссией.
+         
+        - Также отправляю вам ссылку на документ с подробным описанием [тарифного плана](https://uralsib.ru/api/directory-engine/files/rates/nomins_rur_120126_vr5mrcqa.pdf)
+    
+      FromOpen:
+        - Оформить номинальный счет вы можете в [офисе банка]({{$temp.links["officeLink"]}})
+
+           Подробнее по [ссылке]({{$temp.links["nominalAccountLink"]}})
+    Other:
+      - Ознакомиться со всеми доступными вариантами счетов, узнать подробнее об условиях и способах их оформления вы можете по [ссылке]({{$temp.depositLink}})
+
+Deposit:
+  Answer:
+    - Уточните, какая информация о вкладах вам требуется?
+    - Выберите, что именно хотите узнать о вкладах.
+
+  Buttons:
+    - text: "Ознакомиться с условиями"
+      transition: "/Deposits/Deposit/Conditions"
+    - text: "Открыть вклад"
+      transition: "/Deposits/Deposit/Open"
+    - text: "Закрыть вклад"
+      transition: "/Deposits/Deposit/Close"
+
+  Open:
+    Unauthorized: |
+       Открыть вклад можно:
+       • В [офисе банка]({{$temp.officeLink}})
+       • В приложении «Уралсиб Онлайн»: на главной странице нажмите на кнопку «Открыть новый продукт» -> «Открыть вклад» -> выберите нужный вклад -> нажмите на кнопку «Открыть вклад»
+       • В [веб-версии](https://online.uralsib.ru/) на главной странице нажмите на кнопку «Открыть новый продукт» -> «Вклады» -> выберите нужный вклад -> нажмите на кнопку «Открыть вклад»
+        
+    Authorized:
+      AndroidOrIOS: |
+        Для открытия вклада꞉
+        1. На главной странице нажмите на кнопку «Открыть новый продукт».
+        2. Нажмите «Открыть вклад».
+        3. Выберите нужный вклад и нажмите на кнопку «Открыть вклад».
+      Web: |
+        Для открытия вклада꞉
+        1. На главной странице нажмите на кнопку «Открыть новый продукт».
+        2. Перейдите во «Вклады».
+        3. Выберите нужный вклад и нажмите на кнопку «Открыть вклад».
+
+  Close:
+    Unauthorized: |
+      Срочный вклад закроется автоматически в дату окончания. После этого банк перечислит все деньги на счет погашения꞉ сумму вклада и начисленные проценты.
+
+      Закрыть вклад можно꞉
+       • В [офисе банка]({{$temp.officeLink}})
+       • В приложении «Уралсиб Онлайн» и в [веб-версии](https://online.uralsib.ru/): на главной странице выберите нужный вклад -> нажмите на кнопку «Закрыть вклад».
+      
+      Напоминаем, что при досрочном закрытии вклада накопленные проценты сгорают.
+
+    Authorized: |
+      Для закрытия вклада꞉
+      1. На главной странице выберите нужный вклад.
+      2. Нажмите на кнопку «Закрыть вклад».
+      
+      Напоминаем, что при досрочном закрытии вклада накопленные проценты сгорают.
+
+  GetDepositType:
+    Answer:
+      Вас интересует вклад с возможностью пополнения и совершения расходных операций?
+
+    Buttons:
+      - text: "Да"
+        transition: "/Deposits/Deposit/GetDepositType/Agree"
+      - text: "Нет"
+        transition: "/Deposits/Deposit/GetDepositType/Disagree"
+
+    Agree:
+      - В таком случае вам подойдет вклад «Комфорт» с возможностью пополнения и совершения расходных операций. 
+       Начисление и выплата процентов по нему происходит ежемесячно на отдельный счет или с причислением к сумме вклада, то есть с капитализацией.
+       Обращаю ваше внимание, что данный вклад доступен в рамках пакетов услуг «Старт», «Премиум» и «Private Banking».
+
+      - |
+       Оформить вклад вы можете в офисе банка или в «Уралсиб Онлайн». Подробнее по [ссылке]({{$temp.comfortDepositLink}})
+       Также отправляю вам ссылку на документ с подробным описанием тарифного плана꞉ https://uralsib.ru/api/directory-engine/files/rates/komfort-plyus_010626_ea1xw9j6.pdf
+    Disagree:
+      - В Уралсибе есть срочные вклады без пополнения и снятия денег. Проценты начисляются каждый месяц на отдельный счёт или прибавляются к сумме вклада (капитализация), либо в конце срока. Зависит от срока и условий конкретного вклада.
+
+      - |
+       Вклад «Доход». Срок вклада — от 31 до 1 100 дней. 
+       Минимальная сумма вклада — {{$temp.minDepositSummaDohod}}
+       Оформление вклада в офисе банка или в «Уралсиб Онлайн». 
+       Подробнее по [ссылке]({{$temp.incomeDepositLink}})
+       
+      - |
+       Вклад «Выгодный» и «Выгодный Про». Срок вклада — 91 день. 
+       Минимальная сумма вклада — {{$temp.minDepositSummaVigodnyi}}
+       Оформление вклада в офисе банка или в «Уралсиб Онлайн». 
+       «Выгодный Про» доступен только для автоматической пролонгации ранее открытого договора срочного вклада «Выгодный».
+       Подробнее по [ссылке]({{$temp.incomeDepositLink}})
+       
+      - |
+       Вклад «Динамичный». Срок вклада — 181 день. 
+       Минимальная сумма вклада — {{$temp.minDepositSummaDinamich}}
+       Оформление вклада в офисе банка или в «Уралсиб Онлайн». 
+       Подробнее по [ссылке]({{$temp.DinamichDepositLink}})
+
+  ProlongAnswer:
+    NoProlongation: "{{ $session.chosenDeposit.contract }} №{{ $session.chosenDeposit.accNum }} от {{ $session.chosenDeposit.openDate }} заканчивается {{ $session.chosenDeposit.endDate }}. Пролонгация не доступна."
+    ArchivedOrClosed: "{{ $session.chosenDeposit.contract }} №{{ $session.chosenDeposit.accNum }} от {{ $session.chosenDeposit.openDate }} продлевается по ставке 0,01% годовых."
+    Other: "{{ $session.name }}, действие вашего счета бессрочное."
+
+  OperationsAnswer: "Получить выписку с историей операций по вашему счету можно по [ссылке]({{ $temp.DepositOperationsLink }})"
+
+  ToOperator: Для продолжения консультации переключаю вас на специалиста.
+
+  ServiceFee:
+    Answer: Какой продукт вас интересует?
+    Buttons:
+      - text: "Вклад"
+        transition: "/Deposits/Deposit/ServiceFee/No"
+      - text: "Накопительный счет"
+        transition: "/Deposits/Deposit/ServiceFee/No"
+      - text: "Текущий счет"
+        transition: "/Deposits/Deposit/ServiceFee/Account"
+      - text: "Вклад до востребования"
+        transition: "/Deposits/Deposit/ServiceFee/Account"
+
+    DepositOrCumulativeAccount: Комиссия за обслуживание не взимается.
+
+    Account:
+      Answer: Выберите валюту счета.
+      Buttons:
+        - text: "Рубли"
+          transition: "/Deposits/Deposit/ServiceFee/Account/RuChi"
+        - text: "Китайские юани"
+          transition: "/Deposits/Deposit/ServiceFee/Account/RuChi"
+        - text: "Другая иностранная валюта"
+          transition: "/Deposits/Deposit/ServiceFee/Account/Other"
+
+      RuChi: Комиссия за обслуживание не предусмотрена.
+
+      Other: |
+        Получить информацию о комиссии за обслуживание счета вы можете в тарифном плане нужного продукта:
+        • [Текущий счет](https://uralsib.ru/api/directory-engine/files/rates/tek_s_funt_75kkjhtp.pdf)
+        • [Вклад до востребования](https://uralsib.ru/api/directory-engine/files/rates/dv_rur_040923_28txhxcz.pdf)
+
+  Withdraw:
+    Answer: В какой валюте вы хотите снять денежные средства?
+    Buttons:
+      - text: "Рубли"
+        transition: "/Deposits/Deposit/Withdraw/RUB"
+      - text: "Доллары США"
+        transition: "/Deposits/Deposit/Withdraw/Foreign"
+      - text: "Евро"
+        transition: "/Deposits/Deposit/Withdraw/Foreign"
+
+    RUB:
+      Answer:
+        - |
+          Чтобы получить сумму до 300 000 рублей, предварительный заказ не нужен.
+
+          Сумму более 300 000 рублей нужно заказывать заранее.
+        - |
+          При снятии наличных в кассе банка, поступивших безналичным путем и находящихся на счёте меньше 30 дней, комиссия составляет:
+          • При снятии до 3 млн. рублей включительно — {{ $tariffs.DebitCardProfit.Less3MillionPercent }}
+          • Свыше 3-х млн. рублей — {{ $tariffs.DebitCardProfit.More3MillionPercent }}
+        - Хотите оформить заказ?
+      Buttons:
+        - text: "Да"
+          transition: "/CashOrder/CashOrder/Currency/Rub"
+        - text: "Нет"
+          transition: "/SomethingElse"
+
+    Foreign:
+      Answer:
+        - |
+          Сейчас в кассе банка можно получить иностранную валюту только в долларах $ (USD) и евро € (EUR) при соблюдении следующих условий:
+          • Денежные средства должны находиться на вашем счете
+          • Валюта поступила на счет до 09.03.2022 (00:00 часов по московскому времени)
+          • Получить можно не более 10 000 $ или эквивалент
+        - Хотите оформить заказ?
+      Buttons:
+        - text: "Да"
+          transition: "/CashOrder/CashOrder/Currency/Another"
+        - text: "Нет"
+          transition: "/SomethingElse"
+
+  TransferFee:
+    Answer: В какой валюте будет поступление?
+    Buttons:
+      - text: "Рубли"
+        transition: "/Deposits/Deposit/TransferFee/Rubles"
+      - text: "Иностранная валюта"
+        transition: "/Deposits/Deposit/TransferFee/Foreign"
+
+    Rubles: Комиссия за зачисления в рублях не взимается.
+
+    Foreign:
+      Answer: Выберите, откуда хотите совершить перевод.
+      Buttons:
+        - text: "Со счета Уралсиб"
+          transition: "/Deposits/Deposit/TransferFee/Foreign/Inside"
+        - text: "Со счета другого банка"
+          transition: "/Deposits/Deposit/TransferFee/Foreign/Outside"
+
+      Inside: Комиссия за пополнение счета не взимается.
+
+      Outside: |
+        Комиссия за перевод на счет иностранной валюты, отличной от долларов $ (USD) и евро € (EUR), — 1% от суммы перевода (минимум 25 EUR). 
+
+        Ознакомиться с тарифами можно по [ссылке](https://uralsib.ru/tarify).
+
+  WithdrawEarly:
+    Answer: Выберите наименование интересующего вклада.
+    Buttons:
+      - text: "Доход"
+        transition: "/Deposits/Deposit/WithdrawEarly/Name"
+      - text: "Комфорт"
+        transition: "/Deposits/Deposit/WithdrawEarly/Name"
+      - text: "Другой вклад"
+        transition: "/Deposits/Deposit/WithdrawEarly/Other"
+
+    Name:
+      Answer:
+        - При досрочном отзыве вклада, начисленные проценты будут пересчитаны по сниженной ставке 0,01%. Если по вкладу была пролонгация, то выплаченные проценты за предыдущий срок сохранятся.
+        - Хотите узнать о том, как закрыть вклад?
+      Buttons:
+        - text: "Да"
+          tranition: "/Deposits/Deposit/Close"
+        - text: "Нет"
+          tranition: "/SomethingElse"
+
+    Other: |
+      Информацию по вашему вопросу вы можете получить в чате «Уралсиб Онлайн».
+
+  TopUpByThirdPerson: Распоряжение вкладом третьим лицом возможно на основании нотариально заверенной доверенности.
+  
+  IncorrectPercent: По вопросу начисленных процентов, подключу коллегу.
+  
+  Death: |
+    Получить деньги со вклада можно через 6 месяцев после смерти его владельца.
+
+    Для этого нужно прийти в офис банка Уралсиб, где был открыт вклад, и иметь при себе документы о праве на наследство. 
+
+    Чтобы оформить такие документы, необходимо обратиться к нотариусу.
+
+  DeathDocuments: |
+    Отправляю вам файл с списком документов.
+
+    В случае смерти вкладчика выдача средств со вклада производится на основании одного из документов из списка.
+
+AskAboutOldOrNew:
+  Answer: Вас интересует информация о вашем счете или о новом продукте?
+  Buttons:
+    - text: "Мой счет"
+      transition: "/Deposits/AskAboutOldOrNew/Current"
+    - text: "Новый продукт"
+      transition: "/Deposits/AskAboutOldOrNew/New"
+
+  Current:
+    NotAuthorized:
+      AccountConditions: |
+        Посмотреть информацию по счету можно:
+        • В «Уралсиб Онлайн» в разделе «Сбережения»
+        • В чате «Уралсиб Онлайн»
+      Other: |
+        Посмотреть информацию по вкладу можно:
+        • В «Уралсиб Онлайн» в разделе «Сбережения» -> «Вклад» -> «О вкладе»
+        • В чате «Уралсиб Онлайн»
+    Authorized: Для консультации по вопросам счетов перевожу на оператора.
+
+  New:
+    DepositProlong: Ознакомиться с действующими тарифами по вкладам вы можете по [ссылке](https://www.uralsib.ru/vklady).
+    DepositOperations: |
+      Информацию об операциях по вкладу можно получить:
+      • В «Уралсиб Онлайн» в разделе «Сбережения» -> «Вклад» -> «О вкладе» -> «Получить выписку»
+      • В чате «Уралсиб Онлайн»
+      
+ChooseAccountOrDeposit: Выберите счет, по которому вам требуется информация.
+
+AccountOrDepositInfo:
+    FirstReply:
+        NoProlongation: |
+            {{ $session.chosenDeposit.contract }} №{{ $session.chosenDeposit.accNum }} от {{ $session.chosenDeposit.openDate }}:
+            • Баланс счета — {{ $temp.depositAmount }}
+            • Рассчитанные проценты — {{ $session.chosenDeposit.interest }}
+            • Срок — {{ $session.chosenDeposit.term }}
+            • {{ $session.chosenDeposit.prolongation }}. Дата окончания — {{ $session.chosenDeposit.endDate }}
+            • {{ $session.chosenDeposit.capitalization }}
+            • {{ $session.chosenDeposit.withdrawal }}
+            • {{ $session.chosenDeposit.invest }}
+        Prolongation: |
+            {{ $session.chosenDeposit.contract }} №{{ $session.chosenDeposit.accNum }} от {{ $session.chosenDeposit.openDate }}:
+            • Баланс счета — {{ $temp.depositAmount }}
+            • Рассчитанные проценты — {{ $session.chosenDeposit.interest }}
+            • Срок — {{ $session.chosenDeposit.term }}
+            • {{ $session.chosenDeposit.prolongation }}. Дата пролонгации — {{ $session.chosenDeposit.extensDate }}
+            • {{ $session.chosenDeposit.capitalization }}
+            • {{ $session.chosenDeposit.withdrawal }}
+            • {{ $session.chosenDeposit.invest }}
+    FinalReply: Также вы можете получить информацию по вашему вкладу [тут]({{ $temp.DepositConditionsLink }})
+    Savings: Посмотреть информацию по вкладу можно в разделе «Сбережения» -> «Счёт» -> «О счёте», также доступно по [ссылке]({{$temp.DepositOperationsLink}})
+    
+InactiveAPI:
+  AccountConditions: Посмотреть информацию по вкладу можно в разделе «Сбережения».
+  Other: Посмотреть информацию по вкладу можно в разделе «Сбережения» -> «Вклад» -> «О вкладе».
+    

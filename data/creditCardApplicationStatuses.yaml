@@ -1,0 +1,40 @@
+13_SigningOfContract:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Подписание договора
+14_SigningOfContractReturn:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Подписание договора: Возврат на доработку'
+34_Disbursement_Data_Input:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Закрытие заявки
+42_ApprovalReturnFromDocumentsCheck:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Одобрение: возврат на доработку с этапа проверки документов в заявке'
+44_DocumentsCheckReturn:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Проверка документов в заявке: возврат на доработку'
+48_ApplicationCheckBeforeSignOffRep:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Проверка заявки до подписания: повторно'
+49_ApplicationCheckAfterSignOffRep:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: 'Проверка заявки после подписания: повторно'
+50_Application_Review_Security_Check:
+  needTransferToOperator: false
+  reply: Заявка на кредитную карту на рассмотрении. Ожидайте.
+  status: 'Анализ заявки (Проверка ССБ)'
+59_Deal_Assigned:
+  needTransferToOperator: false
+  reply: Заявка на кредитную карту на рассмотрении. Ожидайте.
+  status: Назначение времени сделки
+79_ApprovalLevelsSelection:
+  needTransferToOperator: false
+  reply: Заявка на кредитную карту на рассмотрении. Ожидайте, пожалуйста.
+  status: Выбор уполномоченного лица

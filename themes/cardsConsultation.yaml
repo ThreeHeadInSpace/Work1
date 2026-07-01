@@ -1,0 +1,448 @@
+# Консультирование по картам
+card: 
+  Reply:
+    С каким продуктом связан ваш вопрос?
+  Buttons:
+    - text: Дебетовая карта
+      transition: /CardsConsultation/Card/Debit
+    - text: Кредитная карта
+      transition: /CardsConsultation/Card/Credit
+
+getDebitCards:
+  InactiveAPI:
+    CardBalance: Уточнить баланс карты вы можете в разделе «Главная» -> «Карты».
+    CardConditions: Информацию о тарифе и условиях вашей карты вы можете получить в разделе «Главная» -> «Карты» -> «О карте» -> «Условия обслуживания».
+
+getCreditCards:
+  InactiveAPI:
+    CardBalance: |
+      На главном экране:
+      1. Выберите кредитную карту - «Подробнее об условиях»
+      2. Выберите «Общая задолженность» или «Задолженность периода»
+      Вам откроется информация о доступном балансе, сумме задолженности. Там же вы увидите сумму и дату погашения ближайшего минимального ежемесячного платежа.
+
+    CardConditions: Информацию о тарифе и условиях вашей карты вы можете получить в разделе «Главная» -> «Карты» -> «О карте» -> «Условия обслуживания».
+
+askAboutOldOrNew:
+  Reply:
+    Вас интересуют подробности о вашей карте или о новом продукте?
+  Buttons:
+    - text: Моя карта
+      transition: /CardsConsultation/Card/AskAboutOldOrNew/Current
+    - text: Новая карта
+      transition: /CardsConsultation/Card/AskAboutOldOrNew/New
+
+askAboutProfit:
+  Reply:
+    Вам требуется информация о карте «Прибыль»?
+  Buttons:
+    - text: Да
+      transition: /CardsConsultation/Card/AskAboutProfit/Agree
+    - text: Нет
+      transition: /CardsConsultation/Card/AskAboutProfit/Disagree
+
+debitInfoCard:
+  Reply:
+    - Уточните, какая операция вам требуется?
+    - Выберите интересующую вас операцию.
+  ButtonsIfProfitCardIsNeeded:
+    - text: Информация о тарифе и условиях
+      transition: /CardsConsultation/Card/Debit/Info/Terms
+    - text: Баланс по карте
+      transition: /CardsConsultation/Card/Debit/Info/Balance
+    - text: Оборот по «Уралсиб Бонус»
+      transition: /CardsConsultation/Card/Debit/Info/ProfitBonus
+    - text: Оборот для условий бесплатности
+      transition: /CardsConsultation/Card/Debit/Info/ProfitFree
+    - text: Сумма начисленных процентов
+      transition: /CardsConsultation/Card/Debit/Info/ProfitPercent
+    - text: Ставка по карте
+      transition: /CardsConsultation/Card/Debit/Info/ProfitRate
+    - text: Готовность карты
+      transition: /CardsConsultation/Card/Status
+    - text: Установка или смена ПИН
+      transition: /CardsConsultation/Card/PIN
+    - text: Заблокировать карту
+      transition: /CardsConsultation/Card/Block
+    - text: Разблокировать карту
+      transition: /CardsConsultation/Card/Unblock
+    - text: "Перевыпустить"
+      transition: "/CardsConsultation/Card/Reissue"
+    - text: Другое
+      transition: /CardsConsultation/Card/Debit/Info/Other
+  ButtonsIfNotProfitCardIsNeeded:
+    - text: Информация о тарифе и условиях
+      transition: /CardsConsultation/Card/Debit/Info/Terms
+    - text: Баланс по карте
+      transition: /CardsConsultation/Card/Debit/Info/Balance
+    - text: Готовность карты
+      transition: /CardsConsultation/Card/Status
+    - text: Установка или смена ПИН
+      transition: /CardsConsultation/Card/PIN
+    - text: Заблокировать карту
+      transition: /CardsConsultation/Card/Block
+    - text: Разблокировать карту
+      transition: /CardsConsultation/Card/Unblock
+    - text: "Перевыпустить"
+      transition: "/CardsConsultation/Card/Reissue"
+    - text: Другое
+      transition: /CardsConsultation/Card/Debit/Info/Other
+
+debitInfoTerms:
+  IsNotAuthorized: |
+    Информацию о тарифе и условиях вашей карты вы можете получить:
+    • В «Уралсиб Онлайн» в разделе «Главная» -> «Карты» -> «О карте» -> «Условия обслуживания»
+    • В чате «Уралсиб Онлайн»
+    • На сайте банка в разделе «Дебетовые карты» по [ссылке](https://www.uralsib.ru/tarify).
+  IsAuthorized: |
+    Информацию по карте *{{$session.chosenCard.pan}} вы можете получить по [ссылке]({{$temp.debitCardConditionsLink}})
+
+debitInfoBalance: |
+  Уточнить баланс карты вы можете:
+  • В «Уралсиб Онлайн» в разделе «Главная» -> «Карты»
+  • В чате «Уралсиб Онлайн»
+  • В банкоматах банка Уралсиб
+
+debitInfoBonus:
+  IsNotAuthorized: |
+    Информацию о потраченной сумме, которая вошла в оборот по «Уралсиб Бонус», вы можете уточнить в личном кабинете «Уралсиб Онлайн» в разделе «Главная» -> «Уралсиб Бонус».
+  IsAuthorized: |
+    Информацию о потраченной сумме, которая вошла в оборот дебетовой карты *{{$session.chosenCard.pan}} по «Уралсиб Бонус», вы можете уточнить по [ссылке]({{$temp.debitCardProfitBonusLink}})
+  InactiveAPI: |
+    Информацию о потраченной сумме, которая вошла в оборот по «Уралсиб Бонус», вы можете уточнить в разделе «Главная» -> «Уралсиб Бонус».
+
+debitInfoFree: 
+  Reply: Подробнее об условиях бесплатности вы можете уточнить в личном кабинете «Уралсиб Онлайн» в разделе «Главная» -> «О карте». 
+  InactiveAPI: Информацию об условиях бесплатности вы можете уточнить в разделе «Главная» -> «О карте».
+
+debitInfoPercent:
+  IsNotAuthorized: |
+    Информацию о сумме начисленных процентов по карте «Прибыль» вы можете уточнить в личном кабинете «Уралсиб Онлайн» в разделе «Главная» -> «Карты» -> «О карте» -> «Выписка».
+  IsAuthorized: |
+    Информацию о сумме начисленных процентов по карте *{{$session.chosenCard.pan}} вы можете уточнить по [ссылке]({{$temp.debitCardProfitPercentLink}})
+  InactiveAPI: |
+    Информацию о сумме начисленных процентов по карте «Прибыль» вы можете уточнить в разделе «Главная» -> «Карты» -> «О карте» -> «Выписка».
+
+debitInfoRate:
+  IsNotAuthorized: |
+    Информацию о ставке по карте «Прибыль» вы можете уточнить в личном кабинете «Уралсиб Онлайн» в разделе «Главная» -> «Карты» -> «Выбрать карту».
+  IsAuthorized: |
+    Информацию о ставке по карте *{{$session.chosenCard.pan}} вы можете уточнить по [ссылке]({{$temp.debitCardProfitRateLink}})
+  InactiveAPI: |
+    Информацию о ставке по карте «Прибыль» вы можете уточнить в разделе «Главная» -> «Карты» -> «Выбрать карту».
+
+debitInfoOther: Для консультации по картам перевожу на оператора.
+
+debitGetBalance:
+  Баланс дебетовой карты *{{$session.chosenCard.pan}} составляет {{$temp.rubleForm}}.
+
+debitGetFreeAmount:
+  - |
+    Хорошая новость: вы выполнили условия бесплатного обслуживания карты в этом месяце.
+  - |
+    Условие бесплатности {{$session.chosenCard.free.status}}.
+
+creditInfo:
+  Reply:
+    - Уточните, какая информация вам требуется?
+    - Выберите интересующий вас пункт меню.
+  Buttons:
+    - text: Тарифы и условия
+      transition: /CardsConsultation/Card/Credit/Info/Terms
+    - text: Задолженность и льготный период
+      transition: /CardsConsultation/Card/Credit/Info/Debt
+    - text: Оборот для условий бесплатности
+      transition: /CardsConsultation/Card/Credit/Info/FreeTerms
+    - text: Готовность карты
+      transition: /CardsConsultation/Card/Status
+    - text: Установка или смена ПИН
+      transition: /CardsConsultation/Card/PIN
+    - text: Заблокировать карту
+      transition: /CardsConsultation/Card/Block
+    - text: Разблокировать карту
+      transition: /CardsConsultation/Card/Unblock
+    - text: Другое
+      transition: /CardsConsultation/Card/Credit/Info/Other
+
+
+creditInfoTerms:
+  IsNotAuthorized: |
+    Информацию о тарифе и условиях вашей карты вы можете получить:
+    • В «Уралсиб Онлайн» в разделе «Главная» -> «Карты» -> «О карте» -> «Условия обслуживания»
+    • В чате «Уралсиб Онлайн»
+    • На сайте банка в разделе «Дебетовые карты» по [ссылке](https://www.uralsib.ru/tarify).
+  IsAuthorized:
+    Информацию по карте *{{$session.chosenCard.pan}} вы можете получить по [ссылке]({{$temp.creditCardConditionsLink}})
+
+creditInfoDebt: |
+    На главном экране:
+    1.	Выберите кредитную карту - «Подробнее об условиях»
+    2.	Выберите «Общая задолженность» или «Задолженность периода»
+    Вам откроется информация о доступном балансе, сумме задолженности. Там же вы увидите сумму и дату погашения ближайшего минимального ежемесячного платежа.
+
+creditInfoFreeTerms:
+  Reply: |
+   Информацию по обороту для выполнения условия бесплатности вы можете получить:
+   • В личном кабинете «Уралсиб Онлайн» в разделе «Главная» -> «Карты»
+   • В чате «Уралсиб Онлайн»
+   
+  InactiveAPI: Информацию по обороту для выполнения условия бесплатности вы можете уточнить в разделе «Главная» -> «О карте».
+
+creditInfoOther: Для консультации по картам перевожу на оператора.
+
+creditGetDebt:
+  reply:
+    - |
+      {{$session.name}}, общая сумма задолженности по кредитной карте *{{$session.chosenCard.pan}} на {{$session.currentDebt.debtDate}} составляет {{$temp.rubleFormDebtSum}}. 
+      
+      Для сохранения льготного периода нужно внести {{$temp.rubleFormGraceSum}} до {{$session.currentDebt.graceDate}}. 
+    - |
+      Минимальный ежемесячный платеж:
+      • Сумма - {{$temp.rubleFormMinSum}} 
+      • Дата оплаты до {{$session.currentDebt.minDate}}.
+  toOperator: Для консультации по картам перевожу на оператора.
+
+creditGetFreeAmount:
+  - |
+    Хорошая новость: вы выполнили условия бесплатного обслуживания карты в этом месяце.
+  - Условие бесплатности {{$session.chosenCard.free.status}}.
+
+cardBlock:
+  IsNotAuthorized: |
+    Заблокировать карту можно:
+    • В личном кабинете «Уралсиб Онлайн» банка в разделе «Главная» -> «Карты» -> «Управление»
+    • В чате «Уралсиб Онлайн»
+  IsAuthorized:
+    - По какой причине хотите заблокировать карту?
+  Buttons:
+# Ниже у кнопок нет transition для того, чтобы корректно заполнялся parseTree. При переходе по transition он не заполняется
+    - text: Утеря 
+    - text: Кража
+    - text: Мошеннические операции
+      transition: /CardsConsultation/Card/Block/Other
+    - text: Карта больше не нужна
+      transition: /CardsConsultation/Card/Block/Other
+    - text: Другое
+      transition: /CardsConsultation/Card/Block/Other
+
+cardGetBlockReason: Выберите карту, которую требуется заблокировать.
+
+cardGetBlock: |
+  {{$session.name}}, ваша карта *{{$session.chosenCard.pan}} успешно заблокирована. Рекомендую также заблокировать ваш личный кабинет, чтобы обезопасить денежные средства. Произвести блокировку личного кабинета вы можете по [ссылке]({{$temp.cardBlockLKLink}})
+
+cardBlockOther: Диалог будет переведен на оператора. Не закрывайте чат, пожалуйста.
+
+cardUnblock:
+  IsNotAuthorized: |
+    Разблокировать карту можно:
+    • В личном кабинете «Уралсиб Онлайн» банка в разделе «Главная» -> «Карты» -> «Управление»
+    • В чате «Уралсиб Онлайн»
+  IsAuthorized:
+    - Выберите карту, которую требуется разблокировать.
+
+cardUnblockReason:
+  WrongPinOrCvc: |
+    {{$session.name}}, ваша карта заблокирована по причине неверного ввода ПИН-кода или трехзначного кода безопасности (CVV).
+    Разблокировать ее?
+  WrongPinOrCvcButtons:
+    - text: Да
+      transition: /CardsConsultation/Card/GetUnblock
+    - text: Нет
+      transition: /SomethingElse
+  Lost: |
+    {{$session.name}}, разблокировать карту можно в отделении банка или по [ссылке]({{$temp.cardUnblockLink}})
+  Stolen: |
+    {{$session.name}}, карта была заблокирована по причине кражи, разблокировка невозможна. Перевыпустить карту можно в отделении банка в пределах филиала обслуживания.
+  CardDoNotHonorCompr: |
+    Для продолжения консультации переключаю вас на оператора.
+
+cardGetUnblock: |
+  {{$session.name}}, карта *{{$session.chosenCard.pan}} разблокирована и готова к использованию. В течение 3-5 минут информация о разблокировке отразится в приложении.
+
+cardPIN:
+  IsNotAuthorized: |
+    Установить или сменить ПИН-код карты можно:
+    • В личном кабинете «Уралсиб Онлайн»
+    • По номеру горячей линии 8-800-250-57-57, нажав цифру 6 в тональном режиме
+  IsAuthorized:
+    - Уточните, какая операция вам требуется?
+    - Выберите интересующую вас операцию.
+  Buttons:
+    - text: Установить ПИН
+      transition: /CardsConsultation/Card/PIN/Install
+    - text: Изменить ПИН
+      transition: /CardsConsultation/Card/PIN/Change
+
+cardPINInstall: 
+  Reply: На какой карте хотите установить ПИН-код?
+  InactiveAPI:
+    - "Выберите нужную карту на главной странице. Если для вашей карты доступно изменение пароля, во вкладке «Управление» вы найдете опцию «Установить ПИН-код»."
+    - "Если вы забыли ПИН-код и опция смены отсутствует, нужно перевыпустить карту: самостоятельно в «Уралсиб Онлайн» или в отделении банка в пределах филиала обслуживания."
+    
+cardPINInstallStatus:
+  HasPIN: |
+    {{$session.name}}, по карте *{{$session.chosenCard.pan}} ПИН-код уже установлен. 
+
+    Вам нужно сменить ПИН-код?
+  HasPINButtons:
+    - text: Да
+      transition: /CardsConsultation/Card/PIN/Change
+    - text: Нет
+      transition: /SomethingElse
+  HasPinsetAndVerified: Для установки ПИН-кода перейдите по [ссылке]({{$temp.cardPINInstallLink}})
+  Other: Для продолжения консультации переключаю вас на оператора.
+
+cardPINChange: 
+  Reply: Для какой карты вы хотели бы изменить ПИН-код?
+  InactiveAPI:
+    - Выберите нужную карту на главной странице. Если для вашей карты доступно изменение пароля, во вкладке «Управление» вы найдете опцию «Установить ПИН-код».
+    - "Если вы забыли PIN-код и опция смены отсутствует, нужно перевыпустить карту: самостоятельно в «Уралсиб Онлайн» или в отделении банка в пределах филиала обслуживания."
+
+cardPINChangeStatus:
+  PossibleToChangePassword:
+    - |
+      {{$session.name}}, для смены ПИН-кода по карте: 
+      1. На главной странице выберите карту
+      2. Откройте вкладку «Управление» -> «Изменить ПИН-код».
+    - Также изменить ПИН-код можно в любом банкомате банка Уралсиб.
+  NotPossibleToChangePassword: |
+    {{$session.name}}, изменить ПИН-код карты нельзя. Если вы забыли ПИН-код, нужно перевыпустить карту: самостоятельно по [ссылке]({{$temp.cardReissueLink}}) или в отделении банка в пределах филиала обслуживания.
+ 
+cardStatus:
+  IsNotAuthorized: |
+    Узнать статус и детали выпуска карты вы можете:
+    • В личном кабинете «Уралсиб Онлайн» банка в разделе «Главная» -> «Карты»
+    • В чате «Уралсиб Онлайн»
+    • По номеру горячей линии 8-800-250-57-57
+  IsAuthorized: Статус готовности какой карты вас интересует?
+
+cardStatusAnswer:
+  IsReleased:
+    Карта уже выпущена. По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  IsReady:
+    - |
+      {{$session.name}}, карта *{{$session.chosenCard.pan}} готова и находится в отделении банка по адресу: {{$session.chosenCard.department}}.
+    - |
+      Вы можете ее забрать.
+  IsInProccess:
+    - |
+      {{$session.name}}, карта *{{$session.chosenCard.pan}} готова и находится в отделении банка по адресу: {{$session.chosenCard.department}}.
+    - |
+      Вы можете ее забрать.
+  Other:
+    По вопросу готовности карты перевожу вас на оператора. Пожалуйста, ожидайте.
+
+chosenCard:
+  Выберите карту, по которой вам требуется информация.
+
+toOperator: Для продолжения консультации переключаю вас на специалиста.
+
+InactiveAPI:
+  toOperator: Для продолжения консультации переключаю вас на оператора.
+
+Reissue:
+  isNotAuthorized: 
+    - |
+      Проверить возможность перевыпуска карты можно:
+      • В чате
+      • В приложении «Уралсиб Онлайн» или в веб-версии на [сайте](https://online.uralsib.ru/) на главном экране выберите карту -> вкладка «Управление» -> «Перевыпустить»
+      • Через офис. Для дебетовой в любом офисе в пределах филиала. Для кредитной в обслуживающем отделении
+    - |
+      Срок перевыпуска: 
+      • Дебетовая карта - до 10 рабочих дней
+      • Кредитная карта - до 14 рабочих дней
+  iosOrAndroid: 
+    - |
+      Для проверки возможности перевыпуска карты:
+      1. На главной странице выберите нужную карту.
+      2. Войдите во вкладку «Управление».
+      3. Нажмите кнопку «Перевыпустить», заполните поля - «Отправить заявку».
+    - |
+      Срок перевыпуска: 
+      • Дебетовая карта - до 10 рабочих дней
+      • Кредитная карта - до 14 рабочих дней
+
+PayTag: |
+  Уралсиб не выпускает платежные стикеры. Есть альтернативные способы для безналичных платежей:
+    1. Расплачиваться в магазинах пластиковой картой банка Уралсиб.
+    2. Оплачивать товары и услуги по куар-коду с помощью мобильного приложения на смартфоне. 
+
+DigitalCard:
+  isNotAuthorized:
+    - |
+      Выпустить цифровую карту можно в приложении «Уралсиб Онлайн» или в веб-версии на [сайте](https://online.uralsib.ru/)
+    - |
+      Для этого:
+        1. На главной странице в разделе «Карты» нажмите на «+».
+        2. Выберите тип и вид карты.
+        3. Выберите «Цифровая» и переключите бегунок на согласии.
+  iosOrAndroid: |
+    Для выпуска цифровой карты:
+      1. На главном экране в разделе «Карты» нажмите «+».
+      2. Выберите тип и вид карты.
+      3. Выберите «Цифровая» и переключите бегунок на согласии.
+      4. Нажмите на кнопку «Заказать карту».
+      
+Activation:
+    reply: Каким способом получили карту?
+    buttons:
+        - text: "Карта доставлена курьером"
+          transition: "/CardsConsultation/Card/Activation/Delivery"
+        - text: "Карта выдана на работе"
+          transition: "/CardsConsultation/Card/Activation/AtWork"
+        - text: "Карта получена в офисе"
+          transition: "/CardsConsultation/Card/Activation/Office"
+
+Delivery:
+    reply: 
+        - |
+         В течение дня, после получения карты у курьера, вам поступит СМС-сообщение об активации карты и установке ПИН-кода.
+        - |
+         Для активации бесконтактной оплаты по карте совершите покупку с вводом установленного ПИН-кода или запросите баланс в банкомате Уралсиба.
+    buttons:
+        - text: "Прошло более 1 дня СМС не поступило"
+          transition: "/CardsConsultation/Card/Activation/SMSNotArrive/More1Day"
+        - text: "Установить ПИН-код"
+          transition: "/CardsConsultation/Card/PIN/Install"
+
+AtWork:
+    reply: 
+        - |
+         Если карта получена в офисе банка, сроки активации можно уточнить в этом же отделении.
+        - |
+         Для карт, выданных работодателем, срок активации можно узнать в бухгалтерии организации. 
+         Если карта не активировалась в срок, обратитесь в офис банка. 
+         Карта отделений банка доступна [здесь]({{$temp.officeLink}})
+         
+Office:
+    reply: Чтобы активировать карту установите ПИН-код. Для активации бесконтактной оплаты по карте совершите покупку с вводом установленного PIN-кода или запросите баланс в банкомате Уралсиба.
+    buttons:
+        - text: "Установить ПИН-код"
+          transition: "/CardsConsultation/Card/PIN/Install"
+    
+SMSNotArrive:
+    reply: В течение дня с момента получения карты вам поступит СМС-сообщение об активации карты и установке ПИН-кода.
+    buttons:
+        - text: "Прошло более 1 дня СМС не поступило"
+          transition: "/CardsConsultation/Card/Activation/SMSNotArrive/More1Day"
+
+More1Day:
+    isNotAuthorized: Для проверки готовности карты к активации и установке ПИН-кода напишите в чат «Уралсиб Онлайн».
+    Authorized: Похоже, здесь нужен человек. Переключаю вас на оператора, он проверит готовность карты к активации и установке ПИН-кода.
+    
+ReissueCancel:
+    NotAuthorized:
+        - Для уточнения возможности закрытия заявки на перевыпуск карты напишите в чат приложения «Уралсиб Онлайн» или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+        - Для уточнения возможности закрытия заявки на перевыпуск карты, перевожу на оператора.
+        
+StopList:
+    reply: 
+      - |
+       Чтобы убрать карту из стоп-листа, нужно определить транспортную компанию, у которой не прошла оплата. В каждом регионе свой оператор - проверить можно здесь: https://bilet.nspk.ru/ 
+       Далее:
+       1. Войдите или зарегистрируйтесь в личном кабинете пассажира.
+       2. Проверьте историю платежей.
+       3. Оплатите долг.
+      - |
+       С подробной информацией о причине попадания карты в стоп-лист и способах погашения задолженности можно узнать на сайте: https://bilet.nspk.ru/

@@ -1,0 +1,78 @@
+# Документы
+
+Documents:
+  reply: Какой у вас вопрос по документам? Вот самые частые запросы
+  buttons:
+    - text: "Cтатус отправленных документов"
+      transition: "/Documents/Documents/Status"
+    - text: "Получить документы"
+      transition: "/Documents/Documents/Get"
+    - text: "Отправить документы"
+      transition: "/Documents/Documents/Send"
+
+Status:
+  reply: Я понял, что ваш вопрос связан с отправленными документами. Уточните, что именно вас интересует? Вот самые частые запросы
+  buttons:
+    - text: "Документы по разблокировке карты"
+      transition: "/Documents/Documents/Status/Card"
+    - text: "Документы по страховке"
+      transition: "/Insurance/Insurance/DocChecking"
+    - text: "Документы по аресту"
+      transition: "/Arrest/NotRemoved"
+
+Card:
+  reply: Срок рассмотрения документов на разблокировку карты составляет до 10 рабочих дней.
+  buttons:
+    - text: "Срок уже вышел"
+      transition: "/Documents/Documents/Status/Card/Expired"
+
+Expired:
+  isNotAuthorized: Для уточнения статуса рассмотрения документов напишите в чат приложения «Уралсиб Онлайн» или его [веб-версии](https://online.uralsib.ru/)
+  Authorized: Для уточнения статуса рассмотрения документов перевожу вас на оператора.
+
+Get:
+  reply: Я понял, что ваш вопрос связан с получением документов. Уточните, что именно вас интересует? Вот самые частые запросы
+  buttons:
+    - text: "Договор по кредиту"
+      transition: "/Contract/Contract/Receive"
+    - text: "Документы по ипотеке"
+      transition: "/LoansConsultation/Loan/Encumbrance"
+    - text: "Документы по автокредиту"
+      transition: "/LoansConsultation/Loan/VehiclePassport"
+    - text: "Справки и выписки"
+      transition: "/Statements/Statements"
+
+Send:
+  reply: Я понял, что ваш вопрос связан с отправкой документов. Уточните, что именно вас интересует? Вот самые частые запросы
+  buttons:
+    - text: "Документы по страхованию"
+      transition: "/Insurance/Insurance/DocChecking"
+    - text: "Документы подтверждающие доход"
+      transition: "/Documents/Documents/Send/Confirm"
+    - text: "ПТС/СТС"
+      transition: "/Documents/Documents/Send/VehiclePassport"
+    - text: "Разблокировка карты"
+      transition: "/Documents/Documents/Send/UnblockCard"
+
+Confirm:
+  reply:
+    - Если в заявке не удается прикрепить документ, подтверждающий доход, обновите приложение «Уралсиб Онлайн» или воспользуйтесь [веб-версией](https://online.uralsib.ru/)
+    - Выписку СФР нужно отправить с портала Госуслуги на pfr@uralsib.ru
+  buttons:
+    - text: "Обновить приложение"
+      transition: "/MobileApp/MobileRegistration"
+
+VehiclePassport:
+  reply:
+    - После регистрации автомобиля в ГИБДД предоставьте в банк копии СТС или ПТС не позднее 19 календарных дней с даты выдачи кредита.
+    - Отправьте документы по электронной почте kk@uralsibbank.ru с указанием ФИО и номера кредитного договора.
+
+UnblockCard:
+  reply: Направьте документы для разблокировки карты на электронную почту, указанную в письме или СМС.
+  buttons:
+    - text: "Уведомление не пришло"
+      transition: "/Documents/Documents/Send/UnblockCard/NoSend"
+
+NoSend:
+  isNotAuthorized: Для уточнения информации по разблокировке карты  напишите в чат приложения «Уралсиб Онлайн» или его [веб-версии](https://online.uralsib.ru/)
+  Authorized: Для уточнения информации по разблокировке карты перевожу вас на оператора.

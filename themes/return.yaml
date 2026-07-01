@@ -1,0 +1,12 @@
+return: 
+  answer:
+  - |
+    Ваш вопрос связан с возвратом, но сейчас не хватает информации для ответа. Вот наиболее популярные запросы: 
+
+  buttons:
+    - text: "Вернуть перевод или покупку"
+      transition: "/PaymentsAndTransfer/Common/Revoke"
+    - text: "Вернуть комиссию"
+      transition: "/Comission/Comission/Disagree"
+    - text: "Вернуть страховку"
+      transition: "/Insurance/Insurance/Return"

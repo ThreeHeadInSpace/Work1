@@ -1,0 +1,64 @@
+# Заявка_уточнение
+Application: 
+  answer:
+  - |
+    Я понял, что ваш вопрос связан с заявкой, но пока еще не хватает информации, чтобы дать ответ. Выберите, что хотите сделать с заявкой:
+
+  buttons:
+    - text: "Оформить заявку"
+      transition: "/Application/Application/Submit"
+    - text: "Узнать статус заявки"
+      transition: "/Application/Application/Status"
+    - text: "Отменить заявку"
+      transition: "/Application/Application/Cancel"
+          
+Submit:
+    answer: 
+    - |
+      Я понял, что ваш вопрос связан с оформлением заявки, но пока еще не хватает информации, чтобы дать ответ.  Выберите, оформление какой заявки интересует:
+    
+    buttons:
+        - text: "Кредит"
+          transition: "/ConsumerLoan/ConsumerLoan/Request"
+        - text: "Кредитная карта"
+          transition: "/CreditCards/CreditCard/Request"
+        - text: "Дебетовая карта"
+          transition: "/DebitCards/DebitCard/Request"
+        - text: "Перевыпуск карты"
+          transition: "/CardsConsultation/Card/Reissue"
+        - text: "Заказать наличные"
+          transition: "/CashOrder/CashOrder/Currency"
+          
+Status:
+    answer: 
+    - |
+      Я понял, что вы хотите узнать статус заявки, но пока еще не хватает информации, чтобы дать ответ. Выберите, статус какой заявки интересует:
+    buttons:
+        - text: "Кредит или кредитная карта"
+          transition: "/CheckLoan/CheckLoan"
+        - text: "Заем МКК"
+          transition: "/Microloan/Microloan/Check/Status"
+        - text: "Готовность карты"
+          transition: "/CardsConsultation/Card/Status"
+        - text: "Претензия"
+          transition: "/Feedback/Feedback/ClaimStatus" 
+        - text: "Заказ наличных"
+          transition: "/CashOrder/CashOrder/Status" 
+          
+Cancel:
+    answer: 
+    - | 
+      Я понял, что ваш вопрос связан с отменой заявки, но пока еще не хватает информации, чтобы дать ответ. Выберите, оформление какой заявки интересует:
+    buttons:
+        - text: "Кредит или кредитная карта"
+          transition: "/Refusal/Refusal/CreditRequest"
+        - text: "Заем МКК"
+          transition: "/Microloan/Microloan/Check/Close"
+        - text: "Заказ наличных"
+          transition: "/CashOrder/CashOrder/RequestCancel"
+        - text: "Дебетовая карта"
+          transition: "/DebitCards/DebitCard/Cancel"
+        - text: "Перевыпуск карты"
+          transition: "/CardsConsultation/Card/ReissueCancel"
+        - text: "Брокерский счет"
+          transition: "/Broker/Broker/Cancel"

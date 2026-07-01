@@ -1,0 +1,19 @@
+# Сумма
+amount: 
+  answer:
+  - |
+    Ваш вопрос связан с суммой, но сейчас не хватает информации для ответа. Вот наиболее популярные запросы: 
+
+  buttons:
+    - text: "Сумма задолженности"
+      transition: "/Debt/Debt"
+    - text: "Доступный лимит по кредитной карте"
+      transition: "/CardsConsultation/Card/Credit"
+    - text: "Одобренная сумма по заявке"
+      transition: "/CheckLoan/CheckLoan"
+    - text: "Сумма совершенного перевода"
+      transition: "/Statements/Statements/CreditReport"
+    - text: "Другое"
+      transition: "/Amount/Amount/Other"
+      
+Other: Это немного выше моего цифрового понимания. Давайте подключим человека. 

@@ -1,0 +1,109 @@
+# Дебетовые карты
+DebitCard:
+  FirstReply:
+    - Готов проконсультировать вас по вопросам, связанным с открытием дебетовых карт банка Уралсиб.
+    - С удовольствием расскажу вам об открытии дебетовых карт банка Уралсиб.
+    - Готов проконсультировать вас по вопросам, связанным с открытием дебетовых карт банка Уралсиб.
+    - С удовольствием расскажу вам об открытии дебетовых карт банка Уралсиб.
+
+  SecondReply:
+    - Уточните, какая операция вам требуется?
+    - Выберите интересующую вас операцию.
+
+  Buttons:
+    - text: "Оформить заявку"
+      transition: "/DebitCards/DebitCard/Request"
+    - text: "Ознакомиться с условиями"
+      transition: "/DebitCards/DebitCard/Conditions"
+
+AskCardType:
+  Reply:
+    - Какая дебетовая карта вас интересует?
+
+  NotAuthorized:
+    Buttons:
+      - text: "Карта «Прибыль»"
+        transition: "/DebitCards/DebitCard/AskCardType/Profit"
+      - text: "Другая карта"
+        transition: "/DebitCards/DebitCard/AskCardType/Other"
+  Authorized:
+    Buttons:
+      - text: "Карта «Прибыль»"
+        transition: "/DebitCards/DebitCard/AskCardType/Profit"
+      - text: "МИР «Классическая»"
+        transition: "/DebitCards/DebitCard/AskCardType/Mir"
+      - text: "«Почетный пенсионер»"
+        transition: "/DebitCards/DebitCard/AskCardType/Senior"
+      - text: "Другая карта"
+        transition: "/DebitCards/DebitCard/AskCardType/Other"
+
+Senior:
+  - "Для оформления карты «Почетный пенсионер» вам нужно обратиться в любое удобное отделение банка. Адреса и режим работы офисов «Уралсиб» вы найдете [здесь]({{$temp.officeLink}})"
+
+Other:
+  - "Ознакомиться с полным списком дебетовых карт и условиями их оформления, а также оставить заявку на получение карты вы сможете по [ссылке]({{$temp.debitCardLink}})"
+  - "Также оформить карту можно в отделении банка. Адреса и режим работы офисов «Уралсиб» вы найдете [здесь]({{$temp.officeLink}})"
+
+Profit:
+  Reply: Каким образом планируете получить карту?
+  Buttons:
+    - text: "Курьером"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Delivery"
+    - text: "В офисе банка"
+      transition: "/DebitCards/DebitCard/AskCardType/Profit/Office"
+
+  Office: Оформить заявку на получение карты «Прибыль» можно, обратившись в отделение [банка]({{$temp.officeLink}})
+
+  Delivery:
+    - Оформление заявки доступно через сайт банка по [ссылке](https://www.uralsib.ru/debetovye-karty/pribyl?anchor=pribyl-form).
+
+Mir: Оформить заявку на получение карты МИР «Классическая» можно по [ссылке]({{$temp.MirCardLink}})
+
+Conditions:
+  Reply: Подскажите, вы обращаетесь как физическое лицо?
+  Buttons:
+    - text: "Да"
+      transition: "/DebitCards/DebitCard/Conditions/Individual"
+    - text: "Нет"
+      transition: "/DebitCards/DebitCard/Conditions/Legal"
+
+Individual:
+  Reply: Выберите интересующую вас карту.
+  Buttons:
+    - text: "Карта «Прибыль»"
+      transition: "/DebitCards/DebitCard/Conditions/Individual/Profit"
+    - text: "МИР «Классическая»"
+      transition: "/DebitCards/DebitCard/Conditions/Individual/Mir"
+    - text: "Другое"
+      transition: "/DebitCards/DebitCard/Conditions/Individual/Other"
+
+ProfitCard:
+  - |
+    Дебетовая карта «Прибыль» работает с платежной системой МИР. Начисление процентов на остаток: в первый месяц без условий, во все последующие при тратах по карте от 10 000 рублей. Размер процента составит: {{$temp.debitCardData.CashbackRate}}.
+
+    Комиссия за выпуск карты — {{$temp.debitCardData.IssueFee}}
+
+    Также вы автоматически становитесь участником программы лояльности «Уралсиб Бонус» с кешбэком за оплату картой.
+  - |
+    Оформить заявку на дебетовую карту «Прибыль» вы можете по [ссылке]({{$temp.ProfitCardLink}})
+    Также отправляю вам ссылку на подробный [тарифный план](https://uralsib.ru/api/directory-engine/files/rates/pribyl_010626_aftzmpri.pdf)
+
+MirCard:
+  - |
+    Дебетовая карта МИР «Классическая» работает с платежной системой МИР.
+
+    Комиссия за выпуск карты — {{$temp.debitCardData.IssueFee}} . Комиссия за обслуживание карты по истечению второго и каждого последующего месяцев — {{$temp.debitCardData.CardServiceFee}} . Комиссия не взимается при выполнении условий:
+    • Покупки по карте на сумму от {{$temp.debitCardData.PayMinSumma}}
+    • Ежемесячные поступления на счет карты на сумму от {{$temp.debitCardData.ReceiptMinSumma}}
+
+    Также вы автоматически становитесь участником программы лояльности «Уралсиб Бонус» с кешбэком за оплату картой.
+  - |
+    Получить пластиковую дебетовую карту МИР «Классическая» вы можете в офисе банка Уралсиб. Также есть возможность выпустить цифровую карту в «Уралсиб Онлайн» по [ссылке]({{$temp.MirCardLink}})
+    Отправляю вам ссылку на подробный [тарифный план](https://uralsib.ru/api/directory-engine/files/rates/dcard_mir_klassik_010626_nkhl5chq.pdf)
+
+OtherCard:
+  "Ознакомиться с полным списком дебетовых карт и условиями их оформления, а также оставить заявку на получение карты вы сможете по [ссылке]({{$temp.debitCardLink}})"
+  
+Cancel:
+  NotAuthorized: Для уточнения возможности закрытия заявки  напишите в чат приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+  Authorized: Для уточнения возможности закрытия заявки, перевожу на оператора.

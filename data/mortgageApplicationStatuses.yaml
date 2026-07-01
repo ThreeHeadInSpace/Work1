@@ -1,0 +1,544 @@
+01_PreparationOfApplication:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Оформление заявки
+020_Application_Registration:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Оформление заявки
+021_Credit_History_Review:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Оценка кредитной истории
+022_Application_Preparation_By_Writer:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Ввод/редактирование заявки Райтером
+023_Application_Preparation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Подготовка клиентской анкеты
+024_Application_Editing_Returned_From_Writer:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки (возвращена от Райтера)
+025_Application_Editing_Returned_From_Underwriter:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки (возвращена от Андеррайтера Регистратору)
+026_Application_Preparation_From_Underwriter:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки (возвращена от Андеррайтера Райтеру)
+027_Application_Returned_From_CreditManager:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки. Возврат от КМ
+027_Application_Returned_From_CreditManager_HQ:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки. Возвращена от КИ
+028_ReApproval_Returned_From_CreditManager:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Повторное согласование. Возврат от КМ
+028_ReApproval_Returned_From_CreditManager_HQ:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Повторное согласование. Возврат от КИ
+02_Application_Preparation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Подготовка клиентской анкеты
+02_PreparationOfApplicationChangeOfPersonalData:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Оформление заявки: возврат на редактирование персональных данных'
+030_Renegotiated_Return_to_TP:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Повторное согласование. Возврат с ТП
+03_Application_Review:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки
+03_PreparingClientProfiles:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Подготовка клиентской анкеты
+04_Credit_Limit_Approval:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Согласование кредитного лимита
+04_PreapproveDecision:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Предварительное решение
+04_ProposalsNegotiation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Согласование с клиентом предложений
+05_AddCoApplicant:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавление созаемщика
+05_AddOrDeleteCoApplicantOrGuarantor:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавление/Удаление соземщика/поручителя
+06_Collateral_Data_Review:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Рассмотрение данных по обеспечению
+06_PreparingClientProfilesChangeOfPersonalData:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: Изменение персональных данных'
+07_AdditionalCheck1:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Дополнительная проверка 1
+07_Final_Decision:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Утверждение сделки
+08_AdditionalCheck2:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Дополнительная проверка 2
+103_CM_Postpone:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Заявка отложена КМ
+105_Returned_From_FC_After_Approval:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Возврат от ФК после согласования
+109_Reapprove:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Возвращена на пересогласование с подписания
+10_DocumentsCheck:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Проверка документов
+10_Registration_Data_Input:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Ввод данных о госрегистрации
+110_Sent_Iteratively:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Направлена повторно
+112_Sent_from_Signing_iteratively:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Направлена повторно с этапа подписания
+12_PreparingOfContractReturn:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Подготовка договора: Возврат на доработку'
+13_SigningOfContract:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Подписание договора
+14_SigningOfContractReturn:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Подписание договора: Возврат на доработку'
+15_Add_Subjects_Procedure:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавить субъекта
+17_Credit_Limit_Estimation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Оценка Кредитного Лимита
+18_Credit_Limit_Calculation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Расчет Кредитного Лимита
+19_ApprovalReturn:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Одобрение: Возврат на доработку'
+20_DealPreparation:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Подготовка к сделке
+20_Product_Catalogue_Inquiry:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Запрос продуктового каталога
+21_Timeout_Management:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Управление таймаутами
+22_Deal_Documents_Print:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Подготовить документы по сделке
+23_Organization_Data_Retrieval:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Получение данных организационной структуры
+23_PreparingOfApplicationIdentificationInfoChange:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Оформление заявки: возврат на редактирование идентификационных данных'
+24_Amounts_Conversion:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Перевод в сумму прописью
+24_DuplicateSearch:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поиск дублей
+25_Validate_Data:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Проверить данные
+26_PreparationOfApplicationConsentReceiving:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Оформление заявки: получение согласия на обработку данных'
+26_SearchSubjectsProcedure:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поиск субъекта
+26_Select_Applicant:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Выбор заемщика
+27_Delete_Representative_From_Subject:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Удалить представителя субъекта сделки
+27_PreparingClientProfilesReturnedToAttachDoc:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: заявка возвращена для прикрепления пакета документов'
+28_Add_Representative_To_Subject:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавить представителя для субъекта
+28_PreparingClientProfilesInfoSpecifAndConsReceive:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: уточнение данных и получение согласия'
+29_PreparingClientProfilesInformationSpecification:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: уточнение данных'
+29_Save_CurrentUser_To_LastUW:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Сохранить текущего пользователя как последнего андеррайтера
+30_PreparingClientProfilesConsentReceiving:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: отсутствует согласие на обработку персональных данных'
+30_Save_CurrentUser_To_LastCM:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Сохранить текущего пользователя как последнего кредитного менеджера
+31_Add_Representative:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавить представителя
+31_AdditionalCheck3:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Дополнительная проверка 3
+32_CRMDecisionTaking:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Принятие решения СРМ
+32_Delete_Representative:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Удалить представителя
+33_Add_LoopBack:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Добавить возврат
+33_CollegiateDecisionTaken:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Принято решение коллегиального органа
+34_CarDealerDataRetrieval:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Получение данных по автосалону
+34_RLDDecisionTaking:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Принятие решения ДРК
+35_CRMDecisionTakingReturn:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Принятие решения СРМ (повторно)
+35_CallCenter_Application_Input:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Ввод заявки в Call-центре
+35_InsuranceCompanyDataRetrieval:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Получение данных по страховой компании
+36_Internet_Application_Processing:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Обработка Интернет-заявки
+37_ApplicationOnProcessingNotStartedInTheSubBranch:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Не принята в работу отделением
+37_CallCenterApplicationInput:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Ввод заявки в Call-центре
+38_ApplicationOnProcessingNotStartedInTheBranch:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Не принята в работу филиалом
+38_InternetApplicationProcessing:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Обработка интернет-заявки
+39_ApplicationCheckAfterRework:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Проверка заявки: возврат на доработку'
+39_ApplicationProcessingNotStartedInSubBranch:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Не принята в работу отделением
+39_SignOffClientIdentificationRetry:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Повторная попытка идентификации клиента
+40_ApplicationProcessingNotStartedInTheBranch:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Не принята в работу филиалом
+42_ApprovalReturnFromDocumentsCheck:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Одобрение: возврат на доработку с этапа проверки документов в заявке'
+44_DocumentsCheckReturn:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: 'Проверка документов в заявке: возврат на доработку'
+45_PreparingClientProfilesReturnedToEditApplData:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Подготовка клиентской анкеты: заявка возвращена для редактирования данных'
+46_Application_Modifying:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Редактирование заявки
+47_Application_Review_new:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (новая)
+48_AppStartOCRM:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки из OCRM
+48_Application_Review_locked:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (принята в работу андеррайтером)
+49_AppStartCallCenter:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки call-центр
+49_Application_Review_Returned_from_Security:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (Возврат от ССБ)
+50_Application_Review_Security_Check:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (Проверка ССБ)
+51_AppStartWeb:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки из интернет
+52_AppStartDBO:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки ДБО (Preapprove)
+52_Final_decision_returned_by_CM:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возвращена менеджером)
+53_AppStartAgent:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки со стандартного агентского канала
+53_ReturnDeleteSubjects:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Возврат для удаления участников сделки
+54_AppStartAgentCF:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Поступление заявки от агента (штатного сотрудника)
+55_AppStartAgentRework:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Поступление заявки со стандартного агентского канала: возврат на редактирование'
+56_PreapprovedProductSelection:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Выбор предпродажи
+57_AppStartAgentDocs:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: 'Поступление заявки со стандартного агентского канала: возврат для прикрепления документов'
+59_Deal_Assigned:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Назначение времени сделки
+61_CreditCardParametersInput:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Ввод параметров кредитной карты
+62_CardIssue:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Выпуск Карты
+63_FinalDecisionReturnByApprovalLevel1:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возврат от УЛ 1)
+64_FinalDecisionReturnByApprovalLevel2:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возврат от УЛ 2)
+65_FinalDecisionReturnByApprovalLevel3:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возврат от УЛ 3)
+66_FinalDecisionReturnByApprovalLevel4:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возврат от УЛ 4)
+67_FinalDecisionReturnByApprovalLevel5:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Окончательное решение (возврат от УЛ 5)
+68_ApplicationEvaluationReturnByApprovalLevel1:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (возврат от УЛ 1)
+68_PLWait:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Ожидание ответа от потребительского кредита
+69_ApplicationEvaluationReturnByApprovalLevel2:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (возврат от УЛ 2)
+70_ApplicationEvaluationReturnByApprovalLevel3:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (возврат от УЛ 3)
+71_ApplicationEvaluationReturnByApprovalLevel4:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (возврат от УЛ 4)
+72_ApplicationEvaluationReturnByApprovalLevel5:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки (возврат от УЛ 5)
+78_ApplicationEvaluation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте.
+  status: Анализ заявки
+79_ApprovalLevelsSelection:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Выбор уполномоченного лица
+80_ApprovalLevel1:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Согласование УЛ 1
+81_ApprovalLevel2:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Согласование УЛ 2
+82_ApprovalLevel3:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Согласование УЛ 3
+83_ApprovalLevel4:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Согласование УЛ 4
+84_ApprovalLevel5:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Согласование УЛ 5
+85_FinalDecision:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Окончательное решение
+87_AgentApplicationProcessingTermExceeded:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Превышен срок обработки заявки агентом
+88_ApplicationTimeoutAtCreditManagerRole:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Простой заявки у менеджера
+89_ApplicationTimeoutAtAgentRole:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Простой заявки у агента
+90_TransferredToCDProcessingTimeByAgentExceeded:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Переведена диспетчеру из-за превышения сроков обработки агентом
+91_TransferredToCDProcessingTimeByCMExceeded:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Переведена диспетчеру из-за превышения сроков обработки менеджером
+92_LegalEvaluation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Юридическая оценка
+93_FinalDecisionReturnByLegal:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Окончательное решение (возвращена юристом)
+95_PreScoring_Passed:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Заявка прошла прескоринг
+98_Unlocked_After_Postpone:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Разблокирована после отложения
+99_Returned_to_CI_from_Documents_Preparation:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Возвращена КИ с этапа подготовки документов
+EMPTY:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Неопределенная фаза
+Freeze:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Заявка в ожидании продолжения работы с ней
+NEW:
+  needTransferToOperator: true
+  reply: По данному вопросу перевожу вас на сотрудника. Пожалуйста, ожидайте.
+  status: Новая заявка
+Unknown:
+  needTransferToOperator: false
+  reply: Заявка на ипотечный кредит на рассмотрении. Ожидайте, пожалуйста.
+  status: Неизвестный статус

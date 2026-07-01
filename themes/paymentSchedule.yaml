@@ -1,0 +1,57 @@
+#Вопрос по графику платежей
+PaymentSchedule:
+    reply:
+        - Какой у вас вопрос по графику платежей?
+    buttons: 
+        - text: Скачать
+          transition: "/PaymentSchedule/PaymentSchedule/Download"
+        - text: Не обновился
+          transition: "/PaymentSchedule/PaymentSchedule/NotUpdated"
+          
+Download:
+    reply:
+        - По какому продукту хотите скачать график платежей?
+    buttons: 
+        - text: Кредит
+          transition: "/PaymentSchedule/PaymentSchedule/Download/Loan"
+        - text: Микрокредит
+          transition: "/Microloan/Microloan/Active/Documents"          
+Loan:
+    isNotAuthorized:
+        - |
+          Скачать график платежей можно:
+          • в приложении «Уралсиб Онлайн»: выберите нужный кредит ->раздел «Управление» -> «Скачать график погашения». 
+          • в веб-версии на [сайте](https://online.uralsib.ru/) : выберите нужный кредит  -> внизу страницы «Скачать график погашения».
+    iosOrAndroid: 
+        - |
+          Чтобы скачать график платежей:
+          • на главном экране выберите нужный кредит
+          • далее «Управление» –> «Скачать график погашения».
+    web: 
+        - |
+          Чтобы скачать график платежей:
+          • на главном экране выберите нужный кредит
+          • далее внизу страницы «Скачать график погашения». 
+          
+NotUpdated:
+    reply:
+        - По какому продукту не обновился график платежей?
+    buttons: 
+        - text: Кредит
+          transition: "/PaymentSchedule/PaymentSchedule/NotUpdated/NotUpdatedLoan"
+        - text: Микрокредит
+          transition: "/Microloan/Microloan/Active/PersonalAccount/Incorrect"          
+          
+NotUpdatedLoan:  
+    reply:
+        - Ранее оформляли заявление на досрочное погашение?
+    buttons: 
+        - text: Да
+          transition: "/LoansConsultation/Loan/RepaymentStatus"
+        - text: Нет
+          transition: "/PaymentSchedule/PaymentSchedule/NotUpdated/NotUpdatedLoan/NotUpdatedLoanNot"  
+
+NotUpdatedLoanNot:
+    isNotAuthorized: Для уточнения информации по графику платежей, напишите в чат приложения «Уралсиб Онлайн» или его [веб-версии](https://online.uralsib.ru/)
+    Authorized: Чтобы разобраться с графиком платежей, передам ваш запрос оператору. Ожидайте соединения.
+        

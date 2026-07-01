@@ -1,0 +1,193 @@
+# Обратная связь
+Feedback:
+    FirstReply:
+        - Готов проконсультировать вас по поводу обратной связи.
+        - Буду рад предоставить информацию об обратной связи.
+    SecondReply:
+        - Выберите, что именно вас интересует.
+        - Выберите интересующий вас вариант.
+    Buttons:
+        - text: Оставить благодарность
+          transition: "/Feedback/Feedback/Gratitude"
+        - text: Оставить претензию
+          transition: "/Feedback/Feedback/Claim"
+        - text: Узнать статус обращения
+          transition: "/Feedback/Feedback/ClaimStatus"
+
+Gratitude:
+    Reply: Готов зафиксировать благодарность! Укажите ФИО сотрудника, который вас обслуживал.
+    Buttons:
+        - text: "Не знаю ФИО"
+          transition: "/Feedback/Feedback/Gratitude/FIO"
+          
+    FIO: |
+        Добавьте немного деталей: 
+        • Примерные дата и время
+        • Способ связи или адрес, куда вы ранее обращались
+        Также опишите, что именно вызвало у вас положительные эмоции.
+        
+    Details: Зафиксировал благодарность! Надеюсь, что наше обслуживание и дальше будет вызывать у вас только положительные эмоции.
+
+Claim:
+    NotAuthorized: 'Оставить претензию можно на нашем [сайте](https://uralsib.ru/napishite-nam).'
+    Authorized:
+        Reply:
+            - Выберите тему обращения.
+        Buttons:
+            - text: Проблема с транзакциями
+              transition: "/Feedback/Feedback/Claim/Transactions"
+            - text: Обращение в офис банка
+              transition: "/Feedback/Feedback/Claim/Office"
+            - text: Обращение в контакт-центр
+              transition: "/Feedback/Feedback/Claim/Contact"
+            - text: Использование банкомата
+              transition: "/Feedback/Feedback/Claim/ATM"
+            - text: Информирование от банка
+              transition: "/Feedback/Feedback/Claim/Info"
+            - text: Персональные данные
+              transition: "/Feedback/Feedback/Claim/Personal"
+            - text: Микрокредитование
+              transition: "/Feedback/Feedback/Claim/Microcredit"
+            - text: Другое
+              transition: "/Feedback/Feedback/Claim/Other"
+              
+    ChooseProblem: Укажите подходящее описание проблемы.
+              
+    Transactions:
+        - text: Списание денег с заблокированного счета
+          transition: "/Feedback/Feedback/Claim/ImpossibleTransactions"
+        - text: Некорректная транзакция
+          transition: "/Feedback/Feedback/Claim/DisagreeWithTransactions"
+        - text: Другое
+          transition: "/Feedback/Feedback/Claim/Operator"
+              
+    Contact:
+        - text: Неудовлетворительное обслуживание
+          transition: "/Feedback/Feedback/Claim/CallCentreService"
+        - text: Слишком долгое ожидание
+          transition: "/Feedback/Feedback/Claim/CallCentreWaiting"
+        - text: Другое
+          transition: "/Feedback/Feedback/Claim/Operator"
+              
+    ATM:
+        - text: Банкомат не работает
+          transition: "/Feedback/Feedback/Claim/ATMDoesntWork"
+        - text: Банкомат сломался в процессе транзакции
+          transition: "/Feedback/Feedback/Claim/ATMError"
+        - text: Другое
+          transition: "/Feedback/Feedback/Claim/Operator"
+              
+    Info:
+        - text: Не хочу получать рекламу
+          transition: "/Feedback/Feedback/Claim/Ads"
+        - text: Приходят уведомления о чужих операциях
+          transition: "/Feedback/Feedback/Claim/AdsForOtherClient"
+        - text: Другое
+          transition: "/Feedback/Feedback/Claim/Operator"
+              
+    Personal:
+        - text: Хочу отказаться от обработки персональных данных
+          transition: "/Feedback/Feedback/Claim/PersonalDataRefuse"
+        - text: Данные некорректно отображаются в БКИ
+          transition: "/Feedback/Feedback/Claim/WrongCreditData"
+        - text: Другое
+          transition: "/Feedback/Feedback/Claim/Operator"
+    
+    NeedHelp: 
+        Reply:
+            - Хотите спросить что-то еще?
+            - Могу ли я помочь чем-то еще?
+            - Желаете задать еще вопрос?
+        Buttons:
+            - text: Карты
+              transition: "/CardsConsultation/Card"
+            - text: Кредиты
+              transition: "/LoansConsultation/Loan"
+            - text: Вклады
+              transition: "/Deposits/Deposit"
+            - text: Платежи и переводы
+              transition: "/PaymentsAndTransfer/MoneyTransfer"
+            - text: Навигация в системе
+              transition: "/MobileAppNavigation/DBONavigation"
+              
+    AnotherMethod: |
+        Оставить претензию можно:
+        • На горячей линии по номеру 8-800-250-57-57
+        • В любом удобном [отделении банка]({{ $temp.officeLink }})
+        • По почте — отправить письмо на адрес: г. Москва, 119048, ул. Ефремова, д. 8
+        
+    Operator: Переключаю вас на оператора для фиксации претензии и решения проблемы.
+    
+    Details:
+        P1: Пожалуйста, подробно опишите ситуацию, с которой вы столкнулись. Это поможет специалисту разобраться в проблеме.
+        P2: 'Пожалуйста, опишите ситуацию подробно. Укажите детали: примерные дату и время обращения, имя оператора, если известно, номер телефона, с которого обращались.'
+        P3: 'Пожалуйста, опишите ситуацию подробно. Укажите детали: примерные дату и время обращения, имя оператора, если известно, номер телефона, с которого обращались.'
+        P4:
+            - Мне жаль, что вы столкнулись с некачественным обслуживанием. Приношу извинения за доставленные неудобства.
+            - 'Пожалуйста, опишите ситуацию подробно. Укажите детали: примерные дата и время вашего обращения, адрес офиса, имя сотрудника, если оно известно.'
+        P8: Пожалуйста, подробно опишите ситуацию, с которой вы столкнулись. Это поможет специалисту разобраться в проблеме.
+        P9:
+        P10: Пожалуйста, подробно опишите ситуацию, с которой вы столкнулись. Это поможет специалисту разобраться в проблеме.
+        P11: Пожалуйста, подробно опишите ситуацию, с которой вы столкнулись. Это поможет специалисту разобраться в проблеме.
+        P12: Пожалуйста, опишите ситуацию подробно. Также укажите номер вашего кредитного договора, по которому некорректно отображаются данные. Это поможет разобраться в проблеме.
+        
+    ATMDetails:
+        - Понимаю, что вы столкнулись с неисправностью устройства и приношу извинения за доставленные неудобства. Специалисты обязательно разберутся в возникшей проблеме. Для этого я зафиксирую детали произошедшего.
+        - Пожалуйста, опишите ситуацию подробно.
+        
+    Address: Теперь укажите адрес устройства. Карта банкоматов доступна [здесь]({{ $temp.ATMLink }}).
+    
+    Operation:
+        Reply: При совершении какой операции возникла ошибка?
+        # Переход по стейту нарочно не указан, благодаря этому корректно распознаются сущности в запросе
+        Buttons:
+            - text: Снятие наличных
+            - text: Внесение наличных
+            - text: Оплата услуг наличными
+            
+    Date: Напишите дату совершения операции в формате ДД.ММ.ГГГГ.
+    
+    Time: Укажите точное или примерное время совершения операции в формате ЧЧ:ММ.
+    
+    Card: Введите 4 последние цифры номера карты, которую вы использовали.
+    
+    Sum: Укажите сумму операции.
+    
+    AdsDetails: 
+        Reply: Уточните, пожалуйста, вид оповещения, от которого хотите отказаться.
+        Buttons: 
+            - text: СМС
+              transition: "/Feedback/Feedback/Claim/AdsDetails/Phone"
+            - text: Звонки
+              transition: "/Feedback/Feedback/Claim/AdsDetails/Phone"
+            - text: Электронные письма
+              transition: "/Feedback/Feedback/Claim/AdsDetails/Email"
+            - text: Почтовые письма
+              transition: "/Feedback/Feedback/Claim/AdsDetails/Mail"
+              
+        Mail: Напишите почтовый адрес, на который не хотите получать рассылки.
+        
+    Email:
+        RefuseEmailInfo: Напишите адрес электронной почты, на который приходят уведомления.
+        
+        Reply: Для получения ответа от банка укажите, пожалуйста, ваш актуальный адрес электронной почты.
+        
+    Phone:
+        RefusePhoneInfo: Напишите номер телефона, на который приходят уведомления.
+        
+        Reply: Также прошу вас указать контактный номер для связи.
+        
+    Finish:
+        P7: Я зарегистрировал запрос на исключение из рекламных рассылок. Он будет рассмотрен в течение 7 календарных дней, поэтому некоторое время сообщения от банка могут продолжать поступать.
+        OtherClaimTheme: Претензия принята. Номер обращения поступит в СМС. Срок рассмотрения до 14 календарных дней. Ожидайте звонка для обратной связи.
+    
+    Error: Для продолжения консультации переключаю вас на специалиста.
+    
+ClaimStatus:
+    Operator: Для уточнения статуса обращения переключаю вас на оператора.
+    
+    AnyClaims: На данный момент у вас нет зарегистрированных обращений. 
+    
+    SomeClaims: Статус какого обращения хотите узнать?
+    
+    Give: Обращение №{{ $session.chosenClaim.num }} от {{ $session.chosenClaim.createdDate }} находится в статусе «{{$session.chosenClaim.status}}».

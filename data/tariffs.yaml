@@ -1,0 +1,232 @@
+# Кредитная карта 120 Дней:
+CreditCard120days:
+  RateRange: от 34,9%
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib: 0 рублей
+  CashWithdrawalFeeOther: 0 рублей
+  GracePeriod: не более четырех календарных месяцев
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee: 10 000 руб
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Кредитная карта с кэшбеком:
+CreditCardWithCashback:
+  RateRange: от 34,9%
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib: 3,99% от суммы операции, плюс 300 рублей
+  CashWithdrawalFeeOther: 3,99% от суммы операции, плюс 300 рублей
+  GracePeriod: не более двух календарных месяцев
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee: 10 000 руб.
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Потребительский кредит:
+ConsumerLoan:
+  RateRange: 29,9%
+  InsuredRateRange: 7%
+  CashWithdrawalFeeUralsib: 
+  CashWithdrawalFeeOther: 
+  GracePeriod: 
+  LoanTerm: от 13 до 84 месяцев
+  LoanMinSumma: 30 000 рублей
+  LoanMaxSumma: 1 500 000 рублей (максимальная сумма кредита может быть увеличена на сумму страховой премии)
+  ReviewPeriod: от 5 минут до 3-х рабочих дней с момента получения Банком всех необходимых документов для принятия решения
+  CashbackRate:
+  IssueFee:
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Дебетовая карта «Прибыль»:
+DebitCardProfit:
+  RateRange: 
+  InsuredRateRange: 
+  CashWithdrawalFeeUralsib: 
+  CashWithdrawalFeeOther: 
+  GracePeriod: 
+  LoanTerm: 
+  LoanMinSumma: 
+  LoanMaxSumma: 
+  ReviewPeriod: 
+  CashbackRate: до 1 000 000 рублей (включительно) – 12% годовых; на сумму, превышающую 1 000 000 рублей, проценты не начисляются
+  IssueFee: 0 рублей
+# Было: IssueFee: комиссия не взимается. Изменено для соблюдения логики в реплике
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent: 5% от суммы операции
+  More3MillionPercent: 10% от суммы операции
+
+# Дебетовая карта МИР «Классическая»:
+DebitCardMIRClassic:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee: 0 рублей
+# Было: IssueFee: комиссия не взимается. Изменено для соблюдения логики в реплике
+  CardServiceFee: 99 рублей
+# Было:  CardServiceFee: 99 рублей в месяц/Комиссия не взимается (при выполнении Условия в соответствии с п.4 Тарифов) Изменено для соблюдения логики в реплике
+  PayMinSumma: 5 000 рублей
+  ReceiptMinSumma: 20 000 рублей
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Текущий счет:
+TekushySchet:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee: 0 рублей
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Накопительный счет:
+NakopitSchet:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee: 0 рублей
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma:
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Вклад «Доход»:
+DepositDohod:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma: |
+   100 000,00 рублей или 20 000,00 китайских юаней.
+   При открытии вклада «Доход» на срок 91 день минимальная сумма 1 400 000 рублей.
+   При открытии вклада в ДБО минимальная сумма вклада:
+   • 50 000,00 рублей для вкладов «Доход Premium» и «Доход Private».
+  Less3MillionPercent:
+  More3MillionPercent:
+
+# Вклад «Почетный пенсионер»:
+DepositPPensioner:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma: 50 000,00 рублей
+  Less3MillionPercent: 
+  More3MillionPercent:
+  
+# Вклад «Выгодный»:
+DepositVigodnyi:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma: |
+   100 000,00 рублей.
+   При открытии вклада в ДБО минимальная сумма вклада:
+   • 50 000,00 рублей для вклада «Выгодный».
+  Less3MillionPercent:
+  More3MillionPercent:  
+  
+# Вклад «Динамичныйй»:
+DepositDinamich:
+  RateRange:
+  InsuredRateRange:
+  CashWithdrawalFeeUralsib:
+  CashWithdrawalFeeOther:
+  GracePeriod:
+  LoanTerm:
+  LoanMinSumma:
+  LoanMaxSumma:
+  ReviewPeriod:
+  CashbackRate:
+  IssueFee:
+  CardServiceFee:
+  PayMinSumma:
+  ReceiptMinSumma:
+  MinDepositSumma: |
+   50 000,00 рублей.
+   При открытии вклада в ДБО минимальная сумма вклада:
+   • 50 000,00 рублей для вклада «Динамичный».
+  Less3MillionPercent:
+  More3MillionPercent:   

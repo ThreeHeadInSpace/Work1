@@ -1,0 +1,394 @@
+# Ссылки на разделы на сайте и в «Уралсиб Онлайн»
+OfficeLink:
+  naz: https://uralsib.ru/office-atm/offices/map
+  ios:
+  android: uralsib://map
+ATMLink:
+  naz: https://uralsib.ru/office-atm/atms/map
+  ios:
+  android: uralsib://map
+TerminalLink:
+  naz: https://uralsib.ru/office-atm/terminals/map
+  ios:
+  android: uralsib://map
+CreditCardLink:
+  naz: https://uralsib.ru/kreditnye-karty
+  ios:
+  android:
+CC120DaysLink:
+  naz: https://www.uralsib.ru/kreditnye-karty/120-dney?utm_source=chatbot
+  ios:
+  android: uralsib://openCreditCard
+CCCashbackLink:
+  naz: https://uralsib.ru/kreditnye-karty/cashback?utm_source=chatbot
+  ios:
+  android: uralsib://openCreditCard
+ConsumerLoanLink:
+  naz: https://uralsib.ru/kredity/kredit-na-lyubye-tseli?utm_source=chatbot
+  ios:
+  android:
+AutoLoanLink:
+  naz: https://uralsib.ru/avtokredity?utm_source=chatbot
+  ios:
+  android:
+NewAutoLoanLink:
+  naz: https://uralsib.ru/avtokredity/noviy-avtomobil
+  ios:
+  android:
+OldAutoLoanLink:
+  naz: https://uralsib.ru/avtokredity/avtomobil-s-probegom
+  ios:
+  android:
+WithoutDepositAutoLoanLink:
+  naz: https://uralsib.ru/avtokredity/avtokredit-bez-zaloga
+  ios:
+  android:
+MotoLoanLink:
+  naz: https://uralsib.ru/avtokredity/motoczikly-i-mototekhnika
+  ios:
+  android:
+OwnRateAutoLoanLink:
+  naz: https://uralsib.ru/avtokredity/svoya-stavka
+  ios:
+  android:
+SelfEmployedAutoLoanLink:
+  naz: https://uralsib.ru/avtokredity/avtokredit-dlya-samozanyatih
+  ios:
+  android:
+MortgageLink:
+  naz: https://www.uralsib.ru/ipoteka?utm_source=chatbot
+  ios:
+  android:
+OldMortgageLink:
+  naz: https://uralsib.ru/ipoteka/vtorichnoe-zhile
+  ios:
+  android:
+NewMortgageLink:
+  naz: https://uralsib.ru/ipoteka/novostroyki
+  ios:
+  android:
+FamilyMortgageLink:
+  naz: https://uralsib.ru/ipoteka/ipoteka-dlya-semey-s-detmi
+  ios:
+  android:
+CommerceMortgageLink:
+  naz: https://uralsib.ru/ipoteka/ipoteka-na-kommercheskuyu-nedvizhimost
+  ios:
+  android:
+DepositMortgageLink:
+  naz: https://uralsib.ru/ipoteka/kredit-pod-zalog-nedvizhimosti
+  ios:
+  android:
+RefinancingLink:
+  naz: https://uralsib.ru/ipoteka/refinansirovanie
+  ios: 
+  android: 
+RefinancingLinkOther:
+  naz: https://uralsib.ru/kredity/refinansirovanie
+  ios: 
+  android:   
+DebitCardLink:
+  naz: https://uralsib.ru/debetovye-karty?utm_source=chatbot
+  ios:
+  android: uralsib://openDebitCard
+ProfitCardLink:
+  naz: https://uralsib.ru/debetovye-karty/pribyl?anchor=pribyl-form&utm_source=chatbot
+  ios: uralsib://humanChannel?productCode=28
+  android: uralsib://humanChannel?productCode=28
+  web: uralsib://humanChannel?productCode=28
+MirCardLink:
+  naz: https://uralsib.ru/debetovye-karty/mir-classic?anchor=mir-form&utm_source=chatbot
+  ios: uralsib://openDebitCard?productCode=D37
+  android: uralsib://openDebitCard?productCode=D37
+  web: uralsib://openDebitCard?productCode=D37
+DepositLink:
+  naz: https://uralsib.ru/vklady-scheta
+  ios: uralsib://openDeposit
+  android: uralsib://openDeposit
+ActualAccountLink:
+  naz: https://uralsib.ru/vklady/tekuschiy-schet?utm_source=chatbot
+  ios: uralsib://openAccount
+  android: uralsib://openAccount
+SavingsAccountLink:
+  naz: https://uralsib.ru/vklady/nakopitelnye-scheta?utm_source=chatbot
+  ios: uralsib://openAccount
+  android: uralsib://openAccount
+NominalAccountLink:
+  naz: https://uralsib.ru/vklady/nominalniy-schet?utm_source=chatbot
+  ios: uralsib://openAccount
+  android: uralsib://openAccount
+ComfortDepositLink:
+  naz: https://uralsib.ru/vklady/komfort?utm_source=chatbot
+  ios: uralsib://openDeposit
+  android: uralsib://openDeposit
+IncomeDepositLink:
+  naz: https://uralsib.ru/vklady/dohod?utm_source=chatbot
+  ios: uralsib://openDeposit
+  android: uralsib://openDeposit
+DinamichDepositLink:
+  naz: https://uralsib.ru/vklady/dohod?utm_source=chatbot
+  ios: uralsib://openDeposit
+  android: uralsib://openDeposit  
+PensionerDepositLink:
+  naz: https://uralsib.ru/vklady/pochetniy-pensioner?utm_source=chatbot
+  ios: uralsib://openDeposit
+  android: uralsib://openDeposit
+LoanLink:
+  naz: https://uralsib.ru/kredity
+  ios:
+  android:
+Card2CardLink:
+  naz: https://card2card.uralsib.ru/
+  ios:
+  android: uralsib://c2c
+BonusLink:
+  naz:
+  ios: uralsib://bonus
+  android: uralsib://bonus
+  web: uralsib://bonus
+SBPLink:
+  naz:
+  ios: uralsib://phoneTransfer
+  android: uralsib://phoneTransfer
+  web: uralsib://subscriptionSbpSettings
+TransferLink:
+  naz:
+  ios:
+  android: uralsib://moneyTransfer
+  web:
+CityServiceLink:
+  naz:
+  ios:
+  android: uralsib://cityPlus
+  web: uralsib://cityPlus
+PaymentsLink:
+  naz:
+  ios: uralsib://payments
+  android: uralsib://payments
+  web: uralsib://payments
+PhoneTransferLink:
+  naz:
+  ios:
+  android: uralsib://phoneTransferSettings
+  web: uralsib://settings
+
+# Ссылки на конкретный продукт для АЗ
+
+# Открытие карты Прибыль
+OpenProfitCardLink:
+  ios: uralsib://humanChannel?productCode=28
+  android: uralsib://humanChannel?productCode=28
+  web: uralsib://openDebitCard?productCode=D28
+  naz: https://www.uralsib.ru/debetovye-karty/pribyl?anchor=pribyl-form
+
+# Открытие карты Мир
+OpenMirCardLink:
+  ios: uralsib://openDebitCard?productCode=D37
+  android: uralsib://openDebitCard?productCode=D37
+  web: uralsib://openDebitCard?productCode=D37
+  naz: https://uralsib.ru/debetovye-karty/mir-classic?anchor=mir-classic-form
+
+# Открытие текущего счета
+OpenActualAccountLink:
+  ios: uralsib://openAccount?idVidDepGroup=354167775196
+  android: uralsib://openAccount?idVidDepGroup=354167775196
+  web: uralsib://openAccount?idVidDepGroup=354167775196
+
+# Открытие накопительного счета
+OpenSavingsAccountLink:
+  ios: uralsib://openAccount?idVidDepGroup=354167778228
+  android: uralsib://openAccount?idVidDepGroup=354167778228
+  web: uralsib://openAccount?idVidDepGroup=354167778228
+
+# Условия конкретного депозита
+DepositConditionsLink:
+  ios: uralsib://depositTerms?id={ID}&type=DEPOSIT
+  android: uralsib://depositTerms?id={ID}&type=DEPOSIT
+  web: uralsib://depositTerms?id={ID}&type=DEPOSIT
+
+# История операций для конкретного депозита
+DepositOperationsLink:
+  ios: uralsib://accountHistory?id={ID}&type=ACCOUNT
+  android: uralsib://accountHistory?id={ID}&type=ACCOUNT
+  web: uralsib://depositHistory?id={ID}&type=DEPOSIT
+
+# Пополнение конкретного депозита в Уралсиб Онлайн
+DBODepositTopUpLink:
+  ios: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  android: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  web: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+
+# Реквизиты конкретного депозита в Уралсиб Онлайн
+DBODepositDetailsLink:
+  ios: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  android: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  web: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+
+# Переименование конкретного депозита в Уралсиб Онлайн
+DBODepositRenameLink:
+  ios: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  android: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+  web: uralsib://depositAdmin?id={ID}&type=DEPOSIT
+
+# Выписка по конкретному депозиту в Уралсиб Онлайн
+DBODepositStatementLink:
+  ios: uralsib://getStatement?id={ID}&type=DEPOSIT
+  android: uralsib://getStatement?id={ID}&type=DEPOSIT
+  web: uralsib://getStatement?id={ID}&type=DEPOSIT
+
+# Частичное погашение конкретного кредита
+LoanPartRepaymentLink:
+  ios: uralsib://loanRepaymentPartChatBot?id={ID}&type=LOAN
+  android: uralsib://loanRepaymentPartChatBot?id={ID}&type=LOAN
+  web: uralsib://loanRepaymentPartChatBot?id={ID}&type=LOAN
+
+# Полное погашение конкретного кредита
+LoanFullRepaymentLink:
+  ios: uralsib://loanRepaymentFullChatBot?id={ID}&type=LOAN
+  android: uralsib://loanRepaymentFullChatBot?id={ID}&type=LOAN
+  web: uralsib://loanDetails?id={ID}&type=LOAN
+
+# Реквизиты конкретного кредита в Уралсиб Онлайн
+DBOLoanDetailsLink:
+  ios: uralsib://loanDetails?id={ID}&type=LOAN
+  android: uralsib://loanDetails?id={ID}&type=LOAN
+  web: uralsib://loanDetails?id={ID}&type=LOAN
+
+# Досрочное погашение конкретного депозита в Уралсиб Онлайн
+DBOLoanEarlyRepaymentLink:
+  ios: uralsib://loanRepaymentFullChatBot?id={ID}&type=LOAN
+  android: uralsib://loanRepaymentFullChatBot?id={ID}&type=LOAN
+  web: uralsib://loanRepaymentFullChatBot?id={ID}&type=LOAN
+
+# Пополнение конкретного кредита в Уралсиб Онлайн
+DBOLoanTopUpLink:
+  ios: uralsib://loanAdmin?id={ID}&type=LOAN
+  android: uralsib://loanAdmin?id={ID}&type=LOAN
+  web: uralsib://loanAdmin?id={ID}&type=LOAN
+
+# Условия конкретного кредита в Уралсиб Онлайн
+DBOLoanTermsLink:
+  ios: uralsib://loanDetails?id={ID}&type=LOAN
+  android: uralsib://loanDetails?id={ID}&type=LOAN
+  web: uralsib://loanDetails?id={ID}&type=LOAN
+
+# Условия конкретного пакета услуг
+PackageTermsLink:
+  ios: uralsib://premiumServicePack?mainPackId={ID}
+  android: uralsib://premiumServicePack?mainPackId={ID}
+  web: uralsib://premiumServicePack?mainPackId={ID}
+
+# Тариф конкретной дебетовой карты
+DebitCardConditionsLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Оборот по Уралсиб-бонус для конкретной дебетовой карты
+DebitCardProfitBonusLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Сумма начисленных процентов для конкретной дебетовой карты
+DebitCardProfitPercentLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Процентная ставка для конкретной дебетовой карты
+DebitCardProfitRateLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Тариф конкретной кредитной карты
+CreditCardConditionsLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Блокировка личного кабинета для конкретной карты
+CardBlockLKLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Разблокировка конкретной карты
+CardUnblockLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Установка ПИНа на конкретную карту
+CardPINInstallLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Перевыпуск конкретной карты
+CardReissueLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Выписка по конкретной карте в Уралсиб Онлайн
+DBOCardStatementLink:
+  ios: uralsib://getStatement?id={ID}&type=CARD
+  android: uralsib://getStatement?id={ID}&type=CARD
+  web: uralsib://getStatement?id={ID}&type=CARD
+
+# Настройка уведомлений по конкретной карте в Уралсиб Онлайн
+DBOCardNotificationsOnLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Переименование конкретной карты в Уралсиб Онлайн
+DBOCardRenameLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Реквизиты конкретной карты в Уралсиб Онлайн
+DBOCardDetailsLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Пополнение конкретной карты в Уралсиб Онлайн
+DBOCardTopUpLink:
+  ios: uralsib://cardAdmin?id={ID}&type=CARD
+  android: uralsib://cardAdmin?id={ID}&type=CARD
+  web: uralsib://cardAdmin?id={ID}&type=CARD
+
+# Аналитика конкретной карты в Уралсиб Онлайн
+DBOCardAnalyticsLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Бонусная программа конкретной карты в Уралсиб Онлайн
+DBOCardBonusLink:
+  ios: uralsib://cardDetails?id={ID}&type=CARD
+  android: uralsib://cardDetails?id={ID}&type=CARD
+  web: uralsib://cardDetails?id={ID}&type=CARD
+
+# Оформление кредитной карты
+OpenCreditCardLink:
+  ios: uralsib://openCreditCard?productCode=D35
+  android: uralsib://openCreditCard?productCode=D35
+  web: uralsib://openCreditCard?productCode=D35
+  naz: uralsib://openCreditCard?productCode=D35
+
+# Оформление кредита по офферу
+OpenOfferCreditLink:
+  ios: uralsib://presale?presaleId={ID}
+  android: uralsib://presale?presaleId={ID}
+  web: uralsib://presale?presaleId={ID}
+
+# Оформление кредитной карты по офферу
+OpenOfferCardLink:
+  ios: uralsib://openCreditCard?productCode=D35?presaleId={ID}
+  android: uralsib://openCreditCard?productCode=D35?presaleId={ID}
+  web: uralsib://openCreditCard?productCode=D35?presaleId={ID}

@@ -1,0 +1,48 @@
+# Проблемы с другими сервисами
+websiteError:
+  reply: Укажите, на какой именно сайт банка вы обращались. Это поможет в решении возникшей проблемы.
+  buttons:
+    - text: "Частным лицам"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+    - text: "Страховая компания"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+    - text: "Бизнесу"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+    - text: "Приват-банк"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+    - text: "Уралсиб Премиум"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+    - text: "Другое"
+      transition: "/OtherServicesProblems/WebsiteError/WebsiteAddress"
+
+websiteAddress:
+  insuranceCompany: По вопросу работы сайта страховой компании позвоните, пожалуйста, по телефону 8-800-234-77-55.
+  business: По вопросу работы сайта для бизнеса позвоните, пожалуйста, по телефону 8-800-700-77-16.
+  transfer: Благодарю за ответ! Для продолжения консультации переключаю вас на оператора. Прошу вас сообщить ему детали произошедшего.
+
+payByCardError:
+  reply: Укажите, при каком типе оплаты возникает проблема? Это поможет в ее решении.
+  buttons:
+    - text: "Онлайн на сайте"
+      transition: "/OtherServicesProblems/PayByCardError/Solutions"
+    - text: "Пластиковой картой в магазине"
+      transition: "/OtherServicesProblems/PayByCardError/Solutions"
+    - text: "С помощью MirPay"
+      transition: "/OtherServicesProblems/PayByCardError/Solutions"
+    - text: "Карта в стоп-листе"
+      transition: "/CardsConsultation/StopList"  
+
+payByCardErrorSolutions:
+  notAuthorized: >
+    Для решения проблемы прошу вас написать в чат «Уралсиб Онлайн».
+  authorized: Похоже, здесь нужен человек. Он проверит, что с вашей картой.
+
+ATMError:
+  reply: Укажите, при работе с каким устройством возникла проблема? Это поможет в ее решении.
+  buttons:
+    - text: "Банкомат"
+      transition: "/OtherServicesProblems/ATMError/Solutions"
+    - text: "Терминал"
+      transition: "/OtherServicesProblems/ATMError/Solutions"
+
+ATMErrorSolutions: Вот бы я умел все! Но пока не научился решать проблемы банкоматов и терминалов – человек справится лучше.

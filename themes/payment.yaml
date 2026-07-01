@@ -1,0 +1,119 @@
+#Платеж
+
+Payment: 
+    reply: Какой у вас вопрос по платежу?
+    buttons:
+      - text: Отмена платежа
+        transition: "/Payment/Payment/Cancel"
+      - text: Платеж по кредиту
+        transition: "/Payment/Payment/Loan"
+      - text: Помощь с переводом
+        transition: "/PaymentsAndTransfer/Common/Problem"
+      - text: Сроки перевода
+        transition: "/PaymentsAndTransfer/Common/Time"
+      - text: Лимиты на переводы
+        transition: "/MobileAppNavigation/DBONavigation/Settings/Limits"
+      - text: Оплата услуг
+        transition: "/PaymentsAndTransfer/MoneyTransfer/Payments"
+
+Cancel:
+    reply: Отмена какого платежа вас интересует? Расскажите подробнее или выберите один из вариантов ответа.
+    buttons:
+      - text: Отмена перевода
+        transition: "/PaymentsAndTransfer/Common/Revoke"
+      - text: Возврат покупки
+        transition: "/PaymentsAndTransfer/Common/Revoke"
+      - text: Отмена комиссии
+        transition: "/Comission/Comission/Disagree"
+      - text: Отмена платежа по страховке
+        transition: "/Insurance/Insurance/Return"
+      - text: Отключение подписок
+        transition: "/Subscription/Subscription/TurnOff"
+
+Loan:
+    reply: Какой у вас вопрос по оплате кредита?
+    buttons:
+      - text: Сумма и дата платежа
+        transition: "/Payment/Payment/Loan/SumDateInfo"
+      - text: Когда спишется платеж
+        transition: "/Payment/Payment/Loan/Status"
+      - text: Изменить или пропустить платеж
+        transition: "/Payment/Payment/Loan/Change"
+      - text: Внести платеж
+        transition: "/Payment/Payment/Loan/TopUp"
+
+SumDateInfo:
+    reply: По какому продукту вас интересует сумма и дата платежа?
+    buttons:
+      - text: Кредит
+        transition: "/LoansConsultation/Loan/AllLoans"
+      - text: Кредитная карта
+        transition: "/Debt/Debt/Credit"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments"
+
+Status:
+    reply: 
+        - |
+         Платеж по кредиту списывается в дату платежа. Обычно это происходит в ночь при закрытии банковского дня
+         Если дата платежа приходится на нерабочий день (выходной или праздничный день), то она переносится на следующий рабочий день и списывается в ночь.
+        - |
+         По кредитной карте минимальный платеж необходимо вносить до последнего рабочего дня месяца.
+        - |
+         Проверить, списался ли платеж по кредиту, можно в приложении в «Истории». 
+         Если платеж был списан, вы увидите операцию «Погашение по договору» и номер кредитного договора.
+
+Change:
+    reply: По какому продукту вас интересует изменение или пропуск платежа?
+    buttons:
+      - text: Кредит или кредитная карта
+        transition: "/Payment/Payment/Loan/Change/Loan"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments/ChangePaymentDate"
+
+ChangeLoan:
+    reply: Согласно условиям кредитного договора, изменение даты платежа или пропуск очередного платежа не предусмотрены.
+
+TopUp:
+    reply: Погашение какого кредита вас интересует?
+    buttons:
+      - text: Кредит
+        transition: "/MobileAppNavigation/DBONavigation/Loans/TopUp"
+      - text: Кредитная карта
+        transition: "/MobileAppNavigation/DBONavigation/ManageCards/TopUp"
+      - text: Микрозаем
+        transition: "/Microloan/Microloan/Active/Payments/RepaymentMethods"
+        
+QR:
+    reply: Какой у вас вопрос по оплате с помощью QR-кода?
+    buttons:
+      - text: Как оплатить
+        transition: "/Payment/Payment/QR/Pay"
+      - text: Не могу оплатить
+        transition: "/Payment/Payment/QR/Problem"
+      - text: Оплата по QR-коду кредитной картой 
+        transition: "/CreditCards/CreditCard/GracePeriod/Operation"
+        
+Pay:
+    NotAuthorized:
+        - |
+            Оплатить по QR-коду можно в приложении:
+            1. В вверху главной страницы приложения выберите «Оплата по QR».
+            2. Сканируйте QR-код.
+    Mobile:
+        - |
+            Для оплаты по QR-коду:
+            1. Вверху главной страницы приложения выберите «Оплата по QR».
+            2. Сканируйте QR-код.
+    Web:
+        - |
+            Оплатить по QR-коду можно в приложении:
+            1. В вверху главной страницы приложения выберите «Оплата по QR».
+            2. Сканируйте QR-код.
+
+Problem:
+    isNotAuthorized: |
+        Для решения проблем при оплате по QR-коду напишите в чат:
+        • приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) 
+        • или его [веб-версии](https://online.uralsib.ru/)
+    Authorized: Для решения проблем при оплате по QR коду перевожу вас на оператора. Пожалуйста, ожидайте.

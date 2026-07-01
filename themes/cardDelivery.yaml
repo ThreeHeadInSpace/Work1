@@ -1,0 +1,128 @@
+# Доставка карт
+CardDelivery:
+    answer: Уточните, какой вопрос по доставке?
+    buttons:
+        - text: Вопрос по статусу доставки карты
+          transition: "/CardDelivery/CardDelivery/Status"
+        - text: Причина отмены доставки
+          transition: "/CardDelivery/CardDelivery/ReasonForRefusal"
+        - text: Города доставки
+          transition: "/CardDelivery/CardDelivery/DeliveryCities"
+        - text: Нет моего города при заказе карты
+          transition: "/CardDelivery/CardDelivery/NoDeliveryCity"
+        - text: Отменить доставку
+          transition: "/CardDelivery/CardDelivery/CancelDelivery"
+        - text: Вопрос о курьерской службе
+          transition: "/CardDelivery/CardDelivery/Courier"
+        - text: Изменить способ или дату получения
+          transition: "/CardDelivery/CardDelivery/Change"
+
+Status:
+    NotAuthorized:
+        - Для уточнения информации по доставке, напишите в чат приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+        - Для уточнения информации по доставке, перевожу на оператора.
+
+ReasonForRefusal: 
+    NotAuthorized:
+        - Для уточнения информации по отмене доставки, напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+        - Для уточнения информации по отмене доставки, перевожу на оператора.
+        
+DeliveryCities: 
+    answer: Перевожу на оператора для проверки возможности доставки.
+
+NoDeliveryCity:
+    answer: К доставке в ваш город мы пока не добрались, но вы можете забрать карту у курьера в ближайшем городе, в назначенное время.
+    buttons:
+        - text: Найти ближайший город для доставки
+          transition: "/CardDelivery/CardDelivery/NoDeliveryCity/NearestDeliveryCity"
+        - text: Назад
+          transition: "/CardDelivery/CardDelivery"
+          
+NearestDeliveryCity: 
+    answer: Перевожу на оператора для проверки возможности доставки.
+
+CancelDelivery:
+    answer: Если курьер уже связывался с вами, то для отмены перезвоните по входящему номеру.
+    buttons:
+        - text: Курьер не звонил
+          transition: "/CardDelivery/CardDelivery/CancelDelivery/CourierDidntCall"
+        - text: Назад
+          transition: "/CardDelivery/CardDelivery"
+          
+CourierDidntCall:
+    NotAuthorized:
+        - Для отмены доставки напишите в чат приложения  [«Уралсиб Онлайн»](https://uralsib.ru/online) или его [веб-версии](https://online.uralsib.ru/)
+    Authorized:
+        - Для отмены доставки перевожу вас на оператора.
+
+Courier:
+    answer: Уточните, какой вопрос по курьерской службе?
+    buttons:
+        - text: Связаться с курьером
+          transition: "/CardDelivery/CardDelivery/Courier/ContactTheCourier"
+        - text: Жалоба на курьера
+          transition: "/CardDelivery/CardDelivery/Courier/Claim"
+        - text: Проверка курьерской службы
+          transition: "/CardDelivery/CardDelivery/Courier/Verificftion"
+        - text: Назад
+          transition: "/CardDelivery/CardDelivery"
+          
+ContactTheCourier:
+    answer:
+    - |
+      Если звонков не поступало — ожидайте, с вами свяжутся в ближайшее время.
+      Если курьер уже связывался с вами — перезвоните по входящему номеру.
+      
+    - |
+     Не забудьте отключить антиспам-фильтры, чтобы не пропустить звонок от курьера. 
+    buttons:
+        - text: "Назад"
+          transition: "/CardDelivery/CardDelivery/Courier"  
+
+Claim:
+    answer: Оставить претензионное обращение вы можете в специальной форме на нашем [сайте](https://uralsib.ru/napishite-nam) 
+    buttons:
+        - text: "Назад"
+          transition: "/CardDelivery/CardDelivery/Courier"  
+
+Verificftion:
+    answer:
+    - |
+        Доставка карт осуществляется через курьерские службы: 
+        • ВС экспресс
+        • ЕФИН (ЕФР)
+        • ФИНДОСТАВКА
+    buttons:
+        - text: Назад
+          transition: "/CardDelivery/CardDelivery/Courier"  
+            
+Change:            
+    answer: Уточните, что вы хотите поменять?
+    buttons:
+        - text: Способ получения 
+          transition: "/CardDelivery/CardDelivery/Change/ReceiveCard"
+        - text: Адрес или дата доставки
+          transition: "/CardDelivery/CardDelivery/Change/Address"
+        - text: Назад 
+          transition: "/CardDelivery/CardDelivery"
+          
+ReceiveCard: 
+    answer:
+    - |
+      Получить дебетовую карту можно в [офисе банка]({{$temp.officeLink}}) 
+      Если вы заказывали кредитную карту — забрать ее можно в офисе того филиала, где подавали заявку.
+    buttons:
+        - text: Назад 
+          transition: "/CardDelivery/CardDelivery/Change"
+      
+Address:
+    answer:
+    - Изменить адрес, либо дату доставки можно в личном кабинете курьерской службы. Ссылка на вход была направлена на ваш номер смс сообщением.
+    - |
+      Либо дождаться звонка от курьера и указать другой адрес или дату доставки.
+      Если туда есть доставка, он все оформит.
+    buttons:
+        - text: Назад 
+          transition: "/CardDelivery/CardDelivery/Change"

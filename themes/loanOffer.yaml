@@ -1,0 +1,68 @@
+# Предложения по кредитам
+LoanOffer:
+  FirstReply:
+    - Готов рассказать вам о предложениях по кредитным продуктам.
+    - Буду рад предоставить информацию о предложениях по кредитным продуктам.
+
+  SecondReply:
+    - Выберите, что именно вас интересует.
+    - Выберите интересующий вас вариант.
+    
+  Buttons:
+    - text: "Потребительский кредит"
+      transition: "/LoanOffer/LoanOffer/Consumer"
+    - text: "Кредитная карта"
+      transition: "/CreditCards/CreditCard/Request"
+      
+  Consumer:
+    NotAuthorized:
+      - |
+       У потребительского кредита в банке Уралсиб масса преимуществ:
+        • Оформление онлайн
+        • Конкурентоспособные процентные ставки
+        • Гибкие сроки кредитования 
+        • Решение за 1 день
+        • Возможность частичного и полного досрочного погашения без комиссий в любое время и любом объеме
+        • Индивидуальный подход 
+      
+      - "Подать заявку на потребительский кредит можно [тут]({{$temp.ConsumerLoanLink}})."
+  
+    Authorized: Уточните, какая сумма кредита вас интересует?
+    
+    Approved:
+      Reply:
+        - |
+         {{ $session.name }}, вам доступно специальное предложение по кредиту наличными на льготных условиях:
+          • До {{$temp.offer.MAX_LIMIT}} — уже одобрено
+          • {{$temp.offer.Ghost_privilege_1}} {{$temp.offer.Ghost_privilege_value_1}}
+          • Срок от {{$temp.offer.MIN_PERIOD}} до {{$temp.offer.DURATION}} месяцев
+          • На любые цели: кредит наличными или рефинансирование кредитов сторонних банков
+            
+        - Хотите подать заявку?
+
+      Buttons:
+        - text: "Да"
+          transition: "/ConsumerLoan/ConsumerLoan/Request/Agree"
+        - text: "Нет"
+          transition: "/ConsumerLoan/ConsumerLoan/Request/Disagree"
+          
+    Preapproved:
+      Reply:
+        - |
+         {{ $session.name }}, вам доступно специальное предложение по кредиту наличными на льготных условиях:
+          • до {{$temp.offer.MAX_LIMIT}} — предварительно одобрено
+          • Процентная ставка зависит от суммы и страхования: {{$temp.offer.RANGE_1}} от 9%, {{$temp.offer.RANGE_2}} от 9%, {{$temp.offer.RANGE_3}} от 9%, {{$temp.offer.RANGE_4}} от 9%
+          • Срок до {{$temp.offer.DURATION}}
+          • На любые цели: кредит наличными или рефинансирование кредитов сторонних банков
+          
+        - Для оформления нужен паспорт РФ. При сумме кредита свыше 600 000 рублей дополнительно потребуется документ, подтверждающий доход. 
+            
+        - Хотите подать заявку на продукт?
+
+      Buttons:
+        - text: "Да"
+          transition: "/ConsumerLoan/ConsumerLoan/Request/Agree"
+        - text: "Нет"
+          transition: "/ConsumerLoan/ConsumerLoan/Request/Disagree"
+  
+ToOperator: Для продолжения консультации переключаю вас на оператора.

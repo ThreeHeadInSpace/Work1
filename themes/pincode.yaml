@@ -1,0 +1,35 @@
+# Пин-код
+
+Code: 
+    reply: Я понял, что ваш вопрос связан с кодом. Напишите подробнее или выберите нужный вариант.
+    buttons:
+        - text: "ПИН-код по карте"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/ChangePIN"
+        - text: "Короткий код в приложении"
+          transition: "/MobileAppNavigation/DBONavigation/Settings/PIN"
+        - text: "3D Secure"
+          transition: "/AdditionalService/3DSecure"
+        - text: "Куар-код"
+          transition: "/Payment/Payment/QR"
+        - text: "Подтверждение операций в приложении"
+          transition: "/MobileAppNavigation/DBONavigation/Settings/Approve"
+          
+NotArrive:
+    isNotAuthorized: |
+        При возникновении проблем с получением кода напишите в чат:
+        • приложения [«Уралсиб Онлайн»](https://uralsib.ru/online) 
+        • или его [веб-версии](https://online.uralsib.ru/)
+    Authorized: Уточните какой код вам не поступил, а я пока переведу вас на оператора. Пожалуйста, ожидайте.
+
+Pincode: 
+    answer:
+      - |
+        Я понял, что ваш вопрос связан с ПИН-кодом. Напишите подробнее вопрос или выберите нужный вариант.
+    buttons:
+        - text: "ПИН-код по карте"
+          transition: "/MobileAppNavigation/DBONavigation/ManageCards/ChangePIN"
+        - text: "Короткий код в приложении"
+          transition: "/MobileAppNavigation/DBONavigation/Settings/PIN"
+          
+
+

@@ -1,0 +1,26 @@
+# Снятие наличных - Уточнение
+cashWithdrawal: 
+  answer: 
+    - |
+      Выберите интересующий способ снятия наличных:
+  buttons:
+    - text: "Через банкомат"
+      transition: "/CashWithdrawal/CashWithdrawal/ATM"
+    - text: "В кассе банка"
+      transition: "/CashOrder/CashOrder"
+
+ATM:
+  answer:
+    - |
+      Снимать наличные с карты Уралсиб можно в любых банкоматах банка Уралсиб и банков-партнеров.
+    - |
+      Выберите интересующий пункт меню:
+  buttons:
+    - text: "Найти ближайший банкомат"
+      transition: "/AddressesUralsib/ATMOrOffice/ATM"
+    - text: "Ознакомиться с комиссией"
+      transition: "/Comission/Comission/Withdraw"
+    - text: "Посмотреть лимиты"
+      transition: "/Limits/Limit/WithdrawCash"
+    - text: "Проблема с устройством"
+      transition: "/Feedback/Feedback/Claim/ATM"
