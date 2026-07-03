@@ -111,9 +111,15 @@ themes/mobileAppNavigation - проверен и исправлен (36 ошиб
 
 === themes/ ПОЛНОСТЬЮ ЗАВЕРШЁН: 71 из 71 файлов проверено ===
 
+data/APIswitch - только технические флаги, текста нет
+data/creditCardApplicationStatuses - проверен, ошибок не найдено
+data/autoLoanApplicationStatuses - проверен, ошибок не найдено
+data/tariffs - проверен и исправлен (1 ошибка)
+
 --- В очереди ---
 catchAll - в очереди
-data/* (7 файлов) - в очереди
+data/links, data/mortgageApplicationStatuses, data/consumerLoanApplicationStatuses - в очереди
+
 
 
 
