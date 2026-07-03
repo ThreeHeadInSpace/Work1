@@ -101,10 +101,13 @@ themes/loyaltyProgram - проверен и исправлен (16 ошибок,
 
 themes/insurance - проверен и исправлен (13 ошибок + 3 отметки про сломанные ссылки OfficeLink в коде)
 
+themes/microloan - проверен и исправлен (22 ошибки + 1 отметка про сломанную ссылку OfficeLink)
+
 --- В очереди ---
 catchAll - в очереди
-themes/* (4 оставшихся файла: microloan, deposit, cardsConsultation, mobileAppNavigation) - в очереди
+themes/* (3 оставшихся файла: deposit, cardsConsultation, mobileAppNavigation) - в очереди
 data/* (7 файлов) - в очереди
+
 
 
 
