@@ -1,6 +1,10 @@
 Прогресс проверки и исправления файлов ответов бота
 Формат: <файл> - <статус>
 
+ВАЖНО: с 03.07.2026 пропущенная точка в конце предложения (в т.ч. после ссылки)
+больше НЕ считается ошибкой и не попадает в таблицы правок. Старые записи такого
+рода вычищены из уже готовых xlsx (см. коммит "Чистка xlsx: убраны правки-точки").
+
 --- Старый формат (xlsx без номера строки, не трогаем) ---
 offtopic - проверен и исправлен
 generalStates - проверен и исправлен
@@ -8,140 +12,79 @@ handlers - проверен и исправлен
 startAndEnd - проверен и исправлен
 
 --- Новый формат (xlsx с номером строки, только строки с реальными ошибками, лежит рядом с yaml) ---
-faq/cards - проверен и исправлен (2 ошибки)
-faq/deposits - проверен и исправлен (3 ошибки + 1 сомнительное место, требует ручной проверки)
-faq/sms - проверен и исправлен (1 ошибка)
-faq/loans - пусто, нечего проверять
-faq/loyalty - пусто, нечего проверять
-faq/microloans - пусто, нечего проверять
 
---- themes/ партия 1 (10 самых маленьких файлов) ---
-themes/serviceDesk - проверен, ошибок не найдено
-themes/safeBox - проверен, ошибок не найдено
-themes/technicalWork - весь текст закомментирован, активного содержимого нет
-themes/fraud - проверен и исправлен (2 ошибки)
-themes/currencyExchange - проверен и исправлен (1 ошибка)
-themes/paidServices - проверен, ошибок не найдено
-themes/password - проверен, ошибок не найдено
-themes/return - проверен, ошибок не найдено
-themes/turnoff - проверен, ошибок не найдено
-themes/turnon - проверен, ошибок не найдено
+themes/ — ПОЛНОСТЬЮ ЗАВЕРШЕНО, 71 из 71 файла проверено:
 
---- themes/ партия 2 (следующие 10 по размеру) ---
-themes/debt - проверен, ошибок не найдено
-themes/amount - проверен, ошибок не найдено
-themes/mobileApp - проверен и исправлен (3 ошибки)
-themes/promo - проверен и исправлен (1 ошибка)
-themes/updatePassportData - проверен и исправлен (3 ошибки)
-themes/percent - проверен и исправлен (1 ошибка)
-themes/cashWithdrawal - проверен, ошибок не найдено
-themes/refusal - проверен и исправлен (1 ошибка)
-themes/requisites - проверен и исправлен (1 ошибка)
-themes/avitoLoan - проверен, ошибок не найдено
+faq/cards - 2 ошибки
+faq/deposits - 3 ошибки + 1 сомнительное место
+faq/sms - 1 ошибка
+faq/loans, faq/loyalty, faq/microloans - пусто, нечего проверять
 
---- themes/ партия 3 (следующие 10 по размеру) ---
-themes/money - проверен, ошибок не найдено
-themes/selling - проверен, ошибок не найдено
-themes/trouble - проверен и исправлен (4 ошибки)
-themes/autopayments - проверен и исправлен (2 ошибки)
-themes/blocking - проверен, ошибок не найдено
-themes/carLoan - проверен и исправлен (1 ошибка)
-themes/pincode - проверен и исправлен (1 ошибка)
-themes/restructuring - проверен и исправлен (1 ошибка)
-themes/debtoverdue - проверен и исправлен (1 ошибка)
-themes/broker - проверен и исправлен (1 ошибка)
+themes/serviceDesk, safeBox, technicalWork, paidServices, password, return, turnoff, turnon - чисто
+themes/fraud - 2 ошибки
+themes/currencyExchange - чисто (была только точка, убрана)
+themes/debt, amount, cashWithdrawal, avitoLoan, money, selling, blocking, feedback - чисто
+themes/mobileApp - чисто (была только точка, убрана)
+themes/promo - 1 ошибка
+themes/updatePassportData - 3 ошибки
+themes/percent - 1 ошибка
+themes/refusal - 1 ошибка
+themes/requisites - чисто (была только точка, убрана)
+themes/trouble - 2 ошибки
+themes/autopayments - 2 ошибки
+themes/carLoan - чисто (была только точка, убрана)
+themes/pincode - 1 ошибка
+themes/restructuring - 1 ошибка
+themes/debtoverdue - чисто (была только точка, убрана)
+themes/broker - 1 ошибка
+themes/contract - 1 ошибка
+themes/additionalService - 1 ошибка
+themes/otherServicesProblems - 1 ошибка
+themes/phoneCC - 7 ошибок
+themes/mortgage - 1 ошибка
+themes/closeCard - 1 сомнительное место (без автоисправления)
+themes/premium - 1 ошибка
+themes/yourRate - 4 ошибки (в т.ч. 2 сомнительных места)
+themes/checkLoan - 1 ошибка
+themes/paymentSchedule - 3 ошибки
+themes/addressesUralsib - 3 ошибки (в т.ч. 2 отметки про баг в коде)
+themes/application - 1 ошибка
+themes/subscription - 17 ошибок
+themes/documents - 1 ошибка
+themes/package - чисто (была только точка, убрана)
+themes/close - 1 ошибка
+themes/smsNotifications - 1 ошибка
+themes/debitCards - 2 ошибки
+themes/refinancing - 2 ошибки
+themes/payment - 3 ошибки
+themes/cashOrder - 2 ошибки
+themes/cardDelivery - 2 ошибки
+themes/arrest - 4 ошибки
+themes/cardQuestion - 3 ошибки
+themes/limits - 4 ошибки
+themes/mobileAppProblems - 8 ошибок (в т.ч. 2 сломанные markdown-ссылки)
+themes/consumerLoan - 2 ошибки
+themes/statements - 5 ошибок
+themes/commission - 10 ошибок
+themes/comission - 9 ошибок
+themes/creditCards - 6 ошибок (в т.ч. нестандартный символ двоеточия x2)
+themes/paymentsAndTransfers - 5 ошибок
+themes/loansConsultation - 3 ошибки (в т.ч. 1 сомнительное место)
+themes/loyaltyProgram - 10 ошибок
+themes/insurance - 11 ошибок (+ 3 отметки про сломанные ссылки OfficeLink)
+themes/microloan - 22 ошибки (+ 1 отметка про сломанную ссылку)
+themes/cardsConsultation - 12 ошибок
+themes/deposit - 16 ошибок (+ 2 отметки про баг в коде tranition/transition)
+themes/mobileAppNavigation - 20 ошибок
 
---- themes/ партия 4 (следующие 13 по размеру) ---
-themes/contract - проверен и исправлен (5 ошибок)
-themes/additionalService - проверен и исправлен (1 ошибка)
-themes/otherServicesProblems - проверен и исправлен (1 ошибка)
-themes/phoneCC - проверен и исправлен (7 ошибок)
-themes/mortgage - проверен и исправлен (3 ошибки)
-themes/closeCard - проверен, 1 сомнительное место (без автоисправления)
-themes/premium - проверен и исправлен (1 ошибка)
-themes/yourRate - проверен и исправлен (3 ошибки + 2 сомнительных места)
-themes/checkLoan - проверен и исправлен (1 ошибка)
-themes/paymentSchedule - проверен и исправлен (4 ошибки)
-themes/addressesUralsib - проверен и исправлен (1 ошибка + 2 отметки про баг в коде, не в тексте)
-themes/application - проверен и исправлен (1 ошибка)
-themes/subscription - проверен и исправлен (17 ошибок, в основном дефисы вместо тире + 1 сбитая нумерация шага)
-
---- themes/ партия 5 (следующие 7 по размеру) ---
-themes/loanOffer - проверен, ошибок не найдено
-themes/documents - проверен и исправлен (4 ошибки)
-themes/package - проверен и исправлен (2 ошибки)
-themes/close - проверен и исправлен (1 ошибка)
-themes/smsNotifications - проверен и исправлен (6 ошибок)
-themes/debitCards - проверен и исправлен (13 ошибок, в основном пропущенные точки)
-themes/refinancing - проверен и исправлен (8 ошибок)
-
---- themes/ партия 6 (в процессе) ---
-themes/payment - проверен и исправлен (4 ошибки)
-themes/cashOrder - проверен и исправлен (4 ошибки)
-themes/cardDelivery - проверен и исправлен (5 ошибок)
-themes/arrest - проверен и исправлен (7 ошибок)
-themes/cardQuestion - проверен и исправлен (6 ошибок)
-
-themes/limits - проверен и исправлен (9 ошибок)
-themes/mobileAppProblems - проверен и исправлен (9 ошибок, включая 2 сломанные markdown-ссылки: опечатка «сылке» вместо «ссылке» + неверная скобка)
-
-themes/consumerLoan - проверен и исправлен (7 ошибок)
-themes/statements - проверен и исправлен (10 ошибок, включая опечатку «цессионому»→«цессионному»)
-
-themes/commission - проверен и исправлен (10 ошибок)
-themes/comission - проверен и исправлен (9 ошибок, дублирующий файл commission с опечаткой в названии)
-
-themes/creditCards - проверен и исправлен (16 ошибок, включая нестандартный символ двоеточия U+A789 x2)
-
-themes/feedback - проверен, ошибок не найдено
-themes/paymentsAndTransfers - проверен и исправлен (14 ошибок, включая ещё один нестандартный символ двоеточия)
-
-themes/loansConsultation - проверен и исправлен (8 ошибок, включая 1 сомнительное место)
-themes/loyaltyProgram - проверен и исправлен (16 ошибок, включая сбитую нумерацию шага и двойную точку)
-
-themes/insurance - проверен и исправлен (13 ошибок + 3 отметки про сломанные ссылки OfficeLink в коде)
-
-themes/microloan - проверен и исправлен (22 ошибки + 1 отметка про сломанную ссылку OfficeLink)
-
-themes/deposit - проверен и исправлен (27 ошибок, в основном нестандартный символ двоеточия x14, + 2 отметки про баг в коде «tranition» вместо «transition» — может ломать кнопку)
-
-themes/cardsConsultation - проверен и исправлен (23 ошибки)
-
-themes/mobileAppNavigation - проверен и исправлен (36 ошибок)
-
-=== themes/ ПОЛНОСТЬЮ ЗАВЕРШЁН: 71 из 71 файлов проверено ===
-
+data/ — ПОЛНОСТЬЮ ЗАВЕРШЕНО, 7 из 7 файлов проверено:
 data/APIswitch - только технические флаги, текста нет
-data/creditCardApplicationStatuses - проверен, ошибок не найдено
-data/autoLoanApplicationStatuses - проверен, ошибок не найдено
-data/tariffs - проверен и исправлен (1 ошибка)
-
+data/creditCardApplicationStatuses - чисто
+data/autoLoanApplicationStatuses - чисто
 data/links - весь текст только в комментариях, реальных фраз нет
-data/mortgageApplicationStatuses - проверен и исправлен (1 ошибка: опечатка «соземщика»)
-data/consumerLoanApplicationStatuses - проверен и исправлен (4 ошибки: та же опечатка + двойной неразрывный пробел x3 + пробел перед скобкой)
-
-=== data/ ПОЛНОСТЬЮ ЗАВЕРШЕНА: 7 из 7 файлов проверено ===
+data/tariffs - 1 ошибка
+data/mortgageApplicationStatuses - 1 ошибка
+data/consumerLoanApplicationStatuses - 5 ошибок
 
 --- В очереди ---
 catchAll - в очереди (последний файл, 2251 строка)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
